@@ -16,27 +16,27 @@ public class ClientController {
         this.clientService = clientService;
     }
 
-    @PostMapping
-    public Mono<ClientDTO> addClient(@RequestBody Mono<ClientDTO> clientDto) {
-        return clientService.addClient(clientDto);
-    }
-
-    @GetMapping
+    @GetMapping(value = "/all")
     public Flux<ClientDTO> getClients() {
         return clientService.getAllClients();
     }
 
-    @GetMapping("{customId}")
+    @GetMapping(value = "/{customId}")
     public Mono<ClientDTO> getClient(@PathVariable("customId") String customId) {
         return clientService.getClient(customId);
     }
 
-    @PutMapping("{customId}")
+    @PostMapping(value = "/create")
+    public Mono<ClientDTO> addClient(@RequestBody Mono<ClientDTO> clientDto) {
+        return clientService.addClient(clientDto);
+    }
+
+    @PutMapping(value = "/update/{customId}")
     public Mono<Void> updateClient(@PathVariable("customId") String customId, @RequestBody Mono<ClientDTO> client) {
         return clientService.updateClient(customId, client);
     }
 
-    @DeleteMapping("{customId}")
+    @DeleteMapping(value = "/delete/{customId}")
     public Mono<Void> deleteClient(@PathVariable("customId") String customId) {
         return clientService.deleteClient(customId);
     }
