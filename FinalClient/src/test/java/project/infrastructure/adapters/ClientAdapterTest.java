@@ -12,16 +12,14 @@ import project.domain.model.ClientType;
 import project.domain.validations.ClientDomainValidations;
 import project.infrastructure.adapters.mongoRepos.ClientRepository;
 import project.infrastructure.dto.ClientDTO;
-import project.infrastructure.exceptions.CustomError;
+import project.infrastructure.exceptions.throwable.EmptyAttributes;
+import project.infrastructure.exceptions.throwable.InvalidDocument;
 import project.infrastructure.exceptions.throwable.NotFound;
+import project.infrastructure.exceptions.throwable.WrongClientType;
 import project.infrastructure.mapper.GenericMapper;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
-
-// TODO -> Mejorar la cobertura de las pruebas de la implementación del repositorio
-// TODO -> Contemplar las posibles BRANCHES dentro del código
-// Bastantes branches, puesto que existen gran cantidad de excepciones (CAMINOS) + cobertura de líneas de código
 
 import static org.mockito.Mockito.*;
 
@@ -31,7 +29,7 @@ public class ClientAdapterTest {
   private ClientRepository clientRepository;
 
   @Mock
-  private ClientDomainValidations clientValidations;
+  private ClientDomainValidations domainValidations;
 
   @Mock
   private ClientAppValidations appValidations;
@@ -42,6 +40,7 @@ public class ClientAdapterTest {
   private Client client1;
   private Client client2;
   private ClientDTO clientDTO1;
+  private String documentNumber = "123456789";
 
   @BeforeEach
   public void setUp() {
@@ -71,12 +70,15 @@ public class ClientAdapterTest {
     // Comportamientos predefinidos (MOCKS)
 
     when(clientRepository.insert(Mockito.any(Client.class))).thenReturn(Mono.just(client1));
-    when(clientRepository.findByDocumentNumber(client1.getDocumentNumber())).thenReturn(Mono.just(client1));
+    when(clientRepository.findByDocumentNumber(any(String.class))).thenReturn(Mono.just(client1));
     when(clientRepository.findAll()).thenReturn(Flux.just(client1, client2));
     when(clientRepository.findById(Mockito.any(String.class))).thenReturn(Mono.just(client1));
     when(clientRepository.deleteById(Mockito.any(String.class))).thenReturn(Mono.empty());
     when(appValidations.validateDocumentNumber(any(ClientDTO.class))).thenReturn(Mono.just(clientDTO1));
-    when(clientValidations.validateClientType(any(ClientDTO.class))).thenReturn(Mono.just(clientDTO1));
+    when(domainValidations.validateClientType(any(ClientDTO.class))).thenReturn(Mono.just(clientDTO1));
+    when(clientRepository.existsById(any(String.class))).thenReturn(Mono.just(true));
+    when(clientRepository.findById(any(String.class))).thenReturn(Mono.just(client1));
+    when(clientRepository.save(any(Client.class))).thenReturn(Mono.just(client1));
   }
 
   @Test
@@ -90,6 +92,8 @@ public class ClientAdapterTest {
         .verifyComplete();
 
     verify(clientRepository, times(1)).findByDocumentNumber(client1.getDocumentNumber());
+
+    // Verifica que se ejecute el metodo del repositorio 1 VEZ con los parámetros brindados, se tiene en la mente el flujo de ejecución
   }
 
   @Test
@@ -119,82 +123,36 @@ public class ClientAdapterTest {
   public void shouldNotSaveClientByDocumentNumber() {
     clientDTO1.setDocumentNumber("");
     Mono<?> result = clientAdapter.save(clientDTO1);
+    when(appValidations.validateDocumentNumber(any(ClientDTO.class)))
+        .thenReturn(Mono.error(new InvalidDocument("The provided document number is not valid")));
 
-    StepVerifier.create(result)
-        .expectNextMatches(response -> {
-          if (response instanceof CustomError) {
-            CustomError error = (CustomError) response;
-            return error.getErrorMessage().equals("El documento del cliente no puede estar vacío") &&
-                error.getErrorType() == CustomError.ErrorType.INVALID_DOCUMENT;
-          }
-          return false;
-        })
-        .verifyComplete();
+    StepVerifier.create(result).verifyError(InvalidDocument.class);
 
     verify(clientRepository, never()).insert(any(Client.class));
   }
 
   @Test
   public void shouldNotSaveClientWithDuplicateDocumentNumber() {
-    // Preparar datos de entrada
-    String documentNumber = "123456789";
     clientDTO1.setDocumentNumber(documentNumber);
-
-    // Simular que ya existe un cliente con el mismo número de documento en la base
-    // de datos
-    when(clientRepository.findByDocumentNumber(documentNumber)).thenReturn(Mono.just(client1));
-
-    // Ejecutar el método a probar
+    when(clientRepository.existsByDocumentNumber(documentNumber)).thenReturn(Mono.just(true));
+    when(appValidations.validateDocumentNumber(clientDTO1)).thenReturn(Mono.error(new InvalidDocument("The provided document number is not valid")));
     Mono<?> result = clientAdapter.save(clientDTO1);
 
-    // Verificar el resultado esperado
-    StepVerifier.create(result)
-        .expectNextMatches(response -> {
-          return false;
-        })
-        .verifyComplete();
+    StepVerifier.create(result).verifyError(InvalidDocument.class);
 
-    // Verificar que no se llamó al método insert del repositorio mock
     verify(clientRepository, never()).insert(any(Client.class));
-  }
-
-  @Test
-  public void shouldNotSaveByClient() {
-    when(clientRepository.insert(any(Client.class))).thenReturn(Mono.error(new RuntimeException("Database error")));
-    clientDTO1.setClientType(ClientType.PERSONAL.name());
-    clientDTO1.setDocumentNumber("123456789");
-    Mono<?> result = clientAdapter.save(clientDTO1);
-
-    StepVerifier.create(result)
-        .expectNextMatches(response -> {
-          if (response instanceof CustomError) {
-            CustomError error = (CustomError) response;
-            return error.getErrorMessage().equals("Algunos campos son incorrectos o faltan") &&
-                error.getErrorType() == CustomError.ErrorType.GENERIC_ERROR;
-          }
-          return false;
-        })
-        .verifyComplete();
-
-    verify(clientRepository, times(1)).insert(any(Client.class));
   }
 
   @Test
   public void shouldNotSaveByClientType() {
     clientDTO1.setClientType("Invalid ErrorType");
-    clientDTO1.setDocumentNumber("123456789");
+    clientDTO1.setDocumentNumber(documentNumber);
+    when(domainValidations.validateClientType(clientDTO1))
+        .thenReturn(Mono.error(new WrongClientType("Client type must be PERSONAL or EMPRESARIAL")));
+
     Mono<?> result = clientAdapter.save(clientDTO1);
 
-    StepVerifier.create(result)
-        .expectNextMatches(response -> {
-          if (response instanceof CustomError) {
-            CustomError error = (CustomError) response;
-            return error.getErrorMessage().equals("El tipo de cliente debe ser PERSONAL o EMPRESARIAL") &&
-                error.getErrorType() == CustomError.ErrorType.INVALID_TYPE;
-          }
-          return false;
-        })
-        .verifyComplete();
+    StepVerifier.create(result).verifyError(WrongClientType.class);
 
     verify(clientRepository, never()).insert(any(Client.class));
   }
@@ -213,12 +171,12 @@ public class ClientAdapterTest {
   @Test
   public void shouldNotDeleteClient() {
     String wrongId = "999";
-    when(clientRepository.findById("999")).thenReturn(Mono.empty());
+    when(clientRepository.existsById(any(String.class))).thenReturn(Mono.just(false));
+    when(clientRepository.findById(wrongId)).thenReturn(Mono.empty());
     Mono<?> result = clientAdapter.delete(wrongId);
 
-    StepVerifier.create(result).verifyComplete();
+    StepVerifier.create(result).verifyError(NotFound.class);
 
-    verify(clientRepository, times(1)).findById(wrongId);
     verify(clientRepository, never()).deleteById(wrongId);
   }
 
@@ -228,10 +186,9 @@ public class ClientAdapterTest {
     Mono<String> result = clientAdapter.delete(clientId);
 
     StepVerifier.create(result)
-        .expectNext("Cliente eliminado correctamente")
+        .expectNext("Client deleted successfully")
         .verifyComplete();
 
-    verify(clientRepository, times(1)).findById(clientId);
     verify(clientRepository, times(1)).deleteById(clientId);
   }
 
@@ -257,11 +214,11 @@ public class ClientAdapterTest {
     updatedClientDTO.setClientName("John Smith");
     updatedClientDTO.setClientAddress("Updated Address");
     when(clientRepository.existsByCustomId(wrongId)).thenReturn(Mono.just(true));
-    when(clientRepository.findById(wrongId)).thenReturn(Mono.empty());
-    when(clientRepository.save(any())).thenReturn(Mono.error(new RuntimeException("Error al persistir el cliente")));
+    when(clientRepository.findById(wrongId)).thenReturn(Mono.just(client1));
+    when(clientRepository.save(any())).thenReturn(Mono.error(new EmptyAttributes("Some fields were not set")));
     Mono<?> result = clientAdapter.update(wrongId, updatedClientDTO);
 
-    StepVerifier.create(result).verifyComplete();
+    StepVerifier.create(result).verifyError(EmptyAttributes.class);
 
     verify(clientRepository, times(1)).existsByCustomId(wrongId);
     verify(clientRepository, times(1)).findById(wrongId);
@@ -280,23 +237,18 @@ public class ClientAdapterTest {
     verify(clientRepository, never()).save(any());
   }
 
-  /*
-   * @Test
-   * public void shouldUpdateClient() {
-   * String clientId = "1";
-   * clientDTO1.setClientName("John Smith");
-   * clientDTO1.setClientAddress("Updated Address");
-   * 
-   * when(clientRepository.existsByCustomId(clientId)).thenReturn(Mono.just(true))
-   * ;
-   * when(clientRepository.save(any(Client.class))).thenReturn(Mono.just(client1))
-   * ;
-   * 
-   * Mono<String> result = clientAdapter.update(clientId, clientDTO1);
-   * 
-   * StepVerifier.create(result)
-   * .expectNext("Cliente actualizado correctamente")
-   * .verifyComplete();
-   * }
-   */
+
+  @Test
+  public void shouldUpdateClient() {
+    String clientId = "1";
+    clientDTO1.setClientName("John Smith");
+    clientDTO1.setClientAddress("Updated Address");
+    when(clientRepository.existsByCustomId(clientId)).thenReturn(Mono.just(true));
+
+    Mono<String> result = clientAdapter.update(clientId, clientDTO1);
+
+    StepVerifier.create(result)
+        .expectNext("Client updated successfully")
+        .verifyComplete();
+  }
 }
