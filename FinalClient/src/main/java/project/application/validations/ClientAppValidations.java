@@ -39,6 +39,7 @@ public class ClientAppValidations {
                 log.warn("Document number is empty or duplicated -> {}", CustomError.ErrorType.INVALID_DOCUMENT);
                 return Mono.error(() -> new InvalidDocument("The provided document number is not valid"));
               }
+              log.info("The client has been validated");
               return Mono.just(client);
             }
         );

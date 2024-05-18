@@ -50,7 +50,7 @@ public class ClientAdapter implements ClientPort {
   public Mono<ClientDTO> findByID(String documentNumber) {
     return clientRepository.findByDocumentNumber(documentNumber)
         .flatMap(client -> {
-          log.info("Client found -> {}", client.getCustomId());
+          log.info("Client found -> {}", client.getClientName());
           return Mono.just(GenericMapper.mapToDto(client));
         }).switchIfEmpty(
             Mono.defer(() -> {
@@ -133,6 +133,9 @@ public class ClientAdapter implements ClientPort {
       existingClient.setClientPhone(clientDTO.getClientPhone());
       existingClient.setClientEmail(clientDTO.getClientEmail());
       existingClient.setStatus(clientDTO.getStatus());
+
+      log.info("Updating client{}", existingClient.getClientName());
+
       return clientRepository.save(existingClient);
     });
   }
@@ -154,8 +157,8 @@ public class ClientAdapter implements ClientPort {
             return updateExistingClient(clientId, GenericMapper.mapToDto(client))
                 .then(Mono.just("Client updated successfully"));
           } else {
-            log.warn("Updating client not found -> {}", CustomError.ErrorType.NOT_FOUND);
-            return Mono.error(new NotFound("Client with ID " + clientId + " not found"));
+            log.warn("Not found client -> {}", CustomError.ErrorType.NOT_FOUND);
+            return Mono.error(new NotFound("Looking for a client that does not exist"));
           }
         });
   }

@@ -43,6 +43,7 @@ public class GenericMapper {
     try {
       return modelMapper.map(client, ClientDTO.class);
     } catch (Exception e) {
+      log.error("Some attributes are missing -> {}", CustomError.ErrorType.WRONG_PARAMS);
       throw new EmptyAttributes("Some attributes were not set");
     }
   }
