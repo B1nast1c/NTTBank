@@ -1,51 +1,77 @@
 package project.infrastructure.mapper;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.modelmapper.ModelMapper;
 import project.domain.model.Client;
 import project.domain.model.ClientType;
 import project.infrastructure.dto.ClientDTO;
+import project.infrastructure.exceptions.throwable.EmptyAttributes;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
-public class GenericMapperTest {
-  @Test
-  void testMapToEntity() {
-    // Arrange
-    ClientDTO clientDTO = new ClientDTO("1", "PERSONAL", "John Doe", "123 Main St", "john@example.com", "123456789", "1234567890");
-    Client expectedClient = new Client();
-    expectedClient.setCustomId("1");
-    expectedClient.setClientType(ClientType.PERSONAL);
-    expectedClient.setClientName("John Doe");
-    expectedClient.setClientAddress("123 Main St");
-    expectedClient.setClientEmail("john@example.com");
-    expectedClient.setClientPhone("123456789");
-    expectedClient.setDocumentNumber("1234567890");
+/**
+ * Pruebas del mapper, solamente eso XD, el coverage de este elemento es de 77%
+ * Según IntelliJ
+ */
+class GenericMapperTest {
 
-    ModelMapper modelMapper = Mockito.mock(ModelMapper.class);
-    when(modelMapper.map(any(), any())).thenReturn(expectedClient);
-    Client actualClient = GenericMapper.mapToEntity(clientDTO);
-    Assertions.assertEquals(expectedClient, actualClient);
+  ClientDTO testDto = new ClientDTO();
+  Client testClient = new Client();
+
+  @Mock
+  ModelMapper modelMapper;
+
+  @BeforeEach
+  public void setUp() {
+    MockitoAnnotations.openMocks(this);
+
+    testDto = new ClientDTO("1",
+        "PERSONAL",
+        "John Doe",
+        "123 Main St",
+        "john@example.com",
+        "123456789",
+        "1234567890",
+        true,
+        "01-01-1111");
+    testClient.setClientType(ClientType.PERSONAL);
+    testClient.setCustomId(testDto.getCustomId());
+    testClient.setClientName(testDto.getClientName());
+    testClient.setClientAddress(testDto.getClientAddress());
+    testClient.setClientPhone(testDto.getClientPhone());
+    testClient.setClientEmail(testDto.getClientEmail());
+    testClient.setDocumentNumber(testDto.getDocumentNumber());
+    testClient.setStatus(testDto.getStatus());
+    testClient.setCreatedAt(testDto.getCreatedAt());
   }
 
   @Test
-  void testMapToDto() {
-    Client client = new Client();
-    client.setCustomId("1");
-    client.setClientType(ClientType.EMPRESARIAL);
-    client.setClientName("John Doe");
-    client.setClientAddress("123 Main St");
-    client.setClientEmail("john@example.com");
-    client.setClientPhone("123456789");
-    client.setDocumentNumber("1234567890");
-    ClientDTO expectedClientDTO = new ClientDTO("1", "EMPRESARIAL", "John Doe", "123 Main St", "john@example.com", "123456789", "1234567890");
+  void shouldMapClientDTOToClient() {
+    when(modelMapper.map(any(), any())).thenReturn(testClient);
+    Client actualClient = GenericMapper.mapToEntity(testDto);
+    Assertions.assertEquals(testClient, actualClient);
+  }
 
-    ModelMapper modelMapper = Mockito.mock(ModelMapper.class);
-    when(modelMapper.map(any(), any())).thenReturn(expectedClientDTO);
-    ClientDTO actualClientDTO = GenericMapper.mapToDto(client);
-    Assertions.assertEquals(expectedClientDTO, actualClientDTO);
+  @Test
+  void shouldMapClientToClientDTO() {
+    when(modelMapper.map(any(), any())).thenReturn(testDto);
+    ClientDTO actualClientDTO = GenericMapper.mapToDto(testClient);
+    Assertions.assertEquals(testDto, actualClientDTO);
+  }
+
+  @Test
+  void shouldNotMapClientDTOToClient() {
+    testDto.setClientName(null);
+
+    when(modelMapper.map(any(), any())).thenReturn(testClient);
+
+    Assertions.assertThrows(EmptyAttributes.class, () -> {
+      GenericMapper.mapToEntity(testDto);
+    });
   }
 }
