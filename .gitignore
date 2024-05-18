@@ -1,1 +1,5 @@
 **/target/*
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+/FinalClient/.idea
+/FinalClient/target
