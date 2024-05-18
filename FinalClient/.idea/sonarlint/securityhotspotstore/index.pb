@@ -91,3 +91,5 @@ f
 6src/test/java/project/FinalProjectApplicationTest.java,8\a\8a01708e4300605c4319251fd0f951d535ab1486
 y
 Isrc/test/java/project/domain/validations/ClientDomainValidationsTest.java,1\6\1639a6cbe07ba26d5f0e0479ebf4591f81a30987
+k
+;src/test/java/project/infrastructure/dto/ClientDTOTest.java,9\a\9aaa4e1febd944f3ef263cbcbfbafced2ddd9fdc
