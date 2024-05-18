@@ -20,7 +20,7 @@ public class ClientDomainValidations {
    * @return Dependiendo del cumplimiento, se retorna el mismo elemento
    * o una excepción.
    */
-  public Mono<?> validateClientType(ClientDTO client) {
+  public Mono<ClientDTO> validateClientType(ClientDTO client) {
     if (!client.getClientType().equalsIgnoreCase("PERSONAL")
         && !client.getClientType().equalsIgnoreCase("EMPRESARIAL")) {
       log.warn("Client type is not valid -> {}", CustomError.ErrorType.INVALID_TYPE);

@@ -10,13 +10,13 @@ import reactor.core.publisher.Mono;
  * ya que conecta la capa de infraestructura con el modelo.
  */
 public interface ClientPort {
-  Mono<?> findByID(String id);
+  Mono<ClientDTO> findByID(String id);
 
-  Mono<?> save(ClientDTO client);
+  Mono<ClientDTO> save(ClientDTO client);
 
   Flux<ClientDTO> findAll();
 
-  Mono<?> delete(String clientId);
+  Mono<String> delete(String clientId);
 
-  Mono<?> update(String clientId, Object client);
+  Mono<String> update(String clientId, Object client);
 }

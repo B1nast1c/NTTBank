@@ -47,7 +47,7 @@ public class ClientAdapter implements ClientPort {
    * @return Un Mono que emite el cliente encontrado o lanza una excepción si no se encuentra.
    */
   @Override
-  public Mono<?> findByID(String documentNumber) {
+  public Mono<ClientDTO> findByID(String documentNumber) {
     return clientRepository.findByDocumentNumber(documentNumber)
         .flatMap(client -> {
           log.info("Client found -> {}", client.getCustomId());
@@ -80,7 +80,7 @@ public class ClientAdapter implements ClientPort {
    * @return Un Mono que representa la inserción exitosa del cliente o lanza una excepción si hay errores.
    */
   @Override
-  public Mono<?> save(ClientDTO client) {
+  public Mono<ClientDTO> save(ClientDTO client) {
     return validateAndInsertClient(client)
         .map(GenericMapper::mapToDto);
   }
@@ -104,7 +104,7 @@ public class ClientAdapter implements ClientPort {
    * @return Un Mono que representa la eliminación exitosa del cliente o lanza una excepción si no se encuentra.
    */
   @Override
-  public Mono<?> delete(final String clientId) {
+  public Mono<String> delete(final String clientId) {
     return clientRepository.existsById(clientId)
         .flatMap(exists -> {
           if (Boolean.TRUE.equals(exists)) {
@@ -146,7 +146,7 @@ public class ClientAdapter implements ClientPort {
    */
   @Override
   @Transactional
-  public Mono<?> update(String clientId, Object client) {
+  public Mono<String> update(String clientId, Object client) {
     return clientRepository.existsByCustomId(clientId)
         .flatMap(exists -> {
           if (Boolean.TRUE.equals(exists)) {
