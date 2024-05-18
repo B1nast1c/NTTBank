@@ -1,31 +1,53 @@
 package project.application.validations;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-//import static org.mockito.Mockito.*;
+import project.infrastructure.adapters.mongoRepos.ClientRepository;
+import project.infrastructure.dto.ClientDTO;
+import project.infrastructure.exceptions.throwable.InvalidDocument;
+import reactor.core.publisher.Mono;
+import reactor.test.StepVerifier;
+
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.when;
 
 public class ClientAppValidationsTest {
-    @Mock
-    project.infrastructure.adapters.mongoRepos.ClientRepository clientRepository;
-    @InjectMocks
-    project.application.validations.ClientAppValidations clientAppValidations;
 
-    @Before
-    public void setUp() {
-        MockitoAnnotations.openMocks(this);
-    }
+  ClientDTO testDTO = new ClientDTO();
+  @Mock
+  private ClientRepository clientRepository;
+  @InjectMocks
+  private ClientAppValidations clientAppValidations;
 
-    @Test
-    public void testValidateDocumentNumber() throws Exception {
-        when(clientRepository.existsByDocumentNumber(anyString())).thenReturn(null);
+  @BeforeEach
+  public void setUp() {
+    MockitoAnnotations.openMocks(this);
+  }
 
-        reactor.core.publisher.Mono<project.infrastructure.dto.ClientDTO> result = clientAppValidations.validateDocumentNumber(new project.infrastructure.dto.ClientDTO("customId", "clientType", "clientName", "clientAddress", "clientEmail", "clientPhone", "documentNumber", Boolean.TRUE, "createdAt"));
-        Assert.assertEquals(null, result);
-    }
+  @Test
+  public void shouldBeValidated() {
+    testDTO.setDocumentNumber("111222333");
+    when(clientRepository.existsByDocumentNumber(anyString())).thenReturn(Mono.just(false));
+    Mono<ClientDTO> result = clientAppValidations.validateDocumentNumber(testDTO);
+
+    StepVerifier.create(result)
+        .expectNext(testDTO)
+        .verifyComplete();
+  }
+
+  @Test
+  public void shouldBeInvalidated() {
+    testDTO.setDocumentNumber("111222333");
+    when(clientRepository.existsByDocumentNumber(anyString())).thenReturn(Mono.just(true));
+
+    Mono<ClientDTO> result = clientAppValidations.validateDocumentNumber(testDTO);
+
+    StepVerifier.create(result)
+        .expectErrorMatches(throwable -> throwable instanceof InvalidDocument &&
+            throwable.getMessage().equals("The provided document number is not valid"))
+        .verify();
+  }
 }
-
-//Generated with love by TestMe :) Please raise issues & feature requests at: https://weirddev.com/forum#!/testme

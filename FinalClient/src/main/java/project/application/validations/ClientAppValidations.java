@@ -32,7 +32,7 @@ public class ClientAppValidations {
    * @param client Cliente
    * @return El cliente si todo es correcto, y si no alguna excepción personalizada.
    */
-  public Mono<?> validateDocumentNumber(ClientDTO client) {
+  public Mono<ClientDTO> validateDocumentNumber(ClientDTO client) {
     return clientRepository.existsByDocumentNumber(client.getDocumentNumber())
         .flatMap(foundClient -> {
               if (Boolean.TRUE.equals(foundClient)) {
