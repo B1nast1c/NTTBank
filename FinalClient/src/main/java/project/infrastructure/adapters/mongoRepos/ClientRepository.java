@@ -5,23 +5,30 @@ import project.domain.model.Client;
 import reactor.core.publisher.Mono;
 
 /**
- * Repositorio de Spring Data MongoDB para la entidad Cliente
+ * Repositorio de Spring-Data MongoDB para la entidad Cliente
  */
 public interface ClientRepository extends ReactiveMongoRepository<Client, String> {
-
   /**
-   * Comprueba si existe un cliente con el identificador personalizado dado
+   * Verifica si existe un cliente con un ID personalizado.
    *
-   * @param customId el identificador personalizado del cliente
-   * @return un Mono que indica si existe un cliente con el identificador personalizado dado
+   * @param customId ID personalizado del cliente a buscar.
+   * @return Un Mono que emite `true` si el cliente existe, o `false` si no.
    */
   Mono<Boolean> existsByCustomId(String customId);
 
   /**
-   * Encuentra un cliente por el número de documento
+   * Busca un cliente por su número de documento.
    *
-   * @param documentNumber el número de documento del cliente
-   * @return un Mono que emite el cliente encontrado, o vacío si no se encuentra
+   * @param documentNumber Número de documento del cliente a buscar.
+   * @return Un Mono que emite el cliente encontrado o está vacío si no se encuentra.
    */
   Mono<Client> findByDocumentNumber(String documentNumber);
+
+  /**
+   * Verifica si existe un cliente con un número de documento específico.
+   *
+   * @param documentNumber Número de documento del cliente a buscar.
+   * @return Un Mono que emite `true` si el cliente existe, o `false` si no.
+   */
+  Mono<Boolean> existsByDocumentNumber(String documentNumber);
 }

@@ -3,23 +3,16 @@ package project.infrastructure.exceptions;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
 
 /**
- * Error personalizado lanzado dependiendo del escenario
+ * Respuesta genérica que varía su contenido: Error o Success.
+ *
+ * @param <T> Tipo genérico
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CustomResponse {
-  private String message;
-  private Type type;
-
-  public enum Type {
-    INVALID_TYPE, // Tipo de cliente inválido
-    INVALID_DOCUMENT, // DNI/RUC inválidos
-    NOT_FOUND, // Entidad no encontrada
-    GENERIC_ERROR // Error genérico
-  }
+public class CustomResponse<T> {
+  private boolean success; // Corresponde si la operación ha tenido éxito.
+  private T data;
 }

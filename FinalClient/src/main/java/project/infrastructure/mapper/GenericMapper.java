@@ -4,33 +4,46 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import project.domain.model.Client;
 import project.infrastructure.dto.ClientDTO;
+import project.infrastructure.exceptions.CustomError;
+import project.infrastructure.exceptions.throwable.EmptyAttributes;
 
 /**
- * Mapper genérico para la entidad única que es Cliente.
+ * Mapper funcional para el cambio de clases, uso de modelMapper, se ha decidido hacerla estática
+ * Para compartir un mismo elemento de mapping durante todo el servicio.
  */
 @Slf4j
 public class GenericMapper {
   private static final ModelMapper modelMapper = new ModelMapper();
 
+  private GenericMapper() {
+  }
+
   /**
-   * Mapeo DTO -> Cliente
+   * Mapping entre DTO -> Cliente
    *
-   * @param clientDTO DTO del cliente
-   * @return Cliente
+   * @param clientDTO
+   * @return Cliente (Entidad del modelo)
    */
   public static Client mapToEntity(final Object clientDTO) {
-    log.info("Mapping clientDTO to Client");
-    return modelMapper.map(clientDTO, Client.class);
+    try {
+      return modelMapper.map(clientDTO, Client.class);
+    } catch (Exception e) {
+      log.error("DNI or NAME are missing -> {}", CustomError.ErrorType.WRONG_PARAMS);
+      throw new EmptyAttributes("Some attributes were not set");
+    }
   }
 
   /**
    * Mapeo Cliente -> DTO
    *
    * @param client Objeto del modelo Cliente
-   * @return DTO del cliente
+   * @return DTO
    */
   public static ClientDTO mapToDto(final Object client) {
-    log.info("Mapping client to ClientDTO");
-    return modelMapper.map(client, ClientDTO.class);
+    try {
+      return modelMapper.map(client, ClientDTO.class);
+    } catch (Exception e) {
+      throw new EmptyAttributes("Some attributes were not set");
+    }
   }
 }

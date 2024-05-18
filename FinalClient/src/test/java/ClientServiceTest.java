@@ -1,2 +1,6 @@
-package PACKAGE_NAME;public class ClientServiceTest {
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+public class ClientServiceTest {
+
 }

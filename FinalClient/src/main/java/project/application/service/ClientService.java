@@ -1,51 +1,55 @@
 package project.application.service;
 
 import project.infrastructure.dto.ClientDTO;
+import project.infrastructure.exceptions.CustomResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * Interfaz que define los servicios relacionados con los clientes.
+ * Interfaz o estructura base del servicio de clientes.
+ * Todos los resultados proporcionados por la implementación del servicio
+ * se encuentran dentro de una estructura genérica que almacena el resultado
+ * sea de éxito o falla.
  */
 public interface ClientService {
 
   /**
-   * Agrega un nuevo cliente al sistema
+   * Agrega un nuevo cliente.
    *
-   * @param client el DTO del cliente que representa el nuevo cliente
-   * @return un Mono que emite un mensaje de confirmación o un error
+   * @param client el DTO del cliente que representa el nuevo cliente.
+   * @return un Mono que emite un mensaje de confirmación o un error.
    */
-  Mono<?> addClient(ClientDTO client);
+  Mono<CustomResponse> addClient(ClientDTO client);
 
   /**
-   * Actualiza un cliente existente en el sistema
+   * Actualiza un cliente existente en el sistema.
    *
-   * @param clientId el identificador del cliente que se va a actualizar
-   * @param client   un objeto que contiene los datos actualizados del cliente
-   * @return un Mono que emite un mensaje de confirmación o un error
+   * @param clientId el identificador del cliente que se va a actualizar.
+   * @param client   un objeto que contiene los datos actualizados del cliente.
+   * @return un Mono que emite un mensaje de confirmación o un error.
    */
-  Mono<?> updateClient(String clientId, Object client);
+  Mono<CustomResponse> updateClient(String clientId, Object client);
 
   /**
-   * Elimina un cliente existente del sistema
+   * Elimina un cliente.
    *
-   * @param clientId el identificador del cliente que se va a eliminar
-   * @return un Mono que emite un mensaje de confirmación o un error
+   * @param clientId el identificador del cliente que se va a eliminar.
+   * @return un Mono que emite un mensaje de confirmación o un error.
    */
-  Mono<?> deleteClient(String clientId);
+  Mono<CustomResponse> deleteClient(String clientId);
 
   /**
-   * Recupera un cliente específico del sistema basado en su identificador
+   * Recupera un cliente específico.
    *
-   * @param clientId el identificador del cliente que se va a recuperar
-   * @return un Mono que emite el DTO de cliente correspondiente, o un error si el cliente no se encuentra
+   * @param clientId el identificador del cliente que se va a recuperar.
+   * @return un Mono que emite el DTO de cliente correspondiente, o un error si el cliente no se encuentra.
    */
-  Mono<?> getClient(String clientId);
+  Mono<CustomResponse> getClient(String clientId);
 
   /**
-   * Recupera todos los clientes almacenados en el sistema
+   * Recupera todos los clientes almacenados en el sistema.
    *
-   * @return un Flux que emite objetos ClientDTO que representan a todos los clientes en el sistema
+   * @return un Flux que emite objetos ClientDTO que representan a todos los clientes en el sistema.
    */
-  Flux<ClientDTO> getAllClients();
+  Flux<CustomResponse> getAllClients();
 }

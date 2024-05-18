@@ -1,4 +1,4 @@
-package infrastructure.mapper;
+package project.infrastructure.mapper;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -7,7 +7,6 @@ import org.modelmapper.ModelMapper;
 import project.domain.model.Client;
 import project.domain.model.ClientType;
 import project.infrastructure.dto.ClientDTO;
-import project.infrastructure.mapper.GenericMapper;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;

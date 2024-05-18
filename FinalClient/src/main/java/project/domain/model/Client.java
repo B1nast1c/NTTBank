@@ -12,7 +12,7 @@ import java.util.Date;
 
 
 /**
- * Representa una entidad de cliente en el sistema
+ * Representa una entidad de cliente en el servicio.
  */
 @Data
 @AllArgsConstructor

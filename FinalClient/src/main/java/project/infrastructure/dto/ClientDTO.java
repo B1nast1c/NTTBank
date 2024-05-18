@@ -25,4 +25,14 @@ public class ClientDTO implements Serializable {
   String documentNumber;
   Boolean status = true;
   String createdAt = new Date().toString();
+
+  public ClientDTO(String customId, String clientType, String clientName, String clientAddress, String clientEmail, String clientPhone, String documentNumber) {
+    this.customId = customId;
+    this.clientType = clientType;
+    this.clientName = clientName;
+    this.clientAddress = clientAddress;
+    this.clientEmail = clientEmail;
+    this.clientPhone = clientPhone;
+    this.documentNumber = documentNumber;
+  }
 }
