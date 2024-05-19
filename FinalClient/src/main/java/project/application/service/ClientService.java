@@ -43,7 +43,8 @@ public interface ClientService {
    * Recupera un cliente específico.
    *
    * @param clientId el identificador del cliente que se va a recuperar.
-   * @return un Mono que emite el DTO de cliente correspondiente, o un error si el cliente no se encuentra.
+   * @return un Mono que emite el DTO de cliente correspondiente,
+   * o un error si el cliente no se encuentra.
    */
   Mono<CustomResponse> getClient(String clientId);
 

@@ -14,8 +14,6 @@ import project.infrastructure.mapper.GenericMapper;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.List;
-
 /**
  * Adaptador del puerto cliente, ubicado en el paquete de DOMAIN,
  * un adaptador es básicamente la implementación de un repositorio,
@@ -29,14 +27,16 @@ public class ClientAdapter implements ClientPort {
   private final ClientDomainValidations domainValidations;
 
   /**
-   * Constructor para la clase ClientAdapter
+   * Constructor para la clase ClientAdapter.
    * (ADAPTER -> Implementación de la conexión entre DOMAIN y INFRASTRUCTURE)
    *
    * @param clientRepository  El repositorio para las operaciones de cliente
    * @param appValidations    Validaciones a nivel de aplicación
    * @param domainValidations Validaciones a nivel de dominio
    */
-  public ClientAdapter(final ClientRepository clientRepository, ClientAppValidations appValidations, ClientDomainValidations domainValidations) {
+  public ClientAdapter(final ClientRepository clientRepository,
+                       ClientAppValidations appValidations,
+                       ClientDomainValidations domainValidations) {
     this.clientRepository = clientRepository;
     this.appValidations = appValidations;
     this.domainValidations = domainValidations;
@@ -57,15 +57,18 @@ public class ClientAdapter implements ClientPort {
         }).switchIfEmpty(
             Mono.defer(() -> {
               log.warn("Client not found -> {}", CustomError.ErrorType.NOT_FOUND);
-              return Mono.error(new NotFound("Client with document number " + documentNumber + " not found"));
+              return Mono.error(
+                  new NotFound("Client with document number " + documentNumber + " not found"));
             }));
   }
 
   /**
-   * Valida el tipo de cliente y el número de documento antes de insertar los datos del cliente en la base de datos.
+   * Valida el tipo de cliente y el número de documento antes de insertar los datos.
+   * del cliente en la base de datos.
    *
    * @param client Objeto ClientDTO que contiene los datos del cliente a insertar.
-   * @return Un Mono que representa la inserción exitosa del cliente o lanza una excepción si hay errores.
+   * @return Un Mono que representa la inserción exitosa del cliente o lanza una
+   * excepción si hay errores.
    */
   private Mono<?> validateAndInsertClient(ClientDTO client) {
     return domainValidations
@@ -103,7 +106,8 @@ public class ClientAdapter implements ClientPort {
    * Verifica si un cliente existe por su ID y lo elimina si es así.
    *
    * @param clientId ID del cliente a eliminar.
-   * @return Un Mono que representa la eliminación exitosa del cliente o lanza una excepción si no se encuentra.
+   * @return Un Mono que representa la eliminación exitosa del cliente o lanza
+   * una excepción si no se encuentra.
    */
   @Override
   public Mono<String> delete(final String clientId) {
@@ -125,16 +129,16 @@ public class ClientAdapter implements ClientPort {
    * Actualiza los datos de un cliente existente en la base de datos.
    *
    * @param clientId  ID del cliente a actualizar.
-   * @param clientDTO Objeto ClientDTO con los nuevos datos del cliente.
+   * @param clientDto Objeto ClientDTO con los nuevos datos del cliente.
    * @return Un Mono que representa la actualización exitosa del cliente o lanza una excepción si hay errores.
    */
-  private Mono<?> updateExistingClient(String clientId, ClientDTO clientDTO) {
+  private Mono<?> updateExistingClient(String clientId, ClientDTO clientDto) {
     return clientRepository.findById(clientId).flatMap(existingClient -> {
-      existingClient.setClientName(clientDTO.getClientName());
-      existingClient.setClientAddress(clientDTO.getClientAddress());
-      existingClient.setClientPhone(clientDTO.getClientPhone());
-      existingClient.setClientEmail(clientDTO.getClientEmail());
-      existingClient.setStatus(clientDTO.getStatus());
+      existingClient.setClientName(clientDto.getClientName());
+      existingClient.setClientAddress(clientDto.getClientAddress());
+      existingClient.setClientPhone(clientDto.getClientPhone());
+      existingClient.setClientEmail(clientDto.getClientEmail());
+      existingClient.setStatus(clientDto.getStatus());
 
       log.info("Updating client{}", existingClient.getClientName());
 

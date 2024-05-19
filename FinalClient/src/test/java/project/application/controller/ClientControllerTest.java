@@ -35,10 +35,10 @@ class ClientControllerTest {
 
   @Test
   void shouldReturnErrorClientById() throws IOException {
-    CustomError customError = new CustomError("Client with document number 123 not found", CustomError.ErrorType.GENERIC_ERROR);
+    CustomError customError = new CustomError("Client with document number 123 not found",
+        CustomError.ErrorType.GENERIC_ERROR);
     String responseBody = new ObjectMapper().writeValueAsString(
-        new CustomResponse<>(false, customError)
-    );
+        new CustomResponse<>(false, customError));
 
     mockWebServer.enqueue(new MockResponse().setBody(responseBody).setResponseCode(200));
 
@@ -63,22 +63,24 @@ class ClientControllerTest {
 
     webTestClient.post().uri("clients/create")
         .contentType(MediaType.APPLICATION_JSON)
-        .body(BodyInserters.fromValue(new ClientDTO("1", "PERSONAL", "name", "address", "mail", "phone", "987654321", true, "date")))
+        .body(BodyInserters
+            .fromValue(new ClientDTO("1", "PERSONAL", "name", "address", "mail", "phone", "987654321", true, "date")))
         .exchange()
         .expectStatus().isOk();
   }
 
   @Test
   void shouldNotAddClient() throws IOException {
-    CustomError customError = new CustomError("Client type must be PERSONAL or EMPRESARIAL", CustomError.ErrorType.GENERIC_ERROR);
+    CustomError customError = new CustomError("Client type must be PERSONAL or EMPRESARIAL",
+        CustomError.ErrorType.GENERIC_ERROR);
     String responseBody = new ObjectMapper().writeValueAsString(
-        new CustomResponse<>(false, customError)
-    );
+        new CustomResponse<>(false, customError));
     mockWebServer.enqueue(new MockResponse().setResponseCode(200));
 
     webTestClient.post().uri("clients/create")
         .contentType(MediaType.APPLICATION_JSON)
-        .body(BodyInserters.fromValue(new ClientDTO("1", "INVALIDO", "name", "address", "mail", "phone", "987654321", true, "date")))
+        .body(BodyInserters
+            .fromValue(new ClientDTO("1", "INVALIDO", "name", "address", "mail", "phone", "987654321", true, "date")))
         .exchange()
         .expectStatus().isOk()
         .expectBody(String.class).isEqualTo(responseBody);
@@ -96,8 +98,7 @@ class ClientControllerTest {
   void shouldNotDeleteClient() throws IOException {
     CustomError customError = new CustomError("Client with ID badID not found", CustomError.ErrorType.GENERIC_ERROR);
     String responseBody = new ObjectMapper().writeValueAsString(
-        new CustomResponse<>(false, customError)
-    );
+        new CustomResponse<>(false, customError));
 
     mockWebServer.enqueue(new MockResponse().setResponseCode(200));
     webTestClient.delete().uri("/clients/delete/badID")

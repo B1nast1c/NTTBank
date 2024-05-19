@@ -31,12 +31,12 @@ public class DomainClientService implements ClientService {
   /**
    * Agrega un nuevo cliente al sistema.
    *
-   * @param clientDTO El DTO del cliente que representa el nuevo cliente.
+   * @param clientDto El DTO del cliente que representa el nuevo cliente.
    * @return un Mono que emite un mensaje de confirmación o un error.
    */
   @Override
-  public Mono<CustomResponse> addClient(final ClientDTO clientDTO) {
-    return clientPort.save(clientDTO)
+  public Mono<CustomResponse> addClient(final ClientDTO clientDto) {
+    return clientPort.save(clientDto)
         .flatMap(foundClient -> {
           CustomResponse response = new CustomResponse<>(true, foundClient);
           return Mono.just(response);

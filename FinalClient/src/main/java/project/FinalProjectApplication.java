@@ -6,6 +6,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories;
 import org.springframework.web.reactive.config.EnableWebFlux;
 
+/**
+ * Archivo base del proyecto.
+ */
+
 @EnableWebFlux
 @EnableDiscoveryClient
 @SpringBootApplication

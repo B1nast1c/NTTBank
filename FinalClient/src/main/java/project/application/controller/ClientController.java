@@ -67,7 +67,9 @@ public class ClientController {
    * @return Mono que emite un mensaje de confirmación o un error si la operación falla.
    */
   @PutMapping(value = "/update/{customId}")
-  public Mono<CustomResponse> updateClient(@PathVariable("customId") final String customId, @RequestBody final Object client) {
+  public Mono<CustomResponse> updateClient(
+      @PathVariable("customId") final String customId,
+      @RequestBody final Object client) {
     return clientService.updateClient(customId, client);
   }
 
