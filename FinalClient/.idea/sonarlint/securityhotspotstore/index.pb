@@ -31,3 +31,5 @@ w
 Gsrc/main/java/project/application/validations/ClientAppValidations.java,d\f\df667b0e1682e7f20c8ca823ef495c7849c67189
 l
 <src/main/java/project/application/service/ClientService.java,7\e\7e8e30c8297ab36ec672788788b966a2bb2083cf
+U
+%.mvn/wrapper/maven-wrapper.properties,3\2\32e074f71d16c1e88ac02aa83592ca6ad1fd98a8
