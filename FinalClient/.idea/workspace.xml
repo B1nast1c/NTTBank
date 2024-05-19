@@ -6,13 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="49e01362-8776-46b1-83cc-9929b0b2a7f9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/domain/validations/ClientDomainValidations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/domain/validations/ClientDomainValidations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/infrastructure/adapters/ClientAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/infrastructure/adapters/ClientAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/infrastructure/dto/ClientDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/infrastructure/dto/ClientDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/infrastructure/exceptions/throwable/InvalidDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/infrastructure/exceptions/throwable/InvalidDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/infrastructure/exceptions/throwable/NotFound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/infrastructure/exceptions/throwable/NotFound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/infrastructure/exceptions/throwable/WrongClientType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/infrastructure/exceptions/throwable/WrongClientType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/infrastructure/mapper/GenericMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/infrastructure/mapper/GenericMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -404,7 +397,7 @@
       <workItem from="1716089190073" duration="157000" />
       <workItem from="1716089387771" duration="33000" />
       <workItem from="1716089474057" duration="378000" />
-      <workItem from="1716089902737" duration="481000" />
+      <workItem from="1716089902737" duration="918000" />
     </task>
     <servers />
   </component>
