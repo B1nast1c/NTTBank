@@ -19,14 +19,14 @@ public class GenericMapper {
   }
 
   /**
-   * Mapping entre DTO -> Cliente
+   * Mapping entre DTO -> Cliente.
    *
-   * @param clientDTO
+   * @param clientDto DTO del cliente
    * @return Cliente (Entidad del modelo)
    */
-  public static Client mapToEntity(final Object clientDTO) {
+  public static Client mapToEntity(final Object clientDto) {
     try {
-      return modelMapper.map(clientDTO, Client.class);
+      return modelMapper.map(clientDto, Client.class);
     } catch (Exception e) {
       log.error("DNI or NAME are missing -> {}", CustomError.ErrorType.WRONG_PARAMS);
       throw new EmptyAttributes("Some attributes were not set");
@@ -34,7 +34,7 @@ public class GenericMapper {
   }
 
   /**
-   * Mapeo Cliente -> DTO
+   * Mapeo Cliente -> DTO.
    *
    * @param client Objeto del modelo Cliente
    * @return DTO

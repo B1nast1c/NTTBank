@@ -31,14 +31,16 @@ public class ClientAppValidations {
    *
    * @param client Cliente
    * @return El cliente si el conjunto es correcto, y si no alguna excepción personalizada.
-   *
    */
   public Mono<ClientDTO> validateDocumentNumber(ClientDTO client) {
     return clientRepository.existsByDocumentNumber(client.getDocumentNumber())
         .flatMap(foundClient -> {
               if (Boolean.TRUE.equals(foundClient)) {
-                log.warn("Document number is empty or duplicated -> {}", CustomError.ErrorType.INVALID_DOCUMENT);
-                return Mono.error(() -> new InvalidDocument("The provided document number is not valid"));
+                log.warn("Document number is empty or duplicated -> {}",
+                    CustomError.ErrorType.INVALID_DOCUMENT);
+                return Mono.error(
+                    () -> new InvalidDocument("The provided document number is not valid")
+                );
               }
               log.info("The client has been validated");
               return Mono.just(client);

@@ -17,8 +17,7 @@ public class ClientDomainValidations {
    * Valida el tipo de cliente (PERSONAL o EMPRESARIAL).
    *
    * @param client El DTO del cliente.
-   * @return Dependiendo del cumplimiento, se retorna el mismo elemento
-   * o una excepción.
+   * @return Dependiendo del cumplimiento, se retorna el mismo elemento o una excepción.
    */
   public Mono<ClientDTO> validateClientType(ClientDTO client) {
     if (!client.getClientType().equalsIgnoreCase("PERSONAL")
