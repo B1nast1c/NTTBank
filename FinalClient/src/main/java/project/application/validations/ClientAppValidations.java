@@ -30,7 +30,8 @@ public class ClientAppValidations {
    * Valida que el DNI o el RUC sea válido: Se encuentra vacío o es un elemento repetido.
    *
    * @param client Cliente
-   * @return El cliente si todo es correcto, y si no alguna excepción personalizada.
+   * @return El cliente si el conjunto es correcto, y si no alguna excepción personalizada.
+   *
    */
   public Mono<ClientDTO> validateDocumentNumber(ClientDTO client) {
     return clientRepository.existsByDocumentNumber(client.getDocumentNumber())

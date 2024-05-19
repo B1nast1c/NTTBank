@@ -1,9 +1,6 @@
 package project.infrastructure.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,7 +8,8 @@ import java.util.Date;
 /**
  * DTO de {@link project.domain.model.Client}
  */
-@Data
+@Getter
+@Setter
 @NonNull
 @AllArgsConstructor
 @NoArgsConstructor

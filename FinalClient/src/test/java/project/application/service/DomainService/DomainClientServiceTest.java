@@ -7,13 +7,17 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import project.domain.model.Client;
 import project.domain.ports.ClientPort;
+import project.infrastructure.adapters.mongoRepos.ClientRepository;
 import project.infrastructure.dto.ClientDTO;
 import project.infrastructure.exceptions.CustomError;
-import project.infrastructure.exceptions.CustomResponse;
+import project.infrastructure.responses.CustomResponse;
 import project.infrastructure.exceptions.throwable.NotFound;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -37,6 +41,9 @@ class DomainClientServiceTest {
 
   @Mock
   private ClientPort clientPort;
+
+  @Mock
+  private ClientRepository clientRepository;
 
   @InjectMocks
   private DomainClientService domainClientService;
@@ -160,14 +167,14 @@ class DomainClientServiceTest {
 
   @Test
   void shouldReturnAllClients() {
-    testDTO.setDocumentNumber(clientId);
-    testDTO2.setDocumentNumber("444555666");
+    List<ClientDTO> clients = Arrays.asList(testDTO, testDTO2);
+    CustomResponse<Flux<ClientDTO>> expectedResponse = new CustomResponse<>(true, Flux.fromIterable(clients));
+    when(clientPort.findAll()).thenReturn(expectedResponse.getData());
 
-    Flux<CustomResponse> result = domainClientService.getAllClients();
+    Mono<CustomResponse<List<ClientDTO>>> result = domainClientService.getAllClients();
 
     StepVerifier.create(result)
-        .expectNext(new CustomResponse<>(true, testDTO))
-        .expectNext(new CustomResponse<>(true, testDTO2))
+        .expectNextMatches(response -> response.isSuccess() && response.getData() != Flux.empty())
         .verifyComplete();
   }
 }

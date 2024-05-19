@@ -4,9 +4,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import project.application.service.ClientService;
 import project.infrastructure.dto.ClientDTO;
-import project.infrastructure.exceptions.CustomResponse;
-import reactor.core.publisher.Flux;
+import project.infrastructure.responses.CustomResponse;
 import reactor.core.publisher.Mono;
+
+import java.util.List;
 
 /**
  * Controlador que funciona como la conexión del cliente y el servicio implementado.
@@ -32,7 +33,7 @@ public class ClientController {
    * @return Flux que emite DTOs de clientes.
    */
   @GetMapping(value = "/all")
-  public Flux<CustomResponse> getClients() {
+  public Mono<CustomResponse<List<ClientDTO>>> getClients() {
     return clientService.getAllClients();
   }
 

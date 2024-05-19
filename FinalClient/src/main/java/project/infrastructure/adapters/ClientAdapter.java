@@ -14,6 +14,8 @@ import project.infrastructure.mapper.GenericMapper;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.List;
+
 /**
  * Adaptador del puerto cliente, ubicado en el paquete de DOMAIN,
  * un adaptador es básicamente la implementación de un repositorio,

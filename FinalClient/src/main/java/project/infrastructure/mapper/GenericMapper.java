@@ -9,7 +9,7 @@ import project.infrastructure.exceptions.throwable.EmptyAttributes;
 
 /**
  * Mapper funcional para el cambio de clases, uso de modelMapper, se ha decidido hacerla estática
- * Para compartir un mismo elemento de mapping durante todo el servicio.
+ * Para compartir un mismo elemento de mapping durante la ejecución del servicio.
  */
 @Slf4j
 public class GenericMapper {

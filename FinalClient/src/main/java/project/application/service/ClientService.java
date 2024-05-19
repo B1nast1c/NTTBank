@@ -1,9 +1,10 @@
 package project.application.service;
 
 import project.infrastructure.dto.ClientDTO;
-import project.infrastructure.exceptions.CustomResponse;
-import reactor.core.publisher.Flux;
+import project.infrastructure.responses.CustomResponse;
 import reactor.core.publisher.Mono;
+
+import java.util.List;
 
 /**
  * Interfaz o estructura base del servicio de clientes.
@@ -51,5 +52,5 @@ public interface ClientService {
    *
    * @return un Flux que emite objetos ClientDTO que representan a todos los clientes en el sistema.
    */
-  Flux<CustomResponse> getAllClients();
+  Mono<CustomResponse<List<ClientDTO>>> getAllClients();
 }

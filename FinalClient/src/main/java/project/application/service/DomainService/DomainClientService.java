@@ -5,9 +5,12 @@ import project.application.service.ClientService;
 import project.domain.ports.ClientPort;
 import project.infrastructure.dto.ClientDTO;
 import project.infrastructure.exceptions.CustomError;
-import project.infrastructure.exceptions.CustomResponse;
+import project.infrastructure.mapper.GenericMapper;
+import project.infrastructure.responses.CustomResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.List;
 
 /**
  * Implementación de dominio de la interfaz ClientService.
@@ -113,8 +116,9 @@ public class DomainClientService implements ClientService {
    * @return un Flux que emite objetos ClientDTO que representan a todos los clientes en el sistema.
    */
   @Override
-  public Flux<CustomResponse> getAllClients() {
-    return clientPort.findAll()
-        .flatMap(clients -> Flux.just(new CustomResponse<>(true, clients)));
+  public Mono<CustomResponse<List<ClientDTO>>> getAllClients() {
+    Flux<ClientDTO> clientFlux = clientPort.findAll().map(GenericMapper::mapToDto);
+    Mono<List<ClientDTO>> clientListMono = clientFlux.collectList();
+    return clientListMono.map(clientList -> new CustomResponse<>(true, clientList));
   }
 }

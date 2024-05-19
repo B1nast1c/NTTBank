@@ -1,4 +1,4 @@
-package project.infrastructure.exceptions;
+package project.infrastructure.responses;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

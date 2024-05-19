@@ -14,7 +14,7 @@ import reactor.test.StepVerifier;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
-public class ClientAppValidationsTest {
+ class ClientAppValidationsTest {
 
   ClientDTO testDTO = new ClientDTO();
   @Mock
@@ -23,12 +23,12 @@ public class ClientAppValidationsTest {
   private ClientAppValidations clientAppValidations;
 
   @BeforeEach
-  public void setUp() {
+   void setUp() {
     MockitoAnnotations.openMocks(this);
   }
 
   @Test
-  public void shouldBeValidated() {
+   void shouldBeValidated() {
     testDTO.setDocumentNumber("111222333");
     when(clientRepository.existsByDocumentNumber(anyString())).thenReturn(Mono.just(false));
     Mono<ClientDTO> result = clientAppValidations.validateDocumentNumber(testDTO);
@@ -39,7 +39,7 @@ public class ClientAppValidationsTest {
   }
 
   @Test
-  public void shouldBeInvalidated() {
+   void shouldBeInvalidated() {
     testDTO.setDocumentNumber("111222333");
     when(clientRepository.existsByDocumentNumber(anyString())).thenReturn(Mono.just(true));
 
