@@ -1,11 +1,11 @@
-package com.nttdata.project.bank.account.application.dto.response;
+package com.nttdata.project.bank.account.application.requestModels.response;
 
 import lombok.Builder;
 import lombok.Data;
 
-@Builder
 @Data
-public class BankAccountResponse {
-    private String message;
-    private String code;
+@Builder
+public class BankAccountResponse<T> { // Posibilidad de mandar respuesta personalizada
+  private String message;
+  private T code;
 }
