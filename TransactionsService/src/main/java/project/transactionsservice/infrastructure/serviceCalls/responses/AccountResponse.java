@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 // Los nombres de los atributos dependen del microservcio de cuentas bancarias :D
 
 @Getter
@@ -12,6 +14,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AccountResponse {
-  double balance;
-  String clientNumber;
+  private String accountNumber;
+  private String type;
+  private double balance;
+  private int transactions;
+  private String numberInterbank;
+  private double commissionAmount;
+  private List<String> headlines;
+  private List<?> signatories;
+  private int monthlyMovements;
 }

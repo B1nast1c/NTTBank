@@ -1,16 +1,13 @@
 package project.transactionsservice.domain.validations.strategies;
 
+import project.transactionsservice.application.validations.TransactionsAppValidations;
 import project.transactionsservice.domain.validations.TransactionDomainValidations;
 import project.transactionsservice.infrastructure.dto.TransactionDTO;
+import project.transactionsservice.infrastructure.mapper.GenericMapper;
 import project.transactionsservice.infrastructure.serviceCalls.responses.AccountResponse;
 import project.transactionsservice.infrastructure.serviceCalls.responses.GenericResponse;
 import reactor.core.publisher.Mono;
 
-/**
- * The type Deposit and withdrawal strategy.
- */
-
-// Hay un caso de una cuenta que solamente puede registrar una transacción por mes, ese elemento se implementa aquí
 public class DepositAndWithdrawalStrategy extends TransactionDomainValidations {
   /**
    * Save deposit mono.
@@ -20,8 +17,24 @@ public class DepositAndWithdrawalStrategy extends TransactionDomainValidations {
    */
   public Mono<TransactionDTO> saveDeposit(
       TransactionDTO transactionDTO,
-      AccountResponse accountResponse,
+      GenericResponse serviceResponse,
       String cliendNumber) {
+
+    AccountResponse accRes = GenericMapper.mapToAny(serviceResponse.getData(), AccountResponse.class);
+
+    return validateTransaction(transactionDTO, serviceResponse)
+        .flatMap(dto -> {
+          switch (accRes.getType()) {
+            case "AHORRO":
+              break;
+            case "CUENTA_CORRIENTE":
+              break;
+            case "PLAZO_FIJO":
+              break;
+            default:
+              break;
+          }
+        });
 
     // LÓGICA POR CADA TIPO DE CUENTA (LIMITE DE TRANSACCION, FECHA DE TRANSACCION)
 
@@ -48,6 +61,7 @@ public class DepositAndWithdrawalStrategy extends TransactionDomainValidations {
   protected Mono<TransactionDTO> validateTransaction(
       TransactionDTO transaction,
       GenericResponse serviceResponse) {
-    return TransactionDomainValidations.validateProduct(transaction, serviceResponse);
+    return TransactionsAppValidations.validateProduct(transaction, serviceResponse)
+        .flatMap(TransactionsAppValidations::validateTransactionType);
   }
 }
