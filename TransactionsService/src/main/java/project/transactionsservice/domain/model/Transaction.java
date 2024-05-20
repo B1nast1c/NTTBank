@@ -15,12 +15,13 @@ import java.util.Date;
 @Document(collection = "bankTransactions")
 public class Transaction {
   @Id
-  protected String transactionId;
+  private String transactionId;
 
   @NonNull
-  protected String productNumber; // Número de la cuenta bancaria o del crédito
+  private String productNumber; // Número de la cuenta bancaria o del crédito
 
-  protected TransactionType transactionType;
-  protected double amount = 0.0;
-  protected Date transactionDate = new Date();
+  private TransactionType transactionType;
+  private double amount = 0.0;
+  private Date transactionDate = new Date();
+  private String transactionDetail;
 }

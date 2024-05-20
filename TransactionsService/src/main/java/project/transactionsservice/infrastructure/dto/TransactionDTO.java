@@ -14,4 +14,5 @@ public class TransactionDTO implements Serializable {
   String transactionType;
   double amount;
   String transactionDate;
+  String transactionDetail;
 }

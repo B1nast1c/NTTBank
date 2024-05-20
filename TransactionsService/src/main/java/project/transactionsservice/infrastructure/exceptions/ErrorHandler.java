@@ -21,9 +21,14 @@ public class ErrorHandler {
     return new CustomError(e.getMessage(), CustomError.ErrorType.INVALID_BANK_PRODUCT);
   }
 
-  @ExceptionHandler(DefersAmmount.class)
-  public CustomError handleWrongClientType(DefersAmmount e) {
+  @ExceptionHandler(InvalidAmmount.class)
+  public CustomError handleInvalidAmmount(InvalidAmmount e) {
     return new CustomError(e.getMessage(), CustomError.ErrorType.INVALID_AMMOUNT);
+  }
+
+  @ExceptionHandler(InvalidClient.class)
+  public CustomError handleWrongClientType(InvalidClient e) {
+    return new CustomError(e.getMessage(), CustomError.ErrorType.INVALID_CLIENT);
   }
 
   @ExceptionHandler(EmptyAttributes.class)

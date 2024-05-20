@@ -15,9 +15,6 @@ import project.transactionsservice.infrastructure.dto.TransactionDTO;
 public class GenericMapper {
   private static final ModelMapper modelMapper = new ModelMapper();
 
-  private GenericMapper() {
-  }
-
   public static Transaction mapToEntity(final Object transactionDTO) {
     try {
       return modelMapper.map(transactionDTO, Transaction.class);
@@ -32,5 +29,9 @@ public class GenericMapper {
     } catch (Exception e) {
       throw new RuntimeException("");
     }
+  }
+
+  public static <T> T mapToAny(final Object genericObject, Class<T> targetClass) {
+    return modelMapper.map(genericObject, targetClass);
   }
 }
