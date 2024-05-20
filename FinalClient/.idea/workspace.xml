@@ -5,16 +5,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49e01362-8776-46b1-83cc-9929b0b2a7f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/32e074f71d16c1e88ac02aa83592ca6ad1fd98a8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/2/32e074f71d16c1e88ac02aa83592ca6ad1fd98a8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FinalProducts/src/main/java/project/domain/validations/SaveDomainValidations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FinalProducts/src/main/java/project/domain/validations/UpdateDomainValidations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FinalProducts/src/main/java/project/infrastructure/clientcalls/responses/ClientResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FinalProducts/src/main/java/project/infrastructure/exceptions/CustomError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FinalProducts/src/main/java/project/infrastructure/exceptions/ErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FinalProducts/src/main/java/project/infrastructure/exceptions/throwable/EmptyAttributes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FinalProducts/src/main/java/project/infrastructure/exceptions/throwable/InvalidRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FinalProducts/src/main/java/project/infrastructure/exceptions/throwable/NotFound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FinalProducts/src/main/java/project/infrastructure/exceptions/throwable/NotFoundClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FinalProducts/src/main/java/project/infrastructure/exceptions/throwable/WrongAccountType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FinalProducts/src/main/java/project/infrastructure/exceptions/throwable/WrongClientType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FinalProducts/src/main/java/project/infrastructure/responses/CustomResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FinalProducts/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FinalProducts/src/main/resources/logback-spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/clientService.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/clientService.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/FinalProjectApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/FinalProjectApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/application/controller/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/application/controller/ClientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/application/service/ClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/application/service/ClientService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/application/service/DomainService/DomainClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/application/service/DomainService/DomainClientService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/application/validations/ClientAppValidations.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/application/validations/ClientAppValidations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/domain/model/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/domain/model/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/domain/model/ClientType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/domain/model/ClientType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/domain/ports/ClientPort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/domain/ports/ClientPort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/domain/validations/ClientDomainValidations.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/domain/validations/ClientDomainValidations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/infrastructure/adapters/ClientAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/infrastructure/adapters/ClientAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/infrastructure/adapters/mongoRepos/ClientRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/infrastructure/adapters/mongoRepos/ClientRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/infrastructure/config/ModelMapperConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/infrastructure/config/ModelMapperConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/infrastructure/dto/ClientDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/infrastructure/dto/ClientDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/infrastructure/exceptions/CustomError$ErrorType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/infrastructure/exceptions/CustomError$ErrorType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/infrastructure/exceptions/CustomError.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/infrastructure/exceptions/CustomError.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/infrastructure/exceptions/ErrorHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/infrastructure/exceptions/ErrorHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/infrastructure/exceptions/throwable/EmptyAttributes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/infrastructure/exceptions/throwable/EmptyAttributes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/infrastructure/exceptions/throwable/InvalidDocument.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/infrastructure/exceptions/throwable/InvalidDocument.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/infrastructure/exceptions/throwable/NotFound.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/infrastructure/exceptions/throwable/NotFound.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/infrastructure/exceptions/throwable/WrongClientType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/infrastructure/exceptions/throwable/WrongClientType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/infrastructure/mapper/GenericMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/infrastructure/mapper/GenericMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/project/FinalProjectApplicationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/project/FinalProjectApplicationTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/project/application/controller/ClientControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/project/application/controller/ClientControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/project/application/service/DomainService/DomainClientServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/project/application/service/DomainService/DomainClientServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/project/application/validations/ClientAppValidationsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/project/application/validations/ClientAppValidationsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/project/domain/validations/ClientDomainValidationsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/project/domain/validations/ClientDomainValidationsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/project/infrastructure/adapters/ClientAdapterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/project/infrastructure/adapters/ClientAdapterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/project/infrastructure/mapper/GenericMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/project/infrastructure/mapper/GenericMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/0/1/012a646a911b640fabb361809fbb8fdf7f29bc34" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/0/1/012a646a911b640fabb361809fbb8fdf7f29bc34" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/0/7/07224da6d54518f700c034b552f5a8032897cd2b" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/0/7/07224da6d54518f700c034b552f5a8032897cd2b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/2/5/25d16a2f2e561dd8f3b971691900a7d48c103ff5" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/2/5/25d16a2f2e561dd8f3b971691900a7d48c103ff5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/5/5/55fec181e7d5a7e9cf73c609f6f5e8dd9fbe170d" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/5/5/55fec181e7d5a7e9cf73c609f6f5e8dd9fbe170d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/6/3/63bc4bc4a765122636614717b64f6b3af4fecebe" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/6/3/63bc4bc4a765122636614717b64f6b3af4fecebe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/6/4/640ce0cc46c73613d69b9dadb211b77be0259043" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/6/4/640ce0cc46c73613d69b9dadb211b77be0259043" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/6/4/6468de38ab2bfdae400a0411ac6d29bc5e439202" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/6/4/6468de38ab2bfdae400a0411ac6d29bc5e439202" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/a/9/a96377bbfe7a7f6eeb33c856f66d8ee1b34d0fba" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/a/9/a96377bbfe7a7f6eeb33c856f66d8ee1b34d0fba" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/a/e/aeb02775ddb90c72275e966b363821c289c81c98" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/a/e/aeb02775ddb90c72275e966b363821c289c81c98" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/c/0/c04475f0b4d17c4b1d1670e0004e9f0ae9e635d0" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/c/0/c04475f0b4d17c4b1d1670e0004e9f0ae9e635d0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalProducts/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,11 +167,12 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.FinalProjectApplication.executor": "Debug",
+    "Spring Boot.FinalProjectApplication.executor": "Run",
     "code.cleanup.on.save": "true",
+    "com.google.cloudcode.ide_session_index": "20240519_0000",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/sammi/Documents/NTT GRUPAL/NTTBank/FinalClient",
+    "last_opened_file_path": "C:/Users/sammi/Documents/NTT GRUPAL/NTTBank/FinalProducts",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.stylelint": "true",
