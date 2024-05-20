@@ -1,16 +1,15 @@
-package com.nttdata.project.bank.account.infrastructure.DTO;
+package com.nttdata.project.bank.account.domain.model;
+
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "accounts")
-public class BankAccountDTO {
+@Builder
+public class BankAccount {
 
     @Id
     private String id;
@@ -23,6 +22,4 @@ public class BankAccountDTO {
     private String headlines;
     private String signatories;
     private String monthlyMovements;
-
-    //private String DNI;
 }
