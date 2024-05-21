@@ -1,0 +1,11 @@
+
+i	java:S131)""Add a default case to this switch.(Îâğèşÿÿÿÿ8–ÕÌù1J$ef721523-7f95-44a2-a70d-68fa9e337852
+“
+java:S1301)"KReplace this "switch" statement by "if" statements to increase readability.(Îâğèşÿÿÿÿ8Ÿ–ÕÌù1J$7833efd0-e333-4da9-b67c-4996fd1ef595
+z
+java:S16121"7Replace this lambda with method reference 'Mono::just'.(î°éˆ8¡ªÚÌù1J$e446bfa6-3c13-4775-97e6-58cf6bce7eea
+r	java:S1066"+Replace this use of System.out by a logger.(€÷ÔÓúÿÿÿÿ8£–ÕÌù1J$02f395dc-d8f8-41e6-8e7f-253e574f18fc
+z
+java:S1172@"2Remove this unused method parameter "transaction".(ËÖá½ûÿÿÿÿ8¥–ÕÌù1J$115e263a-4e82-4ef6-b2a8-5be602de78ec
+z
+java:S1172D"2Remove this unused method parameter "transaction".(Ü¸®Šüÿÿÿÿ8¦–ÕÌù1J$e3bc3225-2f61-445e-a16f-72ef5fc1e17e

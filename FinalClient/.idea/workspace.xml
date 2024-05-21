@@ -5,8 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49e01362-8776-46b1-83cc-9929b0b2a7f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/logs/clientService.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/clientService.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FinalProducts/logs/clientService.log" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalProducts/logs/clientService.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/domain/strategies/TransactionsStrategies.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/factory/AccountsFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/factory/TransactionsFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FinalProducts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FinalProducts/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/application/controller/TransactionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/application/controller/TransactionsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/application/validations/TransactionsAppValidations.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/application/validations/TransactionsAppValidations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/domain/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/domain/model/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/domain/validations/TransactionDomainValidations.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/domain/validations/TransactionDomainValidations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/domain/validations/TransactionStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/domain/validations/TransactionStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/domain/validations/strategies/CreditCardChargeStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/domain/validations/strategies/CreditPaymentStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/domain/validations/strategies/DepositAndWithdrawalStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/domain/validations/strategies/accountsStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/adapters/TransactionsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/adapters/TransactionsAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/config/WebClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/config/WebClientConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/dto/TransactionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/dto/TransactionDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/serviceCalls/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/servicecalls/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/serviceCalls/CreditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/servicecalls/CreditService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/serviceCalls/responses/AccountResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/servicecalls/responses/AccountResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/serviceCalls/responses/CreditResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/servicecalls/responses/CreditResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/serviceCalls/responses/GenericResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/servicecalls/responses/GenericResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/serviceCalls/webClient/AccountWebInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/servicecalls/webClient/AccountWebInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/serviceCalls/webClient/CreditWebInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TransactionsService/src/main/java/project/transactionsservice/infrastructure/servicecalls/webClient/CreditWebInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +134,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.FinalProjectApplication.executor": "Run",
     "code.cleanup.on.save": "true",
-    "com.google.cloudcode.ide_session_index": "20240519_0000",
+    "com.google.cloudcode.ide_session_index": "20240520_0000",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/sammi/Documents/NTT GRUPAL/NTTBank/FinalProducts",

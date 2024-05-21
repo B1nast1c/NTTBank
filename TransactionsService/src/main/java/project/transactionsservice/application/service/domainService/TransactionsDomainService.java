@@ -30,12 +30,12 @@ public class TransactionsDomainService implements TransactionsService {
               CustomResponse result = new CustomResponse<>(true, transaction);
               return Mono.just(result);
             }
-        )
-        .onErrorResume(throwable -> {
+        );
+        /*.onErrorResume(throwable -> {
           CustomError error = new CustomError(throwable.getMessage(), CustomError.ErrorType.POSTING_ERROR);
           CustomResponse<CustomError> badResponse = new CustomResponse<>(false, error);
           return Mono.just(badResponse).cast(CustomResponse.class);
-        });
+        });*/
   }
 
   @Override

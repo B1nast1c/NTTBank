@@ -69,7 +69,7 @@ public class SavingsAccAdapter implements BAccountPort {
     return updateDomainValidations.validateSavingsAccount(savingsDTO, saveAccount)
         .flatMap(valid -> {
           if (Boolean.FALSE.equals(valid)) {
-            return Mono.error(new InvalidRule("Transactions amount exceeds the limit"));
+            return Mono.error(new InvalidRule("Transactions ammount exceeds the limit"));
           }
           return updateDomainValidations.validateAmmount(updatedAccount)
               .flatMap(validated -> {

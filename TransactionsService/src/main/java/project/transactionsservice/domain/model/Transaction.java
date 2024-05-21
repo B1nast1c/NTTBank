@@ -18,10 +18,11 @@ public class Transaction {
   private String transactionId;
 
   @NonNull
-  private String productNumber; // Número de la cuenta bancaria o del crédito
+  private String productNumber = ""; // Número de la cuenta bancaria o del crédito
 
   private TransactionType transactionType;
   private double amount = 0.0;
   private Date transactionDate = new Date();
-  private String transactionDetail;
+  private String clientNumber = "";
+  private String transactionDetail = "";
 }

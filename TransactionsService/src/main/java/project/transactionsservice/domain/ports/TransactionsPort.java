@@ -5,7 +5,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface TransactionsPort {
-  Mono<TransactionDTO> saveTransaction(TransactionDTO transactionDTO);
+  Mono<Object> saveTransaction(TransactionDTO transactionDTO);
 
   Mono<TransactionDTO> getTransaction(String transactionNumber);
 

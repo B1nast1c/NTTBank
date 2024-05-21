@@ -1,14 +1,9 @@
 package project.transactionsservice.application.controller;
 
-import lombok.Getter;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import project.transactionsservice.application.service.TransactionsService;
 import project.transactionsservice.infrastructure.dto.TransactionDTO;
 import project.transactionsservice.infrastructure.exceptions.CustomResponse;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
@@ -25,6 +20,11 @@ public class TransactionsController {
   @GetMapping("/all")
   public Mono<CustomResponse<List<TransactionDTO>>> getAllTransactions() {
     return transactionsService.getAllTransactions();
+  }
+
+  @PostMapping("/create")
+  public Mono<CustomResponse> createTransactions(@RequestBody TransactionDTO transaction) {
+    return transactionsService.createTransaction(transaction);
   }
 
   @GetMapping("/transaction/{transactionId}")
