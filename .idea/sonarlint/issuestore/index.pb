@@ -17,16 +17,10 @@ pTransactionsService/src/main/java/project/transactionsservice/application/contr
 dTransactionsService/src/main/java/project/transactionsservice/infrastructure/dto/TransactionDTO.java,2\7\270d78a60693a84ac8beccc5e58fb37ba2c9c36d
 û
 nTransactionsService/src/main/java/project/transactionsservice/infrastructure/adapters/TransactionsAdapter.java,3\f\3f292a89263d0c40461bb614c89041be1a9265bc
-ñ
-fTransactionsService/src/main/java/project/transactionsservice/domain/strategies/AccountStrategies.java,2\1\21045bd8c6dac8e64fd2f7b6c77733fc75c740e0
-õ
-kTransactionsService/src/main/java/project/transactionsservice/domain/strategies/TransactionsStrategies.java,1\0\108f4b18545eda35c8e11b8a7343f4a805820e08
 ¢
 rTransactionsService/src/main/java/project/transactionsservice/domain/validations/TransactionDomainValidations.java,8\e\8e63b0f74146b642cb7679b2bfd87ac0e246fe7e
 ô
 iTransactionsService/src/main/java/project/transactionsservice/infrastructure/factory/AccountsFactory.java,c\8\c8802af42765fc4f9e77c193c0b100b1c8e2be16
-ù
-mTransactionsService/src/main/java/project/transactionsservice/infrastructure/factory/TransactionsFactory.java,e\4\e42d99600b09d4c9e1dc1d8825dfad2bc7531175
 •
 uTransactionsService/src/main/java/project/transactionsservice/infrastructure/servicecalls/request/AccountRequest.java,2\0\20769500079f6ad88e646194b2c5e9b066947dfa
 ù
@@ -41,16 +35,6 @@ r
 BFinalProducts/src/main/java/project/domain/ports/BAccountPort.java,4\3\433310aba0441a5481fbc8409fee19591889b601
 ~
 NFinalProducts/src/main/java/project/domain/model/account/FixedTermAccount.java,1\c\1c4d8e2e053900d283a1633af852db0360cf708e
-ò
-hTransactionsService/src/main/java/project/transactionsservice/domain/strategies/TransactionStrategy.java,1\3\13280fc63a2e22e5a0b2c5d831a03bf1aedbeca4
-î
-dTransactionsService/src/main/java/project/transactionsservice/domain/strategies/DepositStrategy.java,5\f\5f23edd593f95e68c557dc3ea84e9c45e1d8ab33
-°
-qTransactionsService/src/main/java/project/transactionsservice/domain/strategies/transactions/DepositStrategy.java,2\8\280726bcec753acded6c8b233fb8d3c02bdbf4b8
-•
-uTransactionsService/src/main/java/project/transactionsservice/domain/strategies/transactions/TransactionStrategy.java,4\a\4afe013fba56cede96f7dfbe5d76afe6cf771b77
-§
-tTransactionsService/src/main/java/project/transactionsservice/domain/strategies/transactions/WithdrawalStrategy.java,f\7\f7b8b6ca62dfea09f9406c55e6b87fd96cd97317
 §
 tTransactionsService/src/main/java/project/transactionsservice/infrastructure/factory/TransactionStrategyFactory.java,1\8\18b878f7b986ef828cc370aaf529ad4f73d27495
 ê
@@ -139,8 +123,6 @@ fTransactionsService/src/main/java/project/transactionsservice/infrastructure/ma
 iTransactionsService/src/main/java/project/transactionsservice/domain/validations/TransactionStrategy.java,9\e\9e702a4d98ae67c74d30f519c5fbf16c5d075ba4
 ô
 iTransactionsService/src/main/java/project/transactionsservice/infrastructure/helpers/HelperFunctions.java,5\a\5a094c321180eae77c83a523be750d691506c814
-´
-{TransactionsService/src/main/java/project/transactionsservice/infrastructure/factory/TransactionStrategyFactoryBuilder.java,c\8\c88e4a07e77e10fa1b052debb98eef5a4bedb852
 É
 SFinalClient/src/main/java/project/application/validations/ClientAppValidations.java,5\6\5644ce6d8211fa79439044596da6c69d2861e18f
 ~
@@ -211,8 +193,6 @@ TFinalProducts/src/main/java/project/infrastructure/clientcalls/responses/Client
 \FinalProducts/src/main/java/project/infrastructure/clientcalls/responses/ClientResponse.java,a\8\a88fb1e751960dee0c5af5110e35dc43b92730f0
 Ç
 RFinalProducts/src/main/java/project/infrastructure/adapters/SavingsAccAdapter.java,9\d\9de26de3f48a036ea85d1ec2179d76cf35d5b94b
-T
-$FinalProducts/logs/clientService.log,9\9\9977bbc3666e894af128964d497fa2082f785331
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

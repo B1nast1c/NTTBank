@@ -129,7 +129,7 @@ class GenericAccAdapterTest {
   }
 
   @Test
-  void findByAccountNumber_SavingsAccount_ReturnsMonoWithAccount() {
+  void shouldReturnSavingsAccount() {
     String accountNumber = "123";
     SavingsAccount savingsAccount = new SavingsAccount();
     when(savingsRepo.findByAccountNumber(any(String.class))).thenReturn(Mono.just(savingsAccount));
