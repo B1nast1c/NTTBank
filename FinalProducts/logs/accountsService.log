@@ -1,83 +1,151 @@
-2024-05-21 23:14:04 [restartedMain] INFO  : Starting FinalProjectApplication using Java 19.0.2 on valnaevis with PID 24932 (C:\Users\sammi\Documents\NTT GRUPAL\NTTBank\FinalProducts\target\classes started by sammi in C:\Users\sammi\Documents\NTT GRUPAL\NTTBank)
-2024-05-21 23:14:04 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
-2024-05-21 23:14:04 [restartedMain] INFO  : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-05-21 23:14:04 [restartedMain] INFO  : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-05-21 23:14:05 [restartedMain] INFO  : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
-2024-05-21 23:14:05 [restartedMain] INFO  : Finished Spring Data repository scanning in 115 ms. Found 3 Reactive MongoDB repository interfaces.
-2024-05-21 23:14:05 [restartedMain] INFO  : BeanFactory id=6545e6b4-257b-3bac-85b4-8eb8915c1e36
-2024-05-21 23:14:05 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2024-05-21 23:14:05 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2024-05-21 23:14:05 [restartedMain] INFO  : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2024-05-21 23:14:06 [restartedMain] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Amazon.com Inc./19.0.2+7-FR"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@2d1202cd, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@4cd79a9]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
-2024-05-21 23:14:06 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
-2024-05-21 23:14:06 [cluster-ClusterId{value='664d710e6a145030da549af0', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:2, serverValue:210}] to localhost:27017
-2024-05-21 23:14:06 [cluster-rtt-ClusterId{value='664d710e6a145030da549af0', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:1, serverValue:211}] to localhost:27017
-2024-05-21 23:14:06 [cluster-ClusterId{value='664d710e6a145030da549af0', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=65579500}
-2024-05-21 23:14:06 [restartedMain] INFO  : LiveReload server is running on port 35729
-2024-05-21 23:14:06 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
-2024-05-21 23:14:07 [restartedMain] INFO  : Eureka HTTP Client uses RestTemplate.
-2024-05-21 23:14:07 [restartedMain] WARN  : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2024-05-21 23:14:07 [restartedMain] INFO  : Setting initial instance status as: STARTING
-2024-05-21 23:14:07 [restartedMain] INFO  : Initializing Eureka in region us-east-1
-2024-05-21 23:14:07 [restartedMain] INFO  : Resolving eureka endpoints via configuration
-2024-05-21 23:14:07 [restartedMain] INFO  : Disable delta property : false
-2024-05-21 23:14:07 [restartedMain] INFO  : Single vip registry refresh property : null
-2024-05-21 23:14:07 [restartedMain] INFO  : Force full registry fetch : false
-2024-05-21 23:14:07 [restartedMain] INFO  : Application is null : false
-2024-05-21 23:14:07 [restartedMain] INFO  : Registered Applications size is zero : true
-2024-05-21 23:14:07 [restartedMain] INFO  : Application version is -1: true
-2024-05-21 23:14:07 [restartedMain] INFO  : Getting all instance registry info from the eureka server
-2024-05-21 23:14:07 [restartedMain] INFO  : The response status is 200
-2024-05-21 23:14:07 [restartedMain] INFO  : Starting heartbeat executor: renew interval is: 30
-2024-05-21 23:14:07 [restartedMain] INFO  : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2024-05-21 23:14:07 [restartedMain] INFO  : Discovery Client initialized at timestamp 1716351247765 with initial instances count: 0
-2024-05-21 23:14:07 [restartedMain] INFO  : Registering application ACCOUNTSSERVICE with eureka with status UP
-2024-05-21 23:14:07 [restartedMain] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716351247767, current=UP, previous=STARTING]
-2024-05-21 23:14:07 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080: registering service...
-2024-05-21 23:14:07 [restartedMain] INFO  : Netty started on port 8080
-2024-05-21 23:14:07 [restartedMain] INFO  : Updating port to 8080
-2024-05-21 23:14:07 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080 - registration status: 204
-2024-05-21 23:14:07 [restartedMain] INFO  : Started FinalProjectApplication in 3.654 seconds (JVM running for 4.293)
-2024-05-21 23:14:37 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Disable delta property : false
-2024-05-21 23:14:37 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Single vip registry refresh property : null
-2024-05-21 23:14:37 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Force full registry fetch : false
-2024-05-21 23:14:37 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Application is null : false
-2024-05-21 23:14:37 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Registered Applications size is zero : true
-2024-05-21 23:14:37 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Application version is -1: false
-2024-05-21 23:14:37 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Getting all instance registry info from the eureka server
-2024-05-21 23:14:37 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : The response status is 200
-2024-05-21 23:16:30 [reactor-http-nio-3] INFO  : Retrieving all accounts
-2024-05-21 23:16:30 [nioEventLoopGroup-3-3] INFO  : Opened connection [connectionId{localValue:3, serverValue:215}] to localhost:27017
-2024-05-21 23:16:37 [reactor-http-nio-3] INFO  : Retrieving all accounts
-2024-05-21 23:16:38 [reactor-http-nio-3] INFO  : Retrieving all accounts
-2024-05-21 23:18:09 [reactor-http-nio-3] INFO  : Retrieving the account -> 5000273292385383
-2024-05-21 23:18:09 [nioEventLoopGroup-3-4] INFO  : Opened connection [connectionId{localValue:4, serverValue:216}] to localhost:27017
-2024-05-21 23:18:13 [reactor-http-nio-3] INFO  : Retrieving the account -> 50002732923853834
-2024-05-21 23:18:13 [nioEventLoopGroup-3-5] INFO  : Opened connection [connectionId{localValue:5, serverValue:217}] to localhost:27017
-2024-05-21 23:18:13 [nioEventLoopGroup-3-5] WARN  : The account with number 50002732923853834 does not exist
-2024-05-21 23:18:23 [reactor-http-nio-3] INFO  : Retrieving the account -> 5000273292385383
-2024-05-21 23:18:35 [reactor-http-nio-3] INFO  : Retrieving the account -> 4651966668956963
-2024-05-21 23:19:00 [reactor-http-nio-3] INFO  : Calling ClienService to get client by id
-2024-05-21 23:19:01 [reactor-http-nio-3] WARN  : Client retrieval failed, try to request again
-2024-05-21 23:19:07 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
-2024-05-21 23:19:13 [reactor-http-nio-3] INFO  : Calling ClienService to get client by id
-2024-05-21 23:19:13 [reactor-http-nio-3] INFO  : Assigning adapter to the incoming account
-2024-05-21 23:19:13 [nioEventLoopGroup-3-4] WARN  : The account creation breaks some domain rules
-2024-05-21 23:19:35 [reactor-http-nio-3] INFO  : Calling ClienService to get client by id
-2024-05-21 23:19:35 [reactor-http-nio-3] INFO  : Assigning adapter to the incoming account
-2024-05-21 23:19:35 [nioEventLoopGroup-3-5] INFO  : Account -> 9354337054178636 has been created
-2024-05-21 23:19:44 [reactor-http-nio-3] INFO  : Calling ClienService to get client by id
-2024-05-21 23:19:44 [reactor-http-nio-3] INFO  : Assigning adapter to the incoming account
-2024-05-21 23:19:44 [nioEventLoopGroup-3-4] INFO  : Account -> 4819376183056374 has been created
-2024-05-21 23:20:16 [reactor-http-nio-3] INFO  : Retrieving the account -> 4651966668956963
-2024-05-21 23:20:16 [nioEventLoopGroup-3-3] INFO  : Assigning adapter to the incoming account
-2024-05-21 23:20:16 [nioEventLoopGroup-3-3] INFO  : Account -> null has been updated
-2024-05-21 23:20:32 [SpringApplicationShutdownHook] INFO  : Unregistering application ACCOUNTSSERVICE with eureka with status DOWN
-2024-05-21 23:20:32 [SpringApplicationShutdownHook] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716351632979, current=DOWN, previous=UP]
-2024-05-21 23:20:32 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080: registering service...
-2024-05-21 23:20:32 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080 - registration status: 204
-2024-05-21 23:20:35 [SpringApplicationShutdownHook] INFO  : Shutting down DiscoveryClient ...
-2024-05-21 23:20:38 [DiscoveryClient-1] WARN  : task supervisor shutting down, can't accept the task
-2024-05-21 23:20:38 [SpringApplicationShutdownHook] INFO  : Unregistering ...
-2024-05-21 23:20:38 [SpringApplicationShutdownHook] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080 - deregister  status: 200
-2024-05-21 23:20:38 [SpringApplicationShutdownHook] INFO  : Completed shut down of DiscoveryClient
+2024-05-22 01:44:16 [main] INFO  : Starting FinalProjectApplicationTests using Java 19.0.2 on valnaevis with PID 23164 (started by sammi in C:\Users\sammi\Documents\NTT GRUPAL\NTTBank\FinalProducts)
+2024-05-22 01:44:16 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-05-22 01:44:17 [main] INFO  : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2024-05-22 01:44:17 [main] INFO  : Finished Spring Data repository scanning in 221 ms. Found 3 Reactive MongoDB repository interfaces.
+2024-05-22 01:44:17 [main] INFO  : BeanFactory id=d11c4b48-be0a-33d9-ad4d-b7033f4feabd
+2024-05-22 01:44:17 [main] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-22 01:44:18 [main] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-22 01:44:18 [main] INFO  : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-22 01:44:18 [main] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Amazon.com Inc./19.0.2+7-FR"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@22c88610, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@68693d8d]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2024-05-22 01:44:18 [main] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-22 01:44:18 [cluster-ClusterId{value='664d9442954748370c9f2bff', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:1, serverValue:222}] to localhost:27017
+2024-05-22 01:44:18 [cluster-rtt-ClusterId{value='664d9442954748370c9f2bff', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:2, serverValue:221}] to localhost:27017
+2024-05-22 01:44:18 [cluster-ClusterId{value='664d9442954748370c9f2bff', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=132692100}
+2024-05-22 01:44:19 [main] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-22 01:44:20 [main] INFO  : Eureka HTTP Client uses RestTemplate.
+2024-05-22 01:44:20 [main] WARN  : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-22 01:44:20 [main] INFO  : Setting initial instance status as: STARTING
+2024-05-22 01:44:21 [main] INFO  : Initializing Eureka in region us-east-1
+2024-05-22 01:44:21 [main] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 01:44:21 [main] INFO  : Disable delta property : false
+2024-05-22 01:44:21 [main] INFO  : Single vip registry refresh property : null
+2024-05-22 01:44:21 [main] INFO  : Force full registry fetch : false
+2024-05-22 01:44:21 [main] INFO  : Application is null : false
+2024-05-22 01:44:21 [main] INFO  : Registered Applications size is zero : true
+2024-05-22 01:44:21 [main] INFO  : Application version is -1: true
+2024-05-22 01:44:21 [main] INFO  : Getting all instance registry info from the eureka server
+2024-05-22 01:44:21 [main] INFO  : The response status is 200
+2024-05-22 01:44:21 [main] INFO  : Starting heartbeat executor: renew interval is: 30
+2024-05-22 01:44:21 [main] INFO  : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-22 01:44:21 [main] INFO  : Discovery Client initialized at timestamp 1716360261772 with initial instances count: 1
+2024-05-22 01:44:21 [main] INFO  : Registering application ACCOUNTSSERVICE with eureka with status UP
+2024-05-22 01:44:21 [main] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716360261780, current=UP, previous=STARTING]
+2024-05-22 01:44:21 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080: registering service...
+2024-05-22 01:44:21 [main] INFO  : Started FinalProjectApplicationTests in 6.725 seconds (JVM running for 8.818)
+2024-05-22 01:44:21 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080 - registration status: 204
+2024-05-22 01:44:22 [main] INFO  : Retrieving the account -> accountNumber
+2024-05-22 01:44:23 [main] INFO  : Assigning adapter to the incoming account
+2024-05-22 01:44:23 [main] INFO  : Assigning adapter to the incoming account
+2024-05-22 01:44:23 [main] INFO  : Assigning adapter to the incoming account
+2024-05-22 01:44:23 [main] WARN  : Account type not allowed
+2024-05-22 01:44:23 [main] INFO  : Assigning adapter to the incoming account
+2024-05-22 01:44:23 [SpringApplicationShutdownHook] INFO  : Unregistering application ACCOUNTSSERVICE with eureka with status DOWN
+2024-05-22 01:44:23 [SpringApplicationShutdownHook] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716360263242, current=DOWN, previous=UP]
+2024-05-22 01:44:23 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080: registering service...
+2024-05-22 01:44:23 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080 - registration status: 204
+2024-05-22 01:44:25 [SpringApplicationShutdownHook] INFO  : Shutting down DiscoveryClient ...
+2024-05-22 01:44:28 [SpringApplicationShutdownHook] INFO  : Unregistering ...
+2024-05-22 01:44:28 [SpringApplicationShutdownHook] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080 - deregister  status: 200
+2024-05-22 01:44:28 [SpringApplicationShutdownHook] INFO  : Completed shut down of DiscoveryClient
+2024-05-22 01:50:02 [main] INFO  : Starting FinalProjectApplicationTests using Java 19.0.2 on valnaevis with PID 22900 (started by sammi in C:\Users\sammi\Documents\NTT GRUPAL\NTTBank\FinalProducts)
+2024-05-22 01:50:02 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-05-22 01:50:03 [main] INFO  : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2024-05-22 01:50:03 [main] INFO  : Finished Spring Data repository scanning in 224 ms. Found 3 Reactive MongoDB repository interfaces.
+2024-05-22 01:50:04 [main] INFO  : BeanFactory id=d11c4b48-be0a-33d9-ad4d-b7033f4feabd
+2024-05-22 01:50:04 [main] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-22 01:50:04 [main] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-22 01:50:04 [main] INFO  : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-22 01:50:05 [main] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Amazon.com Inc./19.0.2+7-FR"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@4184874c, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@630eb75b]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2024-05-22 01:50:05 [main] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-22 01:50:05 [cluster-ClusterId{value='664d959d997f3873b63454c1', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:1, serverValue:224}] to localhost:27017
+2024-05-22 01:50:05 [cluster-rtt-ClusterId{value='664d959d997f3873b63454c1', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:2, serverValue:223}] to localhost:27017
+2024-05-22 01:50:05 [cluster-ClusterId{value='664d959d997f3873b63454c1', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=129905400}
+2024-05-22 01:50:05 [main] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-22 01:50:06 [main] INFO  : Eureka HTTP Client uses RestTemplate.
+2024-05-22 01:50:07 [main] WARN  : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-22 01:50:07 [main] INFO  : Setting initial instance status as: STARTING
+2024-05-22 01:50:07 [main] INFO  : Initializing Eureka in region us-east-1
+2024-05-22 01:50:07 [main] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 01:50:07 [main] INFO  : Disable delta property : false
+2024-05-22 01:50:07 [main] INFO  : Single vip registry refresh property : null
+2024-05-22 01:50:07 [main] INFO  : Force full registry fetch : false
+2024-05-22 01:50:07 [main] INFO  : Application is null : false
+2024-05-22 01:50:07 [main] INFO  : Registered Applications size is zero : true
+2024-05-22 01:50:07 [main] INFO  : Application version is -1: true
+2024-05-22 01:50:07 [main] INFO  : Getting all instance registry info from the eureka server
+2024-05-22 01:50:07 [main] INFO  : The response status is 200
+2024-05-22 01:50:07 [main] INFO  : Starting heartbeat executor: renew interval is: 30
+2024-05-22 01:50:07 [main] INFO  : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-22 01:50:07 [main] INFO  : Discovery Client initialized at timestamp 1716360607958 with initial instances count: 1
+2024-05-22 01:50:07 [main] INFO  : Registering application ACCOUNTSSERVICE with eureka with status UP
+2024-05-22 01:50:07 [main] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716360607963, current=UP, previous=STARTING]
+2024-05-22 01:50:07 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080: registering service...
+2024-05-22 01:50:07 [main] INFO  : Started FinalProjectApplicationTests in 6.073 seconds (JVM running for 8.02)
+2024-05-22 01:50:08 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080 - registration status: 204
+2024-05-22 01:50:08 [main] INFO  : Retrieving the account -> accountNumber
+2024-05-22 01:50:09 [main] INFO  : Assigning adapter to the incoming account
+2024-05-22 01:50:09 [main] INFO  : Assigning adapter to the incoming account
+2024-05-22 01:50:09 [main] INFO  : Assigning adapter to the incoming account
+2024-05-22 01:50:09 [main] WARN  : Account type not allowed
+2024-05-22 01:50:09 [main] INFO  : Assigning adapter to the incoming account
+2024-05-22 01:50:09 [SpringApplicationShutdownHook] INFO  : Unregistering application ACCOUNTSSERVICE with eureka with status DOWN
+2024-05-22 01:50:09 [SpringApplicationShutdownHook] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716360609284, current=DOWN, previous=UP]
+2024-05-22 01:50:09 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080: registering service...
+2024-05-22 01:50:09 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080 - registration status: 204
+2024-05-22 01:50:11 [SpringApplicationShutdownHook] INFO  : Shutting down DiscoveryClient ...
+2024-05-22 01:50:14 [SpringApplicationShutdownHook] INFO  : Unregistering ...
+2024-05-22 01:50:14 [SpringApplicationShutdownHook] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080 - deregister  status: 200
+2024-05-22 01:50:14 [SpringApplicationShutdownHook] INFO  : Completed shut down of DiscoveryClient
+2024-05-22 02:19:34 [main] INFO  : Starting FinalProjectApplicationTests using Java 19.0.2 on valnaevis with PID 26324 (started by sammi in C:\Users\sammi\Documents\NTT GRUPAL\NTTBank\FinalProducts)
+2024-05-22 02:19:34 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-05-22 02:19:35 [main] INFO  : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2024-05-22 02:19:35 [main] INFO  : Finished Spring Data repository scanning in 250 ms. Found 3 Reactive MongoDB repository interfaces.
+2024-05-22 02:19:36 [main] INFO  : BeanFactory id=d11c4b48-be0a-33d9-ad4d-b7033f4feabd
+2024-05-22 02:19:36 [main] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-22 02:19:36 [main] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-22 02:19:36 [main] INFO  : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-22 02:19:37 [main] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Amazon.com Inc./19.0.2+7-FR"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@62614a5e, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@6a6dfe6a]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2024-05-22 02:19:37 [main] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-22 02:19:37 [cluster-rtt-ClusterId{value='664d9c89145f907f497a1ed2', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:1, serverValue:226}] to localhost:27017
+2024-05-22 02:19:37 [cluster-ClusterId{value='664d9c89145f907f497a1ed2', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:2, serverValue:225}] to localhost:27017
+2024-05-22 02:19:37 [cluster-ClusterId{value='664d9c89145f907f497a1ed2', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=117798800}
+2024-05-22 02:19:37 [main] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-22 02:19:38 [main] INFO  : Eureka HTTP Client uses RestTemplate.
+2024-05-22 02:19:39 [main] WARN  : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-22 02:19:39 [main] INFO  : Setting initial instance status as: STARTING
+2024-05-22 02:19:39 [main] INFO  : Initializing Eureka in region us-east-1
+2024-05-22 02:19:39 [main] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 02:19:39 [main] INFO  : Disable delta property : false
+2024-05-22 02:19:39 [main] INFO  : Single vip registry refresh property : null
+2024-05-22 02:19:39 [main] INFO  : Force full registry fetch : false
+2024-05-22 02:19:39 [main] INFO  : Application is null : false
+2024-05-22 02:19:39 [main] INFO  : Registered Applications size is zero : true
+2024-05-22 02:19:39 [main] INFO  : Application version is -1: true
+2024-05-22 02:19:39 [main] INFO  : Getting all instance registry info from the eureka server
+2024-05-22 02:19:39 [main] INFO  : The response status is 200
+2024-05-22 02:19:39 [main] INFO  : Starting heartbeat executor: renew interval is: 30
+2024-05-22 02:19:39 [main] INFO  : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-22 02:19:39 [main] INFO  : Discovery Client initialized at timestamp 1716362379987 with initial instances count: 1
+2024-05-22 02:19:39 [main] INFO  : Registering application ACCOUNTSSERVICE with eureka with status UP
+2024-05-22 02:19:39 [main] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716362379996, current=UP, previous=STARTING]
+2024-05-22 02:19:39 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080: registering service...
+2024-05-22 02:19:40 [main] INFO  : Started FinalProjectApplicationTests in 6.158 seconds (JVM running for 8.21)
+2024-05-22 02:19:40 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080 - registration status: 204
+2024-05-22 02:19:40 [main] INFO  : Retrieving all accounts
+2024-05-22 02:19:41 [main] INFO  : Retrieving the account -> 123
+2024-05-22 02:19:41 [main] INFO  : Retrieving the account -> 123
+2024-05-22 02:19:41 [main] INFO  : Retrieving all accounts for the client 123
+2024-05-22 02:19:41 [main] INFO  : Retrieving all accounts
+2024-05-22 02:19:41 [main] INFO  : Assigning adapter to the incoming account
+2024-05-22 02:19:41 [main] INFO  : Assigning adapter to the incoming account
+2024-05-22 02:19:41 [main] INFO  : Assigning adapter to the incoming account
+2024-05-22 02:19:41 [main] WARN  : Account type not allowed
+2024-05-22 02:19:41 [main] INFO  : Assigning adapter to the incoming account
+2024-05-22 02:19:41 [SpringApplicationShutdownHook] INFO  : Unregistering application ACCOUNTSSERVICE with eureka with status DOWN
+2024-05-22 02:19:41 [SpringApplicationShutdownHook] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716362381346, current=DOWN, previous=UP]
+2024-05-22 02:19:41 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080: registering service...
+2024-05-22 02:19:41 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080 - registration status: 204
+2024-05-22 02:19:43 [SpringApplicationShutdownHook] INFO  : Shutting down DiscoveryClient ...
+2024-05-22 02:19:46 [SpringApplicationShutdownHook] INFO  : Unregistering ...
+2024-05-22 02:19:46 [SpringApplicationShutdownHook] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:8080 - deregister  status: 200
+2024-05-22 02:19:46 [SpringApplicationShutdownHook] INFO  : Completed shut down of DiscoveryClient

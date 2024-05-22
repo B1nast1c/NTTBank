@@ -1,11 +1,13 @@
 package project.domain.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Clase padre de las cuentas bancarias.
  */
-@Data
+@Getter
+@Setter
 public class BankProduct {
   /**
    * DNI o RUC del cliente.

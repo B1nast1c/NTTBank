@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class GenericMapper {
   protected static ModelMapper modelMapper = new ModelMapper();
 
-  private GenericMapper() {
+  GenericMapper(ModelMapper modelMapper) {
   }
 
   public static <T> T mapToSpecificClass(Object account, Class<T> targetClass) {
