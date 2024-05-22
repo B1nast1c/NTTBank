@@ -8,11 +8,23 @@ import reactor.core.publisher.Mono;
 
 @Component
 public class AccountStrategies {
-  public Mono<TransactionDTO> savingsAndFxdStrategy(TransactionDTO transaction, AccountResponse response) {
+  private Mono<TransactionDTO> genericValidation (TransactionDTO transaction, AccountResponse response) {
     if (transaction.getClientNumber().equals(response.getClientDocument())) {
       return Mono.just(transaction);
     }
     return Mono.error(new InvalidClient("Client not allowed to do the transaction"));
+  }
+
+  public Mono<TransactionDTO> savingsStrategy(TransactionDTO transaction, AccountResponse response) {
+    return genericValidation(transaction, response);
+  }
+
+  public Mono<TransactionDTO> fxdStrategy(TransactionDTO transaction, AccountResponse response) {
+    return genericValidation(transaction, response).
+        flatMap(validated -> {
+          String fxdAccountDate = response.getMovementDate();
+          if (validated.getTransactionDate().equals(re))
+        });
   }
 
   public Mono<TransactionDTO> currAccStrategy(TransactionDTO transaction, AccountResponse response) {
