@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+/**
+ * DTO de Firmantes Legales.
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

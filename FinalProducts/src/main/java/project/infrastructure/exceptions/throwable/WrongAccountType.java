@@ -1,7 +1,7 @@
 package project.infrastructure.exceptions.throwable;
 
 /**
- * Tipo de cliente que no es PERSONAL o EMPRESARIAL.
+ * Tipo de cuenta que no es AHORRO, CORRIENTE, PLAZO FIJO.
  */
 public class WrongAccountType extends RuntimeException {
   public WrongAccountType(String message) {

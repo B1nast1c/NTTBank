@@ -5,6 +5,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
+/**
+ * Tipo de cuenta a PLAZO_FIJO.
+ */
 @Getter
 @Setter
 @EqualsAndHashCode

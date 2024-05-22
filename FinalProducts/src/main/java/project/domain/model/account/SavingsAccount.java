@@ -6,6 +6,9 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * El tipo de cuenta AHORRO
+ */
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor

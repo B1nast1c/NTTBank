@@ -1,7 +1,7 @@
 package project.infrastructure.exceptions.throwable;
 
 /**
- * Cliente no encontrado.
+ * Cuenta Bancaria no encontrada.
  */
 public class NotFound extends RuntimeException {
   public NotFound(String message) {

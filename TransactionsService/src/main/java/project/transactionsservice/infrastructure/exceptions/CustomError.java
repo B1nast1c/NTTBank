@@ -27,5 +27,6 @@ public class CustomError {
     GENERIC_ERROR,
     GETTING_ERROR,
     POSTING_ERROR,
+    INVALID_TRANSACTION
   }
 }

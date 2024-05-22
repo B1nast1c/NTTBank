@@ -6,14 +6,28 @@ import project.infrastructure.clientcalls.responses.ClientResponse;
 import project.infrastructure.clientcalls.webclient.WebClientInterface;
 import reactor.core.publisher.Mono;
 
+/**
+ * Componente que realiza llamadas a un servicio de cliente utilizando WebClient.
+ */
 @Component
 public class WebClientSrv implements WebClientInterface {
   private final WebClient.Builder webClient;
 
+  /**
+   * Constructor para inicializar WebClient.Builder.
+   *
+   * @param webClient Builder para crear instancias de WebClient.
+   */
   public WebClientSrv(WebClient.Builder webClient) {
     this.webClient = webClient;
   }
 
+  /**
+   * Obtiene un cliente por su ID utilizando WebClient.
+   *
+   * @param clientId ID del cliente a buscar.
+   * @return Un Mono que emite una respuesta de cliente.
+   */
   @Override
   public Mono<ClientResponse> getClientByiD(String clientId) {
     return webClient

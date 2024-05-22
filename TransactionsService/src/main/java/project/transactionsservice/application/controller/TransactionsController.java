@@ -17,23 +17,23 @@ public class TransactionsController {
     this.transactionsService = transactionsService;
   }
 
-  @GetMapping("/all")
+  @GetMapping(value = "/all")
   public Mono<CustomResponse<List<TransactionDTO>>> getAllTransactions() {
     return transactionsService.getAllTransactions();
   }
 
-  @PostMapping("/create")
-  public Mono<CustomResponse> createTransactions(@RequestBody TransactionDTO transaction) {
+  @PostMapping(value = "/create")
+  public Mono<CustomResponse<Object>> createTransactions(@RequestBody TransactionDTO transaction) {
     return transactionsService.createTransaction(transaction);
   }
 
-  @GetMapping("/transaction/{transactionId}")
-  public Mono<CustomResponse> getTransactionById(@PathVariable("transactionId") String transactionId) {
+  @GetMapping(value = "/transaction/{transactionId}")
+  public Mono<CustomResponse<Object>> getTransactionById(@PathVariable("transactionId") String transactionId) {
     return transactionsService.getTransaction(transactionId);
   }
 
-  @GetMapping("/bankProduct/{productNumber}")
-  public Mono<CustomResponse> getTransactionsByProductNumber(@PathVariable("productNumber") String productNumber) {
+  @GetMapping(value = "/bankProduct/{productNumber}")
+  public Mono<CustomResponse<Object>> getTransactionsByProductNumber(@PathVariable("productNumber") String productNumber) {
     return transactionsService.getAllTransactionsByProduct(productNumber);
   }
 }

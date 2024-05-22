@@ -5,32 +5,39 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import project.infrastructure.exceptions.throwable.*;
 
 /**
- * Gestión genérica de errores, se incluyen errores originados por la lógica de negocio
- * o errores humanos de ingreso o no ingreso de datos.
+ * Clase para gestionar errores de manera genérica en toda la aplicación.
+ * Se incluyen errores originados por la lógica de negocio o por errores
+ * de ingreso o no ingreso de datos por parte del usuario.
  */
 @ControllerAdvice
 public class ErrorHandler {
   /**
-   * Cliente no encontrado.
+   * Maneja la excepción cuando no se encuentra un cliente.
    *
-   * @param e Excepción desencadenada.
-   * @return Objeto de error personalizado, que obtiene los datos de un MONO.ERROR.
+   * @param e La excepción NotFoundClient lanzada.
+   * @return Un objeto CustomError con el mensaje de error y el tipo de error correspondiente.
    */
   @ExceptionHandler(NotFoundClient.class)
   public CustomError handleNotFound(NotFoundClient e) {
     return new CustomError(e.getMessage(), CustomError.ErrorType.NOT_FOUND_CLIENT);
   }
 
+  /**
+   * Maneja la excepción cuando no se encuentra una cuenta.
+   *
+   * @param e La excepción NotFound lanzada.
+   * @return Un objeto CustomError con el mensaje de error y el tipo de error correspondiente.
+   */
   @ExceptionHandler(NotFound.class)
   public CustomError handleNotAccount(NotFound e) {
     return new CustomError(e.getMessage(), CustomError.ErrorType.NOT_FOUND_ACCOUNT);
   }
 
   /**
-   * DNI-RUC Vacío o ya presente en la base de datos (MONGO).
+   * Maneja la excepción cuando se encuentra un documento inválido.
    *
-   * @param e Excepción desencadenada.
-   * @return Objeto de error personalizado, que obtiene los datos de un MONO.ERROR.
+   * @param e La excepción InvalidRule lanzada.
+   * @return Un objeto CustomError con el mensaje de error y el tipo de error correspondiente.
    */
   @ExceptionHandler(InvalidRule.class)
   public CustomError handleInvalidDocument(InvalidRule e) {
@@ -38,26 +45,32 @@ public class ErrorHandler {
   }
 
   /**
-   * Tipo de cliente inválido.
+   * Maneja la excepción cuando se encuentra un tipo de cliente incorrecto.
    *
-   * @param e Excepción desencadenada.
-   * @return Objeto de error personalizado, que obtiene los datos de un MONO.ERROR.
+   * @param e La excepción WrongClientType lanzada.
+   * @return Un objeto CustomError con el mensaje de error y el tipo de error correspondiente.
    */
   @ExceptionHandler(WrongClientType.class)
   public CustomError handleWrongClientType(WrongClientType e) {
     return new CustomError(e.getMessage(), CustomError.ErrorType.INVALID_TYPE);
   }
 
+  /**
+   * Maneja la excepción cuando se encuentra un tipo de cuenta incorrecto.
+   *
+   * @param e La excepción WrongAccountType lanzada.
+   * @return Un objeto CustomError con el mensaje de error y el tipo de error correspondiente.
+   */
   @ExceptionHandler(WrongAccountType.class)
   public CustomError handleWrongAccountType(WrongAccountType e) {
     return new CustomError(e.getMessage(), CustomError.ErrorType.INVALID_TYPE);
   }
 
   /**
-   * Atributos nulos son nulos, pues el cliente no los establece.
+   * Maneja la excepción cuando se encuentran atributos nulos.
    *
-   * @param e Excepción desencadenada.
-   * @return Objeto de error personalizado, que obtiene los datos de un MONO.ERROR.
+   * @param e La excepción EmptyAttributes lanzada.
+   * @return Un objeto CustomError con el mensaje de error y el tipo de error correspondiente.
    */
   @ExceptionHandler(EmptyAttributes.class)
   public CustomError handleEmptyAttributes(EmptyAttributes e) {
@@ -65,13 +78,13 @@ public class ErrorHandler {
   }
 
   /**
-   * Handle Excepción genérica.
+   * Maneja la excepción genérica IllegalStateException.
    *
-   * @param e Excepción desencadenada
-   * @return Objeto de error personalizado, que obtiene los datos de un MONO.ERROR
+   * @param e La excepción IllegalStateException lanzada.
+   * @return Un objeto CustomError con el mensaje de error y el tipo de error correspondiente.
    */
   @ExceptionHandler(IllegalStateException.class)
   public CustomError handleIllegalStateException(IllegalStateException e) {
-    return new CustomError("Could not find client", CustomError.ErrorType.GENERIC_ERROR);
+    return new CustomError("No se pudo encontrar el cliente", CustomError.ErrorType.GENERIC_ERROR);
   }
 }

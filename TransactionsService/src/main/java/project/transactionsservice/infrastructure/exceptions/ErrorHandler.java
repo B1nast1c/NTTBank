@@ -26,6 +26,11 @@ public class ErrorHandler {
     return new CustomError(e.getMessage(), CustomError.ErrorType.INVALID_AMMOUNT);
   }
 
+  @ExceptionHandler(InvalidTransaction.class)
+  public CustomError handleInvalidTransaction(InvalidTransaction e) {
+    return new CustomError(e.getMessage(), CustomError.ErrorType.INVALID_TRANSACTION);
+  }
+
   @ExceptionHandler(InvalidClient.class)
   public CustomError handleWrongClientType(InvalidClient e) {
     return new CustomError(e.getMessage(), CustomError.ErrorType.INVALID_CLIENT);

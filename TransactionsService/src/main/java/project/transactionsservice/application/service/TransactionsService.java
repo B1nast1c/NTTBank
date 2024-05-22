@@ -7,11 +7,11 @@ import reactor.core.publisher.Mono;
 import java.util.List;
 
 public interface TransactionsService {
-  Mono<CustomResponse> createTransaction(TransactionDTO transactionDTO);
+  Mono<CustomResponse<Object>> createTransaction(TransactionDTO transactionDTO);
 
-  Mono<CustomResponse> getTransaction(String transactionId);
+  Mono<CustomResponse<Object>> getTransaction(String transactionId);
 
   Mono<CustomResponse<List<TransactionDTO>>> getAllTransactions();
 
-  Mono<CustomResponse> getAllTransactionsByProduct(String productNumber);
+  Mono<CustomResponse<Object>> getAllTransactionsByProduct(String productNumber);
 }

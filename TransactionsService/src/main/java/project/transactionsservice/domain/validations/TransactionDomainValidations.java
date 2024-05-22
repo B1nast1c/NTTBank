@@ -1,18 +1,61 @@
 package project.transactionsservice.domain.validations;
 
+import project.transactionsservice.domain.model.Transaction;
 import project.transactionsservice.infrastructure.dto.TransactionDTO;
 import project.transactionsservice.infrastructure.exceptions.throwable.InvalidAmmount;
+import project.transactionsservice.infrastructure.exceptions.throwable.InvalidTransaction;
 import project.transactionsservice.infrastructure.mapper.GenericMapper;
 import project.transactionsservice.infrastructure.servicecalls.responses.AccountResponse;
 import project.transactionsservice.infrastructure.servicecalls.responses.CreditResponse;
 import project.transactionsservice.infrastructure.servicecalls.responses.GenericResponse;
 import reactor.core.publisher.Mono;
 
-// NOTA -> Cada validación del tipo de cuenta corresponde a una estrategia
-// Validamos que el tipo de cuenta corresponda a la transacción seleccionada
-// Cada transacción comparte su guardado, pero las validaciones son diferentes
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Date;
+import java.util.List;
 
 public abstract class TransactionDomainValidations {
+  private static LocalDate convertToLocalDate(Date date) {
+    return Instant.ofEpochMilli(date.getTime())
+        .atZone(ZoneId.systemDefault())
+        .toLocalDate();
+  }
+
+  private static boolean isSameYearAndMonth(String date1, Date date2) {
+    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    try {
+      LocalDate localDate1 = LocalDate.parse(date1, dateFormatter);
+      LocalDate localDate2 = convertToLocalDate(date2);
+      return localDate1.getYear() == localDate2.getYear()
+          && localDate1.getMonthValue() == localDate2.getMonthValue();
+    } catch (DateTimeParseException e) {
+      throw new InvalidTransaction("Date parsing error");
+    }
+  }
+
+  public static Mono<TransactionDTO> validateFxdAccount(TransactionDTO transaction,
+                                                        List<Transaction> transactions) {
+
+    String transactionAccount = transaction.getProductNumber();
+    String transactionDate = transaction.getTransactionDate();
+
+    System.out.println("DATOS DE LA TRANSACCION -> " + transactionAccount + " " + transactionDate);
+
+    boolean onlyAccount = transactions
+        .stream()
+        .anyMatch(found -> found.getProductNumber().equals(transactionAccount)
+            && isSameYearAndMonth(transactionDate, found.getTransactionDate()));
+
+    if (!onlyAccount) {
+      return Mono.just(transaction);
+    }
+    return Mono.error(new InvalidAmmount("Fixed account allows just a transaction per month"));
+  }
+
   public static Mono<TransactionDTO> validateDeposit(TransactionDTO transaction) {
     if (transaction.getAmmount() <= 100000) {
       return Mono.just(transaction);
@@ -36,12 +79,12 @@ public abstract class TransactionDomainValidations {
   }
 
   public static Mono<TransactionDTO> validateCreditCardCharge(TransactionDTO transaction, CreditResponse creditCard) {
-      if (creditCard.getAmmount() >= transaction.getAmmount()) {
-        TransactionDTO mappedTransaction = GenericMapper.mapToDto(creditCard);
-        return Mono.just(mappedTransaction);
-      }
-        return Mono.error(new InvalidAmmount("The charge exceeds the available credit limit"));
+    if (creditCard.getAmmount() >= transaction.getAmmount()) {
+      TransactionDTO mappedTransaction = GenericMapper.mapToDto(creditCard);
+      return Mono.just(mappedTransaction);
     }
+    return Mono.error(new InvalidAmmount("The charge exceeds the available credit limit"));
+  }
 
   protected abstract Mono<TransactionDTO> validateTransaction(TransactionDTO transaction, GenericResponse serviceResponse);
 }

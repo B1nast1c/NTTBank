@@ -17,6 +17,9 @@ import project.infrastructure.exceptions.throwable.InvalidRule;
 import project.infrastructure.mapper.GenericMapper;
 import reactor.core.publisher.Mono;
 
+/**
+ * Adaptador para manejar operaciones CRUD en cuentas de ahorro.
+ */
 @Repository
 public class SavingsAccAdapter implements BAccountPort {
   private final SavingsRepo savingsrepo;
@@ -24,6 +27,14 @@ public class SavingsAccAdapter implements BAccountPort {
   private final UpdateDomainValidations updateDomainValidations;
   private final ReactiveMongoTemplate reactiveMongoTemplate;
 
+  /**
+   * Constructor para inicializar el adaptador de cuenta de ahorro.
+   *
+   * @param savingsrepo             Repositorio de cuentas de ahorro.
+   * @param saveDomainValidations   Validaciones de dominio para guardar.
+   * @param updateDomainValidations Validaciones de dominio para actualizar.
+   * @param reactiveMongoTemplate   Plantilla reactiva para MongoDB.
+   */
   public SavingsAccAdapter(SavingsRepo savingsrepo,
                            SaveDomainValidations saveDomainValidations,
                            UpdateDomainValidations updateDomainValidations,
@@ -42,31 +53,41 @@ public class SavingsAccAdapter implements BAccountPort {
     return GenericMapper.mapToSpecificClass(savingsAccount, SavingsDTO.class);
   }
 
+  /**
+   * Guarda una nueva cuenta de ahorro en la base de datos.
+   *
+   * @param bankAccountDTO Datos de la cuenta de ahorro a guardar.
+   * @param client         Cliente asociado a la cuenta de ahorro.
+   * @return Un mono que representa el resultado de la operación de guardado.
+   */
   @Override
   public Mono<Object> save(Object bankAccountDTO, Client client) {
     return saveDomainValidations
-        .validateSavingsAccount(client)
-        .flatMap(valid -> {
+        .validateSavingsAccount(client) // Restricciones específicas de la cuenta
+        .flatMap(valid -> { // Existencia de otros tipos de cuenta
           if (Boolean.TRUE.equals(valid)) {
             return Mono.error(new InvalidRule("Can't create an account for this client"));
           } else {
             return Mono.just(bankAccountDTO)
-                .map(this::convertClass)
+                .map(this::convertClass) // Clase objetivo
                 .flatMap(account -> {
                   account.setAccountNumber(account.generateAccountNumber());
                   return savingsrepo.insert(account);
                 })
-                .map(this::customDTO);
+                .map(this::customDTO); // DTO del elemento insertado
           }
         });
   }
 
   @Override
   public Mono<Object> update(Object foundAccount, Object updatedAccount) {
-    SavingsDTO savingsDTO = GenericMapper.mapToSpecificClass(updatedAccount, SavingsDTO.class);
-    SavingsAccount saveAccount = GenericMapper.mapToSpecificClass(foundAccount, SavingsAccount.class);
+    SavingsDTO savingsDTO = GenericMapper
+        .mapToSpecificClass(updatedAccount, SavingsDTO.class);
+    SavingsAccount saveAccount = GenericMapper
+        .mapToSpecificClass(foundAccount, SavingsAccount.class);
 
-    return updateDomainValidations.validateSavingsAccount(savingsDTO, saveAccount)
+    return updateDomainValidations
+        .validateSavingsAccount(savingsDTO, saveAccount) // Restricciones específicas de la cuenta
         .flatMap(valid -> {
           if (Boolean.FALSE.equals(valid)) {
             return Mono.error(new InvalidRule("Transactions ammount exceeds the limit"));
@@ -74,8 +95,9 @@ public class SavingsAccAdapter implements BAccountPort {
           return updateDomainValidations.validateAmmount(updatedAccount)
               .flatMap(validated -> {
                 SavingsDTO validatedAccount = GenericMapper.mapToSpecificClass(validated, SavingsDTO.class);
-
-                Query query = new Query(Criteria.where("accountNumber").is(saveAccount.getAccountNumber()));
+                
+                Query query = new Query(Criteria.where("accountNumber")
+                    .is(saveAccount.getAccountNumber())); // Actualización de balance y transactions
                 Update update = new Update()
                     .set("balance", validatedAccount.getBalance())
                     .set("transactions", validatedAccount.getTransactions());

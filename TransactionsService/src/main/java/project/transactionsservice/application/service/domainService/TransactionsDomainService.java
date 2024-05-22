@@ -2,7 +2,6 @@ package project.transactionsservice.application.service.domainService;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import project.transactionsservice.application.controller.TransactionsController;
 import project.transactionsservice.application.service.TransactionsService;
 import project.transactionsservice.domain.ports.TransactionsPort;
 import project.transactionsservice.infrastructure.dto.TransactionDTO;
@@ -23,32 +22,32 @@ public class TransactionsDomainService implements TransactionsService {
   }
 
   @Override
-  public Mono<CustomResponse> createTransaction(TransactionDTO transactionDTO) {
+  public Mono<CustomResponse<Object>> createTransaction(TransactionDTO transactionDTO) {
     return transactionsPort.saveTransaction(transactionDTO)
         .flatMap(
             transaction -> {
-              CustomResponse result = new CustomResponse<>(true, transaction);
+              CustomResponse<Object> result = new CustomResponse<>(true, transaction);
               return Mono.just(result);
             }
-        );
-        /*.onErrorResume(throwable -> {
+        )
+        .onErrorResume(throwable -> {
           CustomError error = new CustomError(throwable.getMessage(), CustomError.ErrorType.POSTING_ERROR);
-          CustomResponse<CustomError> badResponse = new CustomResponse<>(false, error);
-          return Mono.just(badResponse).cast(CustomResponse.class);
-        });*/
+          CustomResponse<Object> badResponse = new CustomResponse<>(false, error);
+          return Mono.just(badResponse);
+        });
   }
 
   @Override
-  public Mono<CustomResponse> getTransaction(String transactionId) {
+  public Mono<CustomResponse<Object>> getTransaction(String transactionId) {
     return transactionsPort.getTransaction(transactionId)
         .flatMap(transaction -> {
-          CustomResponse result = new CustomResponse<>(true, transaction);
+          CustomResponse<Object> result = new CustomResponse<>(true, transaction);
           return Mono.just(result);
         })
         .onErrorResume(throwable -> {
           CustomError error = new CustomError(throwable.getMessage(), CustomError.ErrorType.GETTING_ERROR);
-          CustomResponse<CustomError> badResponse = new CustomResponse<>(false, error);
-          return Mono.just(badResponse).cast(CustomResponse.class);
+          CustomResponse<Object> badResponse = new CustomResponse<>(false, error);
+          return Mono.just(badResponse);
         });
   }
 
@@ -60,15 +59,14 @@ public class TransactionsDomainService implements TransactionsService {
   }
 
   @Override
-  public Mono<CustomResponse> getAllTransactionsByProduct(String productNumber) {
+  public Mono<CustomResponse<Object>> getAllTransactionsByProduct(String productNumber) {
     return transactionsPort.getTransactionsByProductNumber(productNumber)
         .collectList()
-        .map(transactions -> new CustomResponse<>(true, transactions))
-        .cast(CustomResponse.class) // Casteo correspondiente a una respuesta correcta
+        .map(transactions -> new CustomResponse<Object>(true, transactions))
         .onErrorResume(throwable -> {
           CustomError error = new CustomError(throwable.getMessage(), CustomError.ErrorType.GETTING_ERROR);
-          CustomResponse<CustomError> badResponse = new CustomResponse<>(false, error);
-          return Mono.just(badResponse).cast(CustomResponse.class);
+          CustomResponse<Object> badResponse = new CustomResponse<>(false, error);
+          return Mono.just(badResponse);
         });
   }
 }

@@ -26,6 +26,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * Adaptador para cuentas corrientes.
+ */
 @Repository
 public class CurrAccAdapter implements BAccountPort {
   private final CurrAccRepo currentRepo;
@@ -54,6 +57,12 @@ public class CurrAccAdapter implements BAccountPort {
     return GenericMapper.mapToSpecificClass(currAccount, CurrAccDTO.class);
   }
 
+  /**
+   * Valida y filtra los titulares VÁLIDOS de la cuenta corriente.
+   *
+   * @param titulars Titulares de la cuenta corriente
+   * @return Mono que representa el conjunto de titulares válidos
+   */
   private Mono<Set<String>> validateAndFilterTitulars(Set<String> titulars) {
     return Flux.fromIterable(titulars)
         .flatMap(titular -> clientService.getClientByiD(titular)
@@ -63,6 +72,13 @@ public class CurrAccAdapter implements BAccountPort {
         .collect(Collectors.toSet());
   }
 
+  /**
+   * Prepara una cuenta corriente para ser guardada.
+   *
+   * @param dto    DTO de la cuenta corriente
+   * @param client Cliente asociado a la cuenta
+   * @return Mono que representa la cuenta corriente preparada
+   */
   private Mono<CurrentAccount> prepareCurrentAccount(CurrAccDTO dto, Client client) {
     Mono<Set<String>> validTitularsMono = validateAndFilterTitulars(dto.getAccountTitulars());
 
@@ -85,7 +101,7 @@ public class CurrAccAdapter implements BAccountPort {
               signer.setSignerNumber(signer.generateSignerNumber());
               return signer;
             })
-            .collect(Collectors.toList());
+            .collect(Collectors.toList()); // Lista de firmates legales
 
         currentAccount.setAccountTitulars(validTitulars);
         currentAccount.setLegalSigners(legalSigners);
@@ -94,10 +110,17 @@ public class CurrAccAdapter implements BAccountPort {
         currentAccount.setAccountTitulars(Collections.emptyNavigableSet());
         currentAccount.setLegalSigners(Collections.emptyList());
       }
-      return Mono.just(currentAccount);
+      return Mono.just(currentAccount); // Elemento final a insertar
     });
   }
 
+  /**
+   * Guarda una nueva cuenta corriente.
+   *
+   * @param bankAccountDTO DTO de la cuenta corriente
+   * @param client         Cliente asociado a la cuenta
+   * @return Mono que representa la cuenta corriente guardada
+   */
   @Override
   public Mono<Object> save(Object bankAccountDTO, Client client) {
     CurrAccDTO dto = customDTO(bankAccountDTO);
@@ -107,17 +130,25 @@ public class CurrAccAdapter implements BAccountPort {
       if (Boolean.FALSE.equals(isValid)) {
         return Mono.error(new InvalidRule("The account you are creating breaks some rules"));
       }
-      return prepareCurrentAccount(dto, client)
+      return prepareCurrentAccount(dto, client) // Prepara la cuenta corriente para ser guardada
           .flatMap(currentRepo::insert)
           .map(this::customDTO);
     });
   }
 
+  /**
+   * Actualiza una cuenta corriente existente.
+   *
+   * @param foundAccount   Cuenta corriente encontrada
+   * @param updatedAccount DTO actualizado de la cuenta corriente
+   * @return Mono que indica el resultado de la actualización
+   */
   @Override
   public Mono<Object> update(Object foundAccount, Object updatedAccount) {
     CurrAccDTO currDTO = GenericMapper.mapToSpecificClass(updatedAccount, CurrAccDTO.class);
     return updateDomainValidations.validateAmmount(currDTO)
         .flatMap(validated -> {
+          // Cuenta a editar, y elemento que contiene las futuras ediciones - EN ESE ORDEN
           CurrentAccount foundCurrentAccount = GenericMapper.mapToSpecificClass(foundAccount, CurrentAccount.class);
           CurrAccDTO validatedAccount = GenericMapper.mapToSpecificClass(validated, CurrAccDTO.class);
 
@@ -132,4 +163,3 @@ public class CurrAccAdapter implements BAccountPort {
         });
   }
 }
-

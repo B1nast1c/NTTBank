@@ -5,6 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Respuesta del servcio de clientes (DATA).
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

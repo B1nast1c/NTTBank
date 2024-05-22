@@ -3,12 +3,13 @@ package project.transactionsservice.infrastructure.adapters;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import project.transactionsservice.application.validations.TransactionsAppValidations;
+import project.transactionsservice.domain.model.Transaction;
 import project.transactionsservice.domain.ports.TransactionsPort;
 import project.transactionsservice.infrastructure.adapters.mongoRepos.TransactionsRepo;
 import project.transactionsservice.infrastructure.dto.TransactionDTO;
 import project.transactionsservice.infrastructure.exceptions.CustomError;
 import project.transactionsservice.infrastructure.exceptions.throwable.NotFoundTransaction;
-import project.transactionsservice.infrastructure.factory.TransactionsFactory;
+import project.transactionsservice.infrastructure.factory.TransactionStrategyFactory;
 import project.transactionsservice.infrastructure.mapper.GenericMapper;
 import project.transactionsservice.infrastructure.servicecalls.CreditService;
 import reactor.core.publisher.Flux;
@@ -19,35 +20,36 @@ import java.util.function.Function;
 @Slf4j
 @Repository
 public class TransactionsAdapter implements TransactionsPort {
-  private final TransactionsFactory transactionsFactory;
+  private final TransactionStrategyFactory transactionsFactory;
   private final TransactionsRepo transactionsRepo;
   private final CreditService creditService;
 
-  public TransactionsAdapter(TransactionsFactory transactionsFactory,
-                             TransactionsRepo transactionsRepo,
-                             CreditService creditService) {
+  public TransactionsAdapter(
+
+      TransactionStrategyFactory transactionsFactory,
+      TransactionsRepo transactionsRepo,
+      CreditService creditService) {
     this.transactionsFactory = transactionsFactory;
     this.transactionsRepo = transactionsRepo;
     this.creditService = creditService;
   }
 
-  @Override
   public Mono<Object> saveTransaction(TransactionDTO transactionDTO) {
     String transactionType = transactionDTO.getTransactionType();
     return TransactionsAppValidations.validateTransactionType(transactionDTO)
-        .flatMap(transaction -> {
+        .flatMap(validatedTransaction -> {
           Function<TransactionDTO, Mono<Object>> strategy = transactionsFactory.getStrategy(transactionType);
-          return strategy.apply(transaction);
-        });
-/*
-    return accResponse
-        .flatMap(res -> {
-          if (!res.isSuccess()) {
-            log.warn("Account not found -> {}", CustomError.ErrorType.ACCOUNT_NOT_FOUND);
-            return Mono.error(new NotFoundProduct("Error while getting "));
+          if (strategy != null) {
+            Mono<Object> createdTransaction = strategy.apply(validatedTransaction);
+            return createdTransaction
+                .flatMap(inserting -> {
+                  Transaction transaction = GenericMapper.mapToEntity(inserting);
+                  return transactionsRepo.save(transaction)
+                      .map(inserted -> GenericMapper.mapToAny(inserted, TransactionDTO.class));
+                });
           }
-          return creditService.getCredit(transactionDTO.getProductNumber());
-        });*/
+          return Mono.error(new IllegalArgumentException("No strategy found for transaction type: " + transactionType));
+        });
   }
 
   @Override

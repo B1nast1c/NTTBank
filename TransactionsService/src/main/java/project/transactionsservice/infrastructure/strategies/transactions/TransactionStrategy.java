@@ -1,4 +1,4 @@
-package project.transactionsservice.domain.strategies.transactions;
+package project.transactionsservice.infrastructure.strategies.transactions;
 
 import project.transactionsservice.infrastructure.dto.TransactionDTO;
 import reactor.core.publisher.Mono;

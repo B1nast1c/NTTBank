@@ -1,7 +1,7 @@
 package project.transactionsservice.infrastructure.exceptions.throwable;
 
-public class EmptyAttributes extends RuntimeException {
-  public EmptyAttributes(String message) {
+public class InvalidTransaction extends RuntimeException {
+  public InvalidTransaction(String message) {
     super(message);
   }
 }
