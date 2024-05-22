@@ -1,5 +1,6 @@
 package project.infrastructure.adapters;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import project.domain.model.account.CurrentAccount;
 import project.domain.model.account.FixedTermAccount;
@@ -18,6 +19,7 @@ import reactor.core.publisher.Mono;
 /**
  * Adaptador para interactuar con cuentas genéricas en la base de datos.
  */
+@Slf4j
 @Repository
 public class GenericAccAdapter {
   private final CurrAccRepo currAccRepository;
@@ -50,6 +52,7 @@ public class GenericAccAdapter {
     Flux<SavingsDTO> savingsFlux = savingsRepository
         .findAll().map(account -> GenericMapper.mapToSpecificClass(account, SavingsDTO.class));
 
+    log.info("Retrieving all accounts");
     return Flux.concat(currAccFlux, fxdTermFlux, savingsFlux);
   }
 
@@ -67,6 +70,7 @@ public class GenericAccAdapter {
     Flux<SavingsDTO> savingsFlux = savingsRepository.findAllByClientDocument(
         clientId).map(account -> GenericMapper.mapToSpecificClass(account, SavingsDTO.class));
 
+    log.info("Retrieving all accounts for the client {}", clientId);
     return Flux.concat(currAccFlux, fxdTermFlux, savingsFlux);
   }
 
@@ -82,6 +86,7 @@ public class GenericAccAdapter {
     Mono<FixedTermAccount> fxdTermMono = fxdTermRepository.findByAccountNumber(accountNumber);
     Mono<SavingsAccount> savingsMono = savingsRepository.findByAccountNumber(accountNumber);
 
+    log.info("Retrieving the account -> {}", accountNumber);
     return Mono.firstWithValue(currAccMono, fxdTermMono, savingsMono) // Primer elemento NO VACÍO
         .map(object -> GenericMapper.mapToSpecificClass(object, Object.class))
         .switchIfEmpty(Mono.error(new NotFound("No account found with account number: " + accountNumber)));

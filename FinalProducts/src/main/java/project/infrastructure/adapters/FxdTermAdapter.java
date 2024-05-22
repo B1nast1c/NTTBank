@@ -1,5 +1,6 @@
 package project.infrastructure.adapters;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -19,6 +20,7 @@ import reactor.core.publisher.Mono;
 /**
  * Adaptador para cuentas a plazo fijo.
  */
+@Slf4j
 @Repository
 public class FxdTermAdapter implements BAccountPort {
   private final FxdTermRepo fxdTermRepo;
@@ -77,12 +79,14 @@ public class FxdTermAdapter implements BAccountPort {
         validateFxdTermAccount(client)
         .flatMap(isValid -> {
           if (Boolean.TRUE.equals(isValid)) {
+            log.warn("The account creation breaks some domain rules");
             return Mono.error(new InvalidRule("Can't create an account for this client"));
           } else {
             return Mono.just(bankAccountDTO)
                 .map(this::convertClass)
                 .flatMap(account -> {
                   account.setAccountNumber(account.generateAccountNumber());
+                  log.info("Account -> {} has been created", account.getAccountNumber());
                   return fxdTermRepo.insert(account);
                 })
                 .map(this::customDTO);
@@ -113,6 +117,7 @@ public class FxdTermAdapter implements BAccountPort {
               .set("balance", validatedAccount.getBalance())
               .set("transactions", validatedAccount.getTransactions());
 
+          log.info("Account -> {} has been updated", foundFxdAccount.getAccountNumber());
           return reactiveMongoTemplate.findAndModify(query, update, FixedTermAccount.class)
               .flatMap(account -> Mono.just("Account updated successfully"));
         });

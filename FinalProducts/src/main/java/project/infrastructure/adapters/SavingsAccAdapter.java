@@ -1,5 +1,6 @@
 package project.infrastructure.adapters;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -20,6 +21,7 @@ import reactor.core.publisher.Mono;
 /**
  * Adaptador para manejar operaciones CRUD en cuentas de ahorro.
  */
+@Slf4j
 @Repository
 public class SavingsAccAdapter implements BAccountPort {
   private final SavingsRepo savingsrepo;
@@ -66,6 +68,7 @@ public class SavingsAccAdapter implements BAccountPort {
         .validateSavingsAccount(client) // Restricciones específicas de la cuenta
         .flatMap(valid -> { // Existencia de otros tipos de cuenta
           if (Boolean.TRUE.equals(valid)) {
+            log.warn("The account creation breaks some domain rules");
             return Mono.error(new InvalidRule("Can't create an account for this client"));
           } else {
             return Mono.just(bankAccountDTO)
@@ -90,18 +93,20 @@ public class SavingsAccAdapter implements BAccountPort {
         .validateSavingsAccount(savingsDTO, saveAccount) // Restricciones específicas de la cuenta
         .flatMap(valid -> {
           if (Boolean.FALSE.equals(valid)) {
+            log.warn("The saving account validation has failed");
             return Mono.error(new InvalidRule("Transactions ammount exceeds the limit"));
           }
           return updateDomainValidations.validateAmmount(updatedAccount)
               .flatMap(validated -> {
                 SavingsDTO validatedAccount = GenericMapper.mapToSpecificClass(validated, SavingsDTO.class);
-                
+
                 Query query = new Query(Criteria.where("accountNumber")
                     .is(saveAccount.getAccountNumber())); // Actualización de balance y transactions
                 Update update = new Update()
                     .set("balance", validatedAccount.getBalance())
                     .set("transactions", validatedAccount.getTransactions());
 
+                log.info("Account -> {} has been updated", validatedAccount.getAccountNumber());
                 return reactiveMongoTemplate.findAndModify(query, update, SavingsAccount.class)
                     .flatMap(account -> Mono.just("Account updated successfully"));
               });

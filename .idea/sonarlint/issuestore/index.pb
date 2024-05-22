@@ -211,3 +211,8 @@ TFinalProducts/src/main/java/project/infrastructure/clientcalls/responses/Client
 \FinalProducts/src/main/java/project/infrastructure/clientcalls/responses/ClientResponse.java,a\8\a88fb1e751960dee0c5af5110e35dc43b92730f0
 ‚
 RFinalProducts/src/main/java/project/infrastructure/adapters/SavingsAccAdapter.java,9\d\9de26de3f48a036ea85d1ec2179d76cf35d5b94b
+T
+$FinalProducts/logs/clientService.log,9\9\9977bbc3666e894af128964d497fa2082f785331
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

@@ -1,5 +1,6 @@
 package project.infrastructure.adapters;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -29,6 +30,7 @@ import java.util.stream.Collectors;
 /**
  * Adaptador para cuentas corrientes.
  */
+@Slf4j
 @Repository
 public class CurrAccAdapter implements BAccountPort {
   private final CurrAccRepo currentRepo;
@@ -84,6 +86,7 @@ public class CurrAccAdapter implements BAccountPort {
 
     return validTitularsMono.flatMap(validTitulars -> {
       if (validTitulars.isEmpty() && client.getClientType().equals("EMPRESARIAL")) {
+        log.warn("The account titular list is empty");
         return Mono.error(new EmptyAttributes("At least one valid titular is required"));
       }
 
@@ -128,8 +131,10 @@ public class CurrAccAdapter implements BAccountPort {
 
     return clientValidation.flatMap(isValid -> {
       if (Boolean.FALSE.equals(isValid)) {
+        log.warn("The account creation breaks some domain rules");
         return Mono.error(new InvalidRule("The account you are creating breaks some rules"));
       }
+      log.info("Account for the client -> {} has been created", client.getDocumentNumber());
       return prepareCurrentAccount(dto, client) // Prepara la cuenta corriente para ser guardada
           .flatMap(currentRepo::insert)
           .map(this::customDTO);
@@ -158,6 +163,7 @@ public class CurrAccAdapter implements BAccountPort {
               .set("balance", validatedAccount.getBalance())
               .set("transactions", validatedAccount.getTransactions());
 
+          log.info("Account -> {} has been updated", foundCurrentAccount.getAccountNumber());
           return reactiveMongoTemplate.findAndModify(query, update, CurrentAccount.class)
               .flatMap(account -> Mono.just("Account updated successfully"));
         });

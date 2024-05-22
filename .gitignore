@@ -1,2 +1,5 @@
 **/target/*
 *.class
+/FinalClient/.idea/
+/FinalClient/.idea/
+/.idea/

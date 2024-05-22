@@ -1,5 +1,6 @@
 package project.infrastructure.factory;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import project.domain.ports.BAccountPort;
 import project.infrastructure.adapters.CurrAccAdapter;
@@ -10,6 +11,7 @@ import project.infrastructure.exceptions.throwable.WrongAccountType;
 /**
  * La clase BARepoFactory es una fábrica que proporciona adaptadores de repositorio de cuentas bancarias.
  */
+@Slf4j
 @Component
 public class BARepoFactory {
   private final SavingsAccAdapter savingsAccAdapter;
@@ -37,6 +39,7 @@ public class BARepoFactory {
    * @throws WrongAccountType Si se proporciona un tipo de cuenta no compatible.
    */
   public BAccountPort getAdapter(String type) {
+    log.info("Assigning adapter to the incoming account");
     switch (type) {
       case "AHORRO":
         return savingsAccAdapter;
@@ -45,8 +48,8 @@ public class BARepoFactory {
       case "PLAZO_FIJO":
         return fxdTermAdapter;
       default:
-        // Si se proporciona un tipo de cuenta no compatible, se lanza una excepción WrongAccountType.
-        throw new WrongAccountType("Tipo de cuenta no compatible: " + type);
+        log.warn("Account type not allowed");
+        throw new WrongAccountType("Account type not allowed : " + type);
     }
   }
 }

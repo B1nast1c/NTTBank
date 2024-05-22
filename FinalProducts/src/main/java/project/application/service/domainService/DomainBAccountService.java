@@ -1,5 +1,6 @@
 package project.application.service.domainService;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import project.application.service.BankAccountService;
 import project.domain.ports.BAccountPort;
@@ -21,6 +22,7 @@ import java.util.List;
 /**
  * El tipo Servicio de cuenta bancaria del dominio.
  */
+@Slf4j
 @Service
 public class DomainBAccountService implements BankAccountService {
   private final BARepoFactory repositoryFactory;
@@ -64,19 +66,18 @@ public class DomainBAccountService implements BankAccountService {
                 GenericMapper.mapToSpecificClass(savedAccount, Object.class))
             );
       } else {
-        // Si no se encuentra el cliente, retorna un error
+        log.warn("Client retrieval failed, try to request again");
         Object error = new CustomError(
             "Client retrieval failed, please try again",
             CustomError.ErrorType.POST_ERROR);
 
         CustomResponse<Object> errorResponse = new CustomResponse<>(false, error);
-        return Mono.just(errorResponse); // Casting necesario
+        return Mono.just(errorResponse);
       }
     }).onErrorResume(throwable -> {
-      // Manejo de errores en caso de fallos en la llamada
       Object error = new CustomError(throwable.getMessage(), CustomError.ErrorType.POST_ERROR);
       CustomResponse<Object> errorResponse = new CustomResponse<>(false, error);
-      return Mono.just(errorResponse); // Casting necesario
+      return Mono.just(errorResponse);
     });
   }
 
@@ -89,6 +90,7 @@ public class DomainBAccountService implements BankAccountService {
         })
         .onErrorResume(
             throwable -> {
+              log.warn("The account with number {} does not exist", accountNumber);
               Object error = new CustomError("Account does not exist", CustomError.ErrorType.GET_ERROR);
               CustomResponse<Object> badResponse = new CustomResponse<>(false, error);
               return Mono.just(badResponse);
@@ -191,7 +193,7 @@ public class DomainBAccountService implements BankAccountService {
         })
         .onErrorResume(
             throwable -> {
-              // Manejo de errores en caso de que la cuenta no exista
+              log.warn("The account with number {} does not exist and has no balance", accountNumber);
               Object error = new CustomError("Account does not exist", CustomError.ErrorType.GET_ERROR);
               CustomResponse<Object> badResponse = new CustomResponse<>(false, error);
               return Mono.just(badResponse);

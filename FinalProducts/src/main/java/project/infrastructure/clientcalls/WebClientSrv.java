@@ -1,5 +1,6 @@
 package project.infrastructure.clientcalls;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import project.infrastructure.clientcalls.responses.ClientResponse;
@@ -9,6 +10,7 @@ import reactor.core.publisher.Mono;
 /**
  * Componente que realiza llamadas a un servicio de cliente utilizando WebClient.
  */
+@Slf4j
 @Component
 public class WebClientSrv implements WebClientInterface {
   private final WebClient.Builder webClient;
@@ -30,6 +32,8 @@ public class WebClientSrv implements WebClientInterface {
    */
   @Override
   public Mono<ClientResponse> getClientByiD(String clientId) {
+    log.info("Calling ClienService to get client by id");
+    
     return webClient
         .build()
         .get()
