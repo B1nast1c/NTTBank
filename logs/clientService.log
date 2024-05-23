@@ -387,3 +387,10 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 2024-05-22 19:30:23 [nioEventLoopGroup-2-3] INFO  : Client found -> Empresa Random
 2024-05-22 19:30:23 [nioEventLoopGroup-2-3] WARN  : Client not found -> NOT_FOUND
 2024-05-22 19:30:23 [nioEventLoopGroup-2-3] WARN  : Client not found -> NOT_FOUND
+2024-05-22 19:31:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 19:36:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 19:41:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 19:46:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 19:51:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 19:56:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 20:01:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration

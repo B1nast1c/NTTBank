@@ -27,6 +27,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
+/**
+ * Clase de prueba para GenericAccAdapter.
+ */
 class GenericAccAdapterTest {
   private final FixedTermAccount testFixed = new FixedTermAccount();
   private final SavingsAccount testSavings = new SavingsAccount();
@@ -57,6 +60,9 @@ class GenericAccAdapterTest {
     testSavings.setId("savingsID");
   }
 
+  /**
+   * Prueba que verifica que no se encuentren cuentas.
+   */
   @Test
   void shouldFindNoAccounts() {
     when(currAccRepo.findAll()).thenReturn(Flux.empty());
@@ -66,6 +72,9 @@ class GenericAccAdapterTest {
     StepVerifier.create(genericAccAdapter.findAll()).expectComplete().verify();
   }
 
+  /**
+   * Prueba que verifica que se encuentre una de cada tipo de cuenta.
+   */
   @Test
   void shouldReturnOneOfEachAccount() {
     when(currAccRepo.findAll()).thenReturn(Flux.just(testCurrent));
@@ -79,6 +88,9 @@ class GenericAccAdapterTest {
         .verifyComplete();
   }
 
+  /**
+   * Prueba que verifica que no se encuentren cuentas para un cliente.
+   */
   @Test
   void shouldFindNoAccountsForClient() {
     String clientId = "123";
@@ -89,6 +101,9 @@ class GenericAccAdapterTest {
     StepVerifier.create(genericAccAdapter.findByClientId(clientId)).expectComplete().verify();
   }
 
+  /**
+   * Prueba que verifica que se lance una excepción cuando no se encuentra una cuenta por número de cuenta.
+   */
   @Test
   void shouldThrowNotFoundException() {
     String accountNumber = "123";
@@ -102,6 +117,9 @@ class GenericAccAdapterTest {
         .verify();
   }
 
+  /**
+   * Prueba que verifica que se retorne una cuenta corriente.
+   */
   @Test
   void shouldReturnCurrentAccount() {
     String accountNumber = "123";
@@ -115,6 +133,9 @@ class GenericAccAdapterTest {
         .verify();
   }
 
+  /**
+   * Prueba que verifica que se retorne una cuenta a plazo fijo.
+   */
   @Test
   void shouldReturnFixedTermAccount() {
     String accountNumber = "123";
@@ -128,6 +149,9 @@ class GenericAccAdapterTest {
         .verify();
   }
 
+  /**
+   * Prueba que verifica que se retorne una cuenta de ahorros.
+   */
   @Test
   void shouldReturnSavingsAccount() {
     String accountNumber = "123";

@@ -23,7 +23,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-public class SavingsAccAdapterTest {
+/**
+ * Pruebas unitarias para SavingsAccAdapter.
+ */
+class SavingsAccAdapterTest {
 
   private final SavingsDTO testSavingsDTO = new SavingsDTO();
   private final SavingsAccount testSavingsAccount = new SavingsAccount();
@@ -56,6 +59,9 @@ public class SavingsAccAdapterTest {
         .thenReturn(Mono.just(testSavingsAccount));
   }
 
+  /**
+   * Verifica que se guarde una cuenta de ahorros exitosamente.
+   */
   @Test
   void shouldSaveSavingsAccount() {
     StepVerifier.create(savingsAccAdapter.save(testSavingsDTO, testClient))
@@ -71,6 +77,9 @@ public class SavingsAccAdapterTest {
     verify(savingsRepo).insert(any(SavingsAccount.class));
   }
 
+  /**
+   * Verifica que no se guarde una cuenta de ahorros si la validación falla.
+   */
   @Test
   void shouldNotSaveSavingsAccount() {
     when(saveDomainValidations.validateSavingsAccount(any(Client.class)))
@@ -83,6 +92,9 @@ public class SavingsAccAdapterTest {
     verify(savingsRepo, never()).insert(any(SavingsAccount.class));
   }
 
+  /**
+   * Verifica que se actualice una cuenta de ahorros exitosamente.
+   */
   @Test
   void shouldUpdateSavingsAccountSuccessfully() {
     StepVerifier.create(savingsAccAdapter.update(testSavingsAccount, testSavingsDTO))
@@ -96,6 +108,9 @@ public class SavingsAccAdapterTest {
         .findAndModify(any(Query.class), any(UpdateDefinition.class), eq(SavingsAccount.class));
   }
 
+  /**
+   * Verifica que no se actualice una cuenta de ahorros si la validación falla.
+   */
   @Test
   void shouldNotUpdateSavingsAccount() {
     when(updateDomainValidations.validateSavingsAccount(any(SavingsDTO.class), any(SavingsAccount.class)))

@@ -21,7 +21,10 @@ import reactor.test.StepVerifier;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-public class FxdTermAdapterTest {
+/**
+ * Clase de prueba para FxdTermAdapter.
+ */
+class FxdTermAdapterTest {
 
   private final FxdTermDTO testFxdTermDTO = new FxdTermDTO();
   private final Client testClient = new Client();
@@ -43,6 +46,9 @@ public class FxdTermAdapterTest {
     MockitoAnnotations.openMocks(this);
   }
 
+  /**
+   * Prueba que verifica que no se puede actualizar una cuenta a plazo fijo si existen cuentas de otro tipo.
+   */
   @Test
   void shouldNotUpdateFixedTermAccount() {
     when(saveDomainValidations.validateFxdTermAccount(any(Client.class)))
@@ -56,6 +62,9 @@ public class FxdTermAdapterTest {
     verify(fxdTermRepo, never()).insert(any(FixedTermAccount.class));
   }
 
+  /**
+   * Prueba que verifica que se puede guardar una cuenta a plazo fijo.
+   */
   @Test
   void shouldSaveFixedTermAccount() {
     when(saveDomainValidations.validateFxdTermAccount(any(Client.class)))
@@ -71,8 +80,11 @@ public class FxdTermAdapterTest {
     verify(fxdTermRepo).insert(any(FixedTermAccount.class));
   }
 
+  /**
+   * Prueba que verifica que se puede actualizar una cuenta a plazo fijo válida.
+   */
   @Test
-  void testUpdate_ValidAccount() {
+  void shouldUpdateValidAccount() {
     foundFxdAccount.setAccountNumber("123");
     when(updateDomainValidations.validateAmmount(any(FxdTermDTO.class)))
         .thenReturn(Mono.just(testFxdTermDTO));
@@ -87,8 +99,11 @@ public class FxdTermAdapterTest {
     verify(reactiveMongoTemplate).findAndModify(any(Query.class), any(UpdateDefinition.class), eq(FixedTermAccount.class));
   }
 
+  /**
+   * Prueba que verifica que no se puede actualizar una cuenta a plazo fijo con un monto inválido.
+   */
   @Test
-  void testUpdate_InvalidAmmount() {
+  void shouldNotUpdateInvalidAmmount() {
     when(updateDomainValidations.validateAmmount(any(FxdTermDTO.class)))
         .thenReturn(Mono.error(new InvalidRule("Invalid amount")));
 

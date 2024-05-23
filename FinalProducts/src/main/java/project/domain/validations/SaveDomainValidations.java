@@ -27,7 +27,10 @@ public class SaveDomainValidations {
    * @param savingsRepo Repositorio de cuentas de ahorro.
    * @param fxdTermRepo Repositorio de cuentas a plazo fijo.
    */
-  public SaveDomainValidations(CurrAccRepo currentRepo, SavingsRepo savingsRepo, FxdTermRepo fxdTermRepo) {
+  public SaveDomainValidations(
+      CurrAccRepo currentRepo,
+      SavingsRepo savingsRepo,
+      FxdTermRepo fxdTermRepo) {
     this.currentRepo = currentRepo;
     this.savingsRepo = savingsRepo;
     this.fxdTermRepo = fxdTermRepo;

@@ -154,7 +154,8 @@ public class CurrAccAdapter implements BAccountPort {
     return updateDomainValidations.validateAmmount(currDTO)
         .flatMap(validated -> {
           // Cuenta a editar, y elemento que contiene las futuras ediciones - EN ESE ORDEN
-          CurrentAccount foundCurrentAccount = GenericMapper.mapToSpecificClass(foundAccount, CurrentAccount.class);
+          CurrentAccount foundCurrentAccount = GenericMapper
+              .mapToSpecificClass(foundAccount, CurrentAccount.class);
           CurrAccDTO validatedAccount = GenericMapper.mapToSpecificClass(validated, CurrAccDTO.class);
 
           Query query = new Query(Criteria

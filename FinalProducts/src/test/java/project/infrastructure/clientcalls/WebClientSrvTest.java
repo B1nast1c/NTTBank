@@ -17,6 +17,9 @@ import reactor.test.StepVerifier;
 
 import java.io.IOException;
 
+/**
+ * Pruebas unitarias para WebClientSrv.
+ */
 @TestInstance(TestInstance.Lifecycle.PER_METHOD)
 @ActiveProfiles("test")
 @SpringBootTest
@@ -26,6 +29,9 @@ class WebClientSrvTest {
   private WebClientSrv clientSrv;
   private ObjectMapper objectMapper;
 
+  /**
+   * Configuración inicial para cada prueba.
+   */
   @BeforeEach
   void setUp() throws IOException {
     mockWebServer = new MockWebServer();
@@ -39,6 +45,9 @@ class WebClientSrvTest {
     objectMapper = new ObjectMapper();
   }
 
+  /**
+   * Verifica que se devuelva un cliente.
+   */
   @Test
   void shouldReturnClient() throws Exception {
     String clientDocument = "testDocument";
@@ -60,9 +69,12 @@ class WebClientSrvTest {
     Mono<ClientResponse> gotClient = clientSrv.getClientByiD(clientDocument);
 
     StepVerifier.create(gotClient)
-        .verifyError(WebClientRequestException.class); // Ver como implementar si alcanza el tiempo
+        .verifyError(WebClientRequestException.class); // Ver cómo implementar si alcanza el tiempo
   }
 
+  /**
+   * Verifica que se maneje un error del servidor.
+   */
   @Test
   void shouldHandleServerError() throws Exception {
     String clientDocument = "anyDocument";

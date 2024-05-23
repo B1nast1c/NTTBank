@@ -31,8 +31,11 @@ import java.util.Set;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+/**
+ * Clase de prueba para CurrAccAdapter.
+ */
 @ExtendWith(MockitoExtension.class)
-public class CurrAccAdapterTest {
+class CurrAccAdapterTest {
   private final CurrAccDTO testCurrAccDTO = new CurrAccDTO();
   private final Client testClient = new Client();
   private final CurrentAccount foundCurrentAccount = new CurrentAccount();
@@ -55,6 +58,9 @@ public class CurrAccAdapterTest {
     testClient.setClientType("EMPRESARIAL");
   }
 
+  /**
+   * Prueba que verifica que se puede guardar una cuenta corriente empresarial.
+   */
   @Test
   void shouldSaveCurrentEnterpriseAccount() {
     when(domainValidations.validateCurrentAccount(any(Client.class), any(CurrAccDTO.class)))
@@ -73,6 +79,9 @@ public class CurrAccAdapterTest {
     verify(currentRepo).insert(any(CurrentAccount.class));
   }
 
+  /**
+   * Prueba que verifica que se puede guardar una cuenta corriente empresarial con firmantes.
+   */
   @Test
   void shouldSaveCurrentEnterpriseAccountWithSigners() {
     testCurrAccDTO.setLegalSigners(List.of(new LegalSignerDTO[]{new LegalSignerDTO(), new LegalSignerDTO()}));
@@ -92,6 +101,9 @@ public class CurrAccAdapterTest {
     verify(currentRepo).insert(any(CurrentAccount.class));
   }
 
+  /**
+   * Prueba que verifica que no se puede guardar una cuenta corriente sin titulares.
+   */
   @Test
   void shouldNotSaveCurrentAccountEmptyTitulars() {
     testCurrAccDTO.setAccountTitulars(Collections.emptySet());
@@ -106,6 +118,9 @@ public class CurrAccAdapterTest {
     verify(currentRepo, times(0)).insert(any(CurrentAccount.class));
   }
 
+  /**
+   * Prueba que verifica que se puede guardar una cuenta corriente personal.
+   */
   @Test
   void shouldSaveCurrentPersonalAccount() {
     testClient.setClientType("PERSONAL");
@@ -125,6 +140,9 @@ public class CurrAccAdapterTest {
     verify(currentRepo, times(1)).insert(any(CurrentAccount.class));
   }
 
+  /**
+   * Prueba que verifica que se puede guardar una cuenta corriente personal sin titulares.
+   */
   @Test
   void shouldSaveCurrentPersonalAccountNoTitulars() {
     testClient.setClientType("PERSONAL");
@@ -142,7 +160,9 @@ public class CurrAccAdapterTest {
     verify(currentRepo, times(1)).insert(any(CurrentAccount.class));
   }
 
-
+  /**
+   * Prueba que verifica que no se puede guardar una cuenta corriente si las validaciones fallan.
+   */
   @Test
   void shouldNotSaveCurrentAccount() {
     when(domainValidations.validateCurrentAccount(any(Client.class), any(CurrAccDTO.class)))
@@ -157,6 +177,9 @@ public class CurrAccAdapterTest {
     verify(currentRepo, never()).insert(any(CurrentAccount.class));
   }
 
+  /**
+   * Prueba que verifica que se puede actualizar una cuenta corriente existente.
+   */
   @Test
   void shouldUpdateCurrentAccount() {
     foundCurrentAccount.setAccountNumber("123");
@@ -173,8 +196,11 @@ public class CurrAccAdapterTest {
     verify(reactiveMongoTemplate).findAndModify(any(Query.class), any(Update.class), eq(CurrentAccount.class));
   }
 
+  /**
+   * Prueba que verifica que no se puede actualizar una cuenta corriente con un monto inválido.
+   */
   @Test
-  void testUpdate_InvalidAmmount() {
+  void shouldNotUpdateByInvalidAmmount() {
     when(updateDomainValidations.validateAmmount(any(CurrAccDTO.class)))
         .thenReturn(Mono.error(new InvalidRule("Invalid amount")));
 

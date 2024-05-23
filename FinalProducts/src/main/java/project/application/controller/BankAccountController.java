@@ -44,7 +44,8 @@ public class BankAccountController {
    * @return un Mono que contiene la respuesta personalizada con la lista de cuentas bancarias
    */
   @GetMapping("/client/{clientId}")
-  public Mono<CustomResponse<Object>> getBankAccountsByClientId(@PathVariable("clientId") String clientId) {
+  public Mono<CustomResponse<Object>> getBankAccountsByClientId
+  (@PathVariable("clientId") String clientId) {
     return bankAccountService.getAllBankAccountsByClientId(clientId);
   }
 
@@ -55,7 +56,8 @@ public class BankAccountController {
    * @return un Mono que contiene la respuesta personalizada con los detalles de la cuenta bancaria
    */
   @GetMapping("/account/{accountId}")
-  public Mono<CustomResponse<Object>> getBankAccountsById(@PathVariable("accountId") String accountId) {
+  public Mono<CustomResponse<Object>> getBankAccountsById
+  (@PathVariable("accountId") String accountId) {
     return bankAccountService.getBankAccount(accountId);
   }
 
@@ -66,7 +68,8 @@ public class BankAccountController {
    * @return un Mono que contiene la respuesta personalizada con el saldo de la cuenta
    */
   @GetMapping("/account/balance/{accountId}")
-  public Mono<CustomResponse<Object>> getBankAccountBalance(@PathVariable("accountId") String accountId) {
+  public Mono<CustomResponse<Object>> getBankAccountBalance
+  (@PathVariable("accountId") String accountId) {
     return bankAccountService.getAccountBalance(accountId);
   }
 

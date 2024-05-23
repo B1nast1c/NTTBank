@@ -35,7 +35,9 @@ public class UpdateDomainValidations {
    * @param savingsAccount La cuenta de ahorros.
    * @return Un Mono que indica si la validación fue exitosa.
    */
-  public Mono<Boolean> validateSavingsAccount(SavingsDTO accountDTO, SavingsAccount savingsAccount) {
+  public Mono<Boolean> validateSavingsAccount(
+      SavingsDTO accountDTO,
+      SavingsAccount savingsAccount) {
     return Mono.just(
         !(accountDTO.getTransactions() > savingsAccount.getMovementsLimit()
             || accountDTO.getTransactions() < 0));

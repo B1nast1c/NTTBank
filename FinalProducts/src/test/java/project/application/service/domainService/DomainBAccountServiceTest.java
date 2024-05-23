@@ -28,10 +28,14 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+/**
+ * Clase de prueba para DomainBAccountService.
+ */
 class DomainBAccountServiceTest {
   private final Object testAccount = new Object();
   private final BankAccountDTO testAccountDTO = new BankAccountDTO();
   BAccountPort repository = mock(SavingsAccAdapter.class);
+
   ClientResponse clientResponse = new ClientResponse(true, new Client(
       "ClientId",
       "PERSONAL",
@@ -46,15 +50,19 @@ class DomainBAccountServiceTest {
 
   @Mock
   SavingsAccAdapter savingsAdapter;
+
   @Mock
   BARepoFactory repositoryFactory;
+
   @Mock
   WebClientSrv clientService;
+
   @Mock
   GenericAccAdapter genericAdapter;
+
   @InjectMocks
   DomainBAccountService domainBAccountService;
-
+  
   @BeforeEach
   void setUp() {
     MockitoAnnotations.openMocks(this);
@@ -63,11 +71,12 @@ class DomainBAccountServiceTest {
     testAccountDTO.setClientDocument("ClientDocument");
     objectAccount = GenericMapper.mapToSpecificClass(testAccountDTO, BankAccountDTO.class);
 
-    // Compotamientos para el update
+    // Comportamientos para el update
     when(genericAdapter.findByAccountNumber(anyString())).thenReturn(Mono.just(testAccount));
     when(repositoryFactory.getAdapter(anyString())).thenReturn(savingsAdapter);
     when(savingsAdapter.update(any(Object.class), any(Object.class))).thenReturn(Mono.just(testAccountDTO));
     when(repository.update(any(Object.class), any(Object.class))).thenReturn(Mono.just(testAccount));
+
     // Comportamientos para el create / save
     when(clientService.getClientByiD(anyString())).thenReturn(Mono.just(clientResponse));
     when(savingsAdapter.save(any(Object.class), any(Client.class))).thenReturn(Mono.just(testAccountDTO));
@@ -75,6 +84,9 @@ class DomainBAccountServiceTest {
     when(clientService.getClientByiD(anyString())).thenReturn(Mono.just(clientResponse));
   }
 
+  /**
+   * Debe obtener la cuenta bancaria si existe.
+   */
   @Test
   void shouldGetBankAccountIfExists() {
     CustomResponse<Object> expectedResponse = new CustomResponse<>(true, testAccount);
@@ -85,6 +97,9 @@ class DomainBAccountServiceTest {
         .verifyComplete();
   }
 
+  /**
+   * No debe obtener la cuenta bancaria si no existe.
+   */
   @Test
   void shouldNotGetBankAccountNotExists() {
     String errorMessage = "Account does not exist";
@@ -103,6 +118,9 @@ class DomainBAccountServiceTest {
         .verifyComplete();
   }
 
+  /**
+   * Debe obtener el balance de la cuenta bancaria si existe.
+   */
   @Test
   void shouldGetBankAccountBalanceIfExists() {
     BankAccountDTO mappedAccount = GenericMapper.mapToSpecificClass(testAccount, BankAccountDTO.class);
@@ -114,6 +132,9 @@ class DomainBAccountServiceTest {
         .verifyComplete();
   }
 
+  /**
+   * No debe obtener el balance de la cuenta bancaria si no existe.
+   */
   @Test
   void shouldNotGetBankAccountBalanceIfNotExists() {
     String errorMessage = "Account does not exist";
@@ -132,6 +153,9 @@ class DomainBAccountServiceTest {
         .verifyComplete();
   }
 
+  /**
+   * Debe obtener las cuentas bancarias.
+   */
   @Test
   void shouldGetBankAccounts() {
     List<Object> accounts = List.of(testAccount);
@@ -144,6 +168,9 @@ class DomainBAccountServiceTest {
         .verifyComplete();
   }
 
+  /**
+   * Debe obtener las cuentas bancarias por cliente si existe.
+   */
   @Test
   void shouldGetBankAccountsByClientIfExist() {
     List<Object> accounts = List.of(testAccount);
@@ -157,6 +184,9 @@ class DomainBAccountServiceTest {
         .verifyComplete();
   }
 
+  /**
+   * Prueba debe actualizar la cuenta bancaria.
+   */
   @Test
   void testShouldUpdateBankAccount() {
     String accountNumber = "updatedNumber";
@@ -176,16 +206,19 @@ class DomainBAccountServiceTest {
         .verifyComplete();
   }
 
+  /**
+   * Prueba no debe actualizar la cuenta bancaria con transacción negativa.
+   */
   @Test
   void testShouldNopUpdateBankAccountNegativeTransaction() {
     String accountNumber = "updatedNumber";
-    String errorMessage = "Transactions ammount must be positive";
+    String errorMessage = "Transactions amount must be positive";
     BankAccountDTO testUpdated = GenericMapper.mapToSpecificClass(objectAccount, BankAccountDTO.class);
     testUpdated.setTransactions(-10); // Seteo de transacciones negativas
     when(genericAdapter.findByAccountNumber(anyString()))
         .thenReturn(Mono.just(objectAccount));
     when(savingsAdapter.update(any(Object.class), any(Object.class)))
-        .thenReturn(Mono.error(new InvalidRule("Transactions ammount must be positive")));
+        .thenReturn(Mono.error(new InvalidRule(errorMessage)));
 
     Mono<CustomResponse<Object>> result = domainBAccountService.updateBankAccount(accountNumber, testUpdated);
 
@@ -198,6 +231,9 @@ class DomainBAccountServiceTest {
         .verifyComplete();
   }
 
+  /**
+   * Prueba debe crear cuenta si el cliente existe.
+   */
   @Test
   void testShouldCreateAccountClientExists() {
     BankAccountDTO testCreated = GenericMapper.mapToSpecificClass(objectAccount, BankAccountDTO.class);
@@ -216,6 +252,9 @@ class DomainBAccountServiceTest {
         .verifyComplete();
   }
 
+  /**
+   * Prueba no debe crear cuenta si el cliente no existe.
+   */
   @Test
   void testShouldNotCreateAccountClientNotExists() {
     CustomError error = new CustomError("Client retrieval failed, please try again", CustomError.ErrorType.POST_ERROR);
@@ -239,6 +278,9 @@ class DomainBAccountServiceTest {
         .verifyComplete();
   }
 
+  /**
+   * Prueba no debe crear cuenta si el tipo de cuenta es incorrecto.
+   */
   @Test
   void testShouldNotCreateAccountWrongType() {
     BankAccountDTO testCreated = GenericMapper.mapToSpecificClass(objectAccount, BankAccountDTO.class);
@@ -248,9 +290,9 @@ class DomainBAccountServiceTest {
 
     when(genericAdapter.findByAccountNumber(anyString())).thenReturn(Mono.just(objectAccount));
     when(clientService.getClientByiD(anyString())).thenReturn(Mono.just(clientResponse));
-    when(savingsAdapter.save(any(Object.class), any(Client.class))).thenReturn((Mono.error(
+    when(savingsAdapter.save(any(Object.class), any(Client.class))).thenReturn(Mono.error(
         new WrongAccountType("Invalid account type")
-    )));
+    ));
 
     Mono<CustomResponse<Object>> result = domainBAccountService.createBankAccount(testCreated);
 

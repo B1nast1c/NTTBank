@@ -11,19 +11,28 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+/**
+ * Pruebas unitarias para GenericMapper.
+ */
 class GenericMapperTest {
 
   private final TestingClass testingObj = new TestingClass("test", "name");
   private final TestingClassAlt testingObjAlt = new TestingClassAlt("test", "name");
-  GenericMapper genericMapper;
+  private GenericMapper genericMapper;
   private ModelMapper modelMapper;
 
+  /**
+   * Configuración inicial para cada prueba.
+   */
   @BeforeEach
   void setUp() {
     modelMapper = mock(ModelMapper.class);
     genericMapper = new GenericMapper(modelMapper);
   }
 
+  /**
+   * Verifica si se realiza correctamente el mapeo de una lista a otra lista específica.
+   */
   @Test
   void shouldMapListToSpecificList() {
     List<TestingClass> testList = new ArrayList<>();

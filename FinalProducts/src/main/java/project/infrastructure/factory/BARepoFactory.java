@@ -9,7 +9,8 @@ import project.infrastructure.adapters.SavingsAccAdapter;
 import project.infrastructure.exceptions.throwable.WrongAccountType;
 
 /**
- * La clase BARepoFactory es una fábrica que proporciona adaptadores de repositorio de cuentas bancarias.
+ * La clase BARepoFactory es una fábrica que proporciona adaptadores de
+ * repositorio de cuentas bancarias.
  */
 @Slf4j
 @Component
@@ -25,7 +26,10 @@ public class BARepoFactory {
    * @param fxdTermAdapter    El adaptador de repositorio de cuentas a plazo fijo.
    * @param currAccAdapter    El adaptador de repositorio de cuentas corrientes.
    */
-  public BARepoFactory(SavingsAccAdapter savingsAccAdapter, FxdTermAdapter fxdTermAdapter, CurrAccAdapter currAccAdapter) {
+  public BARepoFactory(
+      SavingsAccAdapter savingsAccAdapter,
+      FxdTermAdapter fxdTermAdapter,
+      CurrAccAdapter currAccAdapter) {
     this.savingsAccAdapter = savingsAccAdapter;
     this.fxdTermAdapter = fxdTermAdapter;
     this.currAccAdapter = currAccAdapter;

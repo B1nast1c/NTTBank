@@ -23,12 +23,17 @@ import java.util.Set;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
+/**
+ * Clase de prueba para las validaciones de dominio al guardar cuentas bancarias.
+ */
 class SaveDomainValidationsTest {
+
   private final Client testClient = new Client();
   private final BankAccountDTO testAcc = new BankAccountDTO();
   private final CurrAccDTO currTestAcc = new CurrAccDTO();
   private final Set<String> testTitulars = new HashSet<>();
   private final List<LegalSignerDTO> legalSigners = new ArrayList<>();
+
   @Mock
   private CurrAccRepo currAccRepo;
 
@@ -41,6 +46,9 @@ class SaveDomainValidationsTest {
   @InjectMocks
   private SaveDomainValidations saveDomainValidations;
 
+  /**
+   * Configuración inicial de los mocks y datos de prueba.
+   */
   @BeforeEach
   void setUp() {
     MockitoAnnotations.openMocks(this);
@@ -54,18 +62,23 @@ class SaveDomainValidationsTest {
     legalSigners.add(new LegalSignerDTO("testSigner", "testName", "testLastName"));
   }
 
+  /**
+   * Prueba para validar que un cliente personal no tenga ninguna cuenta a plazo fijo.
+   */
   @Test
   void shouldValidateFixedPersonalHasNotAny() {
     testClient.setClientType("PERSONAL");
     testClient.setClientType("PLAZO_FIJO");
     SaveDomainValidations saveDomainValidations = new SaveDomainValidations(currAccRepo, savingsRepo, fxdTermRepo);
 
-    StepVerifier.create(saveDomainValidations
-            .validateFxdTermAccount(testClient))
+    StepVerifier.create(saveDomainValidations.validateFxdTermAccount(testClient))
         .expectNext(false)
         .verifyComplete();
   }
 
+  /**
+   * Prueba para validar que un cliente personal tenga cuentas de ahorro o corriente antes de abrir una cuenta a plazo fijo.
+   */
   @Test
   void shouldValidateFixedPersonalHasSavingsOrCurrent() {
     testClient.setClientType("PERSONAL");
@@ -73,57 +86,67 @@ class SaveDomainValidationsTest {
     when(savingsRepo.existsByClientDocument(any())).thenReturn(Mono.just(true));
     SaveDomainValidations saveDomainValidations = new SaveDomainValidations(currAccRepo, savingsRepo, fxdTermRepo);
 
-    StepVerifier.create(saveDomainValidations
-            .validateFxdTermAccount(testClient))
+    StepVerifier.create(saveDomainValidations.validateFxdTermAccount(testClient))
         .expectNext(true)
         .verifyComplete();
   }
 
+  /**
+   * Prueba para validar que un cliente personal no tenga ninguna cuenta corriente.
+   */
   @Test
   void shouldValidateCurrentPersonalHasNotAny() {
     testClient.setClientType("PERSONAL");
     SaveDomainValidations saveDomainValidations = new SaveDomainValidations(currAccRepo, savingsRepo, fxdTermRepo);
 
-    StepVerifier.create(saveDomainValidations
-            .validateCurrentAccount(testClient, currTestAcc))
+    StepVerifier.create(saveDomainValidations.validateCurrentAccount(testClient, currTestAcc))
         .expectNext(true)
         .verifyComplete();
   }
 
+  /**
+   * Prueba para validar que un cliente personal ya tenga una cuenta corriente.
+   */
   @Test
   void shouldValidateCurrentPersonalHasAny() {
     testClient.setClientType("PERSONAL");
     when(currAccRepo.existsByClientDocument(any())).thenReturn(Mono.just(true));
     SaveDomainValidations saveDomainValidations = new SaveDomainValidations(currAccRepo, savingsRepo, fxdTermRepo);
 
-    StepVerifier.create(saveDomainValidations
-            .validateCurrentAccount(testClient, currTestAcc))
+    StepVerifier.create(saveDomainValidations.validateCurrentAccount(testClient, currTestAcc))
         .expectNext(false)
         .verifyComplete();
   }
 
+  /**
+   * Prueba para validar que un cliente personal ya tenga una cuenta de ahorro.
+   */
   @Test
   void shouldValidateCurrentPersonalHasSaving() {
     testClient.setClientType("PERSONAL");
     when(savingsRepo.existsByClientDocument(any())).thenReturn(Mono.just(true));
     SaveDomainValidations saveDomainValidations = new SaveDomainValidations(currAccRepo, savingsRepo, fxdTermRepo);
 
-    StepVerifier.create(saveDomainValidations
-            .validateCurrentAccount(testClient, currTestAcc))
+    StepVerifier.create(saveDomainValidations.validateCurrentAccount(testClient, currTestAcc))
         .expectNext(false)
         .verifyComplete();
   }
 
+  /**
+   * Prueba para validar que un cliente empresarial con titulares vacíos pueda abrir una cuenta corriente.
+   */
   @Test
   void shouldValidateCurrentEnterpriseAndEmptyTitulars() {
     SaveDomainValidations saveDomainValidations = new SaveDomainValidations(currAccRepo, savingsRepo, fxdTermRepo);
 
-    StepVerifier.create(saveDomainValidations
-            .validateCurrentAccount(testClient, currTestAcc))
+    StepVerifier.create(saveDomainValidations.validateCurrentAccount(testClient, currTestAcc))
         .expectNext(true)
         .verifyComplete();
   }
 
+  /**
+   * Prueba para validar que un cliente empresarial con titulares y firmantes legales pueda abrir una cuenta corriente.
+   */
   @Test
   void shouldValidateCurrentEnterpriseAndHasTitulars() {
     SaveDomainValidations saveDomainValidations = new SaveDomainValidations(currAccRepo, savingsRepo, fxdTermRepo);
@@ -131,12 +154,14 @@ class SaveDomainValidationsTest {
     currTestAcc.setAccountTitulars(testTitulars);
     currTestAcc.setLegalSigners(legalSigners);
 
-    StepVerifier.create(saveDomainValidations
-            .validateCurrentAccount(testClient, currTestAcc))
+    StepVerifier.create(saveDomainValidations.validateCurrentAccount(testClient, currTestAcc))
         .expectNext(true)
         .verifyComplete();
   }
 
+  /**
+   * Prueba para validar una cuenta de ahorro empresarial.
+   */
   @Test
   void shouldValidateSavingsEmpresarial() {
     testAcc.setAccountType("AHORRO");
@@ -147,6 +172,9 @@ class SaveDomainValidationsTest {
         .verifyComplete();
   }
 
+  /**
+   * Prueba para validar que un cliente personal no pueda abrir una cuenta de ahorro si no tiene una cuenta corriente.
+   */
   @Test
   void shouldValidateSavingsPersonal() {
     testClient.setClientType("PERSONAL");
@@ -158,6 +186,9 @@ class SaveDomainValidationsTest {
         .verifyComplete();
   }
 
+  /**
+   * Prueba para validar que un cliente personal pueda abrir una cuenta de ahorro si ya tiene una cuenta de ahorro.
+   */
   @Test
   void shouldValidateSavingsPersonalHasSaving() {
     testClient.setClientType("PERSONAL");
@@ -170,6 +201,9 @@ class SaveDomainValidationsTest {
         .verifyComplete();
   }
 
+  /**
+   * Prueba para validar que un cliente personal pueda abrir una cuenta de ahorro si ya tiene una cuenta corriente.
+   */
   @Test
   void shouldValidateSavingsPersonalHasCurrent() {
     testClient.setClientType("PERSONAL");
@@ -182,6 +216,9 @@ class SaveDomainValidationsTest {
         .verifyComplete();
   }
 
+  /**
+   * Prueba para validar que un cliente personal pueda abrir una cuenta de ahorro si ya tiene una cuenta a plazo fijo.
+   */
   @Test
   void shouldValidateSavingsPersonalHasFxdTerm() {
     testClient.setClientType("PERSONAL");

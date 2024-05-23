@@ -33,8 +33,10 @@ public interface BankAccountService {
    * @param bankAccountDTO el DTO de la cuenta bancaria
    * @return un flujo con la respuesta personalizada del resultado de la operación de actualización
    */
-  Mono<CustomResponse<Object>> updateBankAccount(String accountNumber, BankAccountDTO bankAccountDTO);
-
+  Mono<CustomResponse<Object>> updateBankAccount(
+      String accountNumber,
+      BankAccountDTO bankAccountDTO);
+  
   /**
    * Obtiene todas las cuentas bancarias.
    *
