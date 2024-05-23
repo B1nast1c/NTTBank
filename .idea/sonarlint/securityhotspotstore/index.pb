@@ -228,3 +228,9 @@ KFinalProducts/src/test/java/project/infrastructure/mapper/TestingClass.java,7\
 NFinalProducts/src/test/java/project/infrastructure/mapper/TestingClassAlt.java,6\a\6ac1ee66a9df452cfc5ba2933d818b18e2c963a8
 z
 JFinalProducts/src/test/java/project/infrastructure/dto/GenericDTOTest.java,1\0\10c960ed0606d95845bf5583a2388274eab83f5d
+ê
+`FinalProducts/src/main/java/project/infrastructure/clientcalls/webclient/WebClientInterface.java,7\f\7f0b72c7f5e63c96c2ee0e908de17788cc04d8ca
+q
+AFinalProducts/src/test/java/resources/application-test.properties,0\8\08bfda91b0cf790e1ff805cbbc3043520101cc9a
+|
+LFinalClient/src/main/java/project/infrastructure/exceptions/CustomError.java,0\2\0240ae67eee7f02e1a047641f57566c5ea86c259

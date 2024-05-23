@@ -21,7 +21,8 @@ public class WebClientSrv implements WebClientInterface {
    * @param webClient Builder para crear instancias de WebClient.
    */
   public WebClientSrv(WebClient.Builder webClient) {
-    this.webClient = webClient;
+    this.webClient = webClient
+        .baseUrl("http://clientService");
   }
 
   /**
@@ -32,8 +33,8 @@ public class WebClientSrv implements WebClientInterface {
    */
   @Override
   public Mono<ClientResponse> getClientByiD(String clientId) {
-    log.info("Calling ClienService to get client by id");
-    
+    log.info("Calling ClientService to get client by id");
+
     return webClient
         .build()
         .get()

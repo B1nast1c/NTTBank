@@ -1,11 +1,13 @@
 package project.infrastructure.dto;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * DTO Cuenta de Ahorros.
  */
-@Data
+@Getter
+@Setter
 public class SavingsDTO extends BankAccountDTO {
   int movementsLimit;
 }

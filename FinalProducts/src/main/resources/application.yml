@@ -1,6 +1,10 @@
 server:
   port: 8080
 
+client:
+  service:
+    baseUrl: http://clientService
+
 spring:
   application:
     name: accountsService

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import project.infrastructure.adapters.mongoRepos.ClientRepository;
+import project.infrastructure.adapters.mongorepos.ClientRepository;
 import project.infrastructure.dto.ClientDTO;
 import project.infrastructure.exceptions.throwable.InvalidDocument;
 import reactor.core.publisher.Mono;
@@ -14,7 +14,7 @@ import reactor.test.StepVerifier;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
- class ClientAppValidationsTest {
+class ClientAppValidationsTest {
 
   ClientDTO testDTO = new ClientDTO();
   @Mock
@@ -23,12 +23,12 @@ import static org.mockito.Mockito.when;
   private ClientAppValidations clientAppValidations;
 
   @BeforeEach
-   void setUp() {
+  void setUp() {
     MockitoAnnotations.openMocks(this);
   }
 
   @Test
-   void shouldBeValidated() {
+  void shouldBeValidated() {
     testDTO.setDocumentNumber("111222333");
     when(clientRepository.existsByDocumentNumber(anyString())).thenReturn(Mono.just(false));
     Mono<ClientDTO> result = clientAppValidations.validateDocumentNumber(testDTO);
@@ -39,7 +39,7 @@ import static org.mockito.Mockito.when;
   }
 
   @Test
-   void shouldBeInvalidated() {
+  void shouldBeInvalidated() {
     testDTO.setDocumentNumber("111222333");
     when(clientRepository.existsByDocumentNumber(anyString())).thenReturn(Mono.just(true));
 

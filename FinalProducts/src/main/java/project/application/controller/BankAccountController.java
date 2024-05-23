@@ -3,8 +3,6 @@ package project.application.controller;
 import org.springframework.web.bind.annotation.*;
 import project.application.service.BankAccountService;
 import project.infrastructure.dto.BankAccountDTO;
-import project.infrastructure.dto.CurrAccDTO;
-import project.infrastructure.dto.LegalSignerDTO;
 import project.infrastructure.responses.CustomResponse;
 import reactor.core.publisher.Mono;
 
@@ -94,61 +92,5 @@ public class BankAccountController {
       @PathVariable("accountId") String accountId,
       @RequestBody BankAccountDTO bankAccount) {
     return bankAccountService.updateBankAccount(accountId, bankAccount);
-  }
-
-  /**
-   * Agrega titulares (propietarios) a una cuenta bancaria específica.
-   *
-   * @param accountId el ID de la cuenta
-   * @param titulars  la lista de titulares a agregar
-   * @return un Mono que contiene la respuesta personalizada con los detalles actualizados de la cuenta bancaria
-   */
-  @PostMapping("/titulars/{accountId}")
-  public Mono<CustomResponse<CurrAccDTO>> addTitularsToAccount(
-      @PathVariable("accountId") String accountId,
-      @RequestBody List<String> titulars) {
-    return bankAccountService.addTitularsToAccount(accountId, titulars);
-  }
-
-  /**
-   * Elimina un titular específico de una cuenta bancaria.
-   *
-   * @param accountId el ID de la cuenta
-   * @param ownerId   el ID del propietario a eliminar
-   * @return un Mono que contiene la respuesta personalizada con los detalles actualizados de la cuenta bancaria
-   */
-  @DeleteMapping("/titulars/{accountId}/{ownerId}")
-  public Mono<CustomResponse<CurrAccDTO>> removeTitulars(
-      @PathVariable("accountId") String accountId,
-      @PathVariable("ownerId") String ownerId) {
-    return bankAccountService.removeTitularfromAccount(accountId, ownerId);
-  }
-
-  /**
-   * Agrega firmantes a una cuenta bancaria específica.
-   *
-   * @param accountId el ID de la cuenta
-   * @param signers   la lista de firmantes a agregar
-   * @return un Mono que contiene la respuesta personalizada con los detalles actualizados de la cuenta bancaria
-   */
-  @PostMapping("/signers/{accountId}")
-  public Mono<CustomResponse<CurrAccDTO>> addSignersToAccount(
-      @PathVariable("accountId") String accountId,
-      @RequestBody List<LegalSignerDTO> signers) {
-    return bankAccountService.addLegalSignersToAccount(accountId, signers);
-  }
-
-  /**
-   * Elimina un firmante legal específico de una cuenta bancaria.
-   *
-   * @param accountId el ID de la cuenta
-   * @param ownerId   el ID del firmante a eliminar
-   * @return un Mono que contiene la respuesta personalizada con los detalles actualizados de la cuenta bancaria
-   */
-  @DeleteMapping("/signers/{accountId}/{ownerId}")
-  public Mono<CustomResponse<CurrAccDTO>> removeLegalSigners(
-      @PathVariable("accountId") String accountId,
-      @PathVariable("ownerId") String ownerId) {
-    return bankAccountService.removeLegalSignerfromAccount(accountId, ownerId);
   }
 }

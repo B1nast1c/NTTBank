@@ -271,3 +271,119 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 2024-05-22 02:20:04 [SpringApplicationShutdownHook] INFO  : Completed shut down of DiscoveryClient
+2024-05-22 17:16:41 [restartedMain] INFO  : Starting FinalProjectApplication using Java 11.0.22 on valnaevis with PID 24484 (C:\Users\sammi\Documents\NTT GRUPAL\NTTBank\FinalClient\target\classes started by sammi in C:\Users\sammi\Documents\NTT GRUPAL\NTTBank)
+2024-05-22 17:16:41 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-05-22 17:16:41 [restartedMain] INFO  : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-22 17:16:41 [restartedMain] INFO  : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-22 17:16:42 [restartedMain] INFO  : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2024-05-22 17:16:42 [restartedMain] INFO  : Finished Spring Data repository scanning in 43 ms. Found 1 Reactive MongoDB repository interfaces.
+2024-05-22 17:16:42 [restartedMain] INFO  : BeanFactory id=793773eb-fca8-379f-a0ba-c7b18fda5e40
+2024-05-22 17:16:42 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-22 17:16:42 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-22 17:16:42 [restartedMain] INFO  : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-22 17:16:42 [restartedMain] INFO  : Tomcat initialized with port(s): 8083 (http)
+2024-05-22 17:16:42 [restartedMain] INFO  : Initializing ProtocolHandler ["http-nio-8083"]
+2024-05-22 17:16:42 [restartedMain] INFO  : Starting service [Tomcat]
+2024-05-22 17:16:42 [restartedMain] INFO  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2024-05-22 17:16:42 [restartedMain] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/11.0.22+9-LTS-219"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@44de2d9f, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@5ef07b70]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2024-05-22 17:16:43 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-22 17:16:43 [restartedMain] INFO  : LiveReload server is running on port 35729
+2024-05-22 17:16:43 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-22 17:16:43 [cluster-rtt-ClusterId{value='664e6eca5e9a6b4b90e60221', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:2, serverValue:39}] to localhost:27017
+2024-05-22 17:16:43 [cluster-ClusterId{value='664e6eca5e9a6b4b90e60221', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:1, serverValue:40}] to localhost:27017
+2024-05-22 17:16:43 [cluster-ClusterId{value='664e6eca5e9a6b4b90e60221', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=46875200}
+2024-05-22 17:16:43 [nioEventLoopGroup-2-3] INFO  : Opened connection [connectionId{localValue:3, serverValue:41}] to localhost:27017
+2024-05-22 17:16:43 [restartedMain] INFO  : Eureka HTTP Client uses RestTemplate.
+2024-05-22 17:16:44 [restartedMain] WARN  : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-22 17:16:44 [restartedMain] INFO  : Setting initial instance status as: STARTING
+2024-05-22 17:16:44 [restartedMain] INFO  : Initializing Eureka in region us-east-1
+2024-05-22 17:16:44 [restartedMain] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 17:16:44 [restartedMain] INFO  : Disable delta property : false
+2024-05-22 17:16:44 [restartedMain] INFO  : Single vip registry refresh property : null
+2024-05-22 17:16:44 [restartedMain] INFO  : Force full registry fetch : false
+2024-05-22 17:16:44 [restartedMain] INFO  : Application is null : false
+2024-05-22 17:16:44 [restartedMain] INFO  : Registered Applications size is zero : true
+2024-05-22 17:16:44 [restartedMain] INFO  : Application version is -1: true
+2024-05-22 17:16:44 [restartedMain] INFO  : Getting all instance registry info from the eureka server
+2024-05-22 17:16:44 [restartedMain] INFO  : The response status is 200
+2024-05-22 17:16:44 [restartedMain] INFO  : Starting heartbeat executor: renew interval is: 30
+2024-05-22 17:16:44 [restartedMain] INFO  : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-22 17:16:44 [restartedMain] INFO  : Discovery Client initialized at timestamp 1716416204668 with initial instances count: 0
+2024-05-22 17:16:44 [restartedMain] INFO  : Registering application CLIENTSERVICE with eureka with status UP
+2024-05-22 17:16:44 [restartedMain] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716416204671, current=UP, previous=STARTING]
+2024-05-22 17:16:44 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_CLIENTSERVICE/192.168.0.11:clientService:8083: registering service...
+2024-05-22 17:16:44 [restartedMain] INFO  : Starting ProtocolHandler ["http-nio-8083"]
+2024-05-22 17:16:44 [restartedMain] INFO  : Tomcat started on port(s): 8083 (http) with context path ''
+2024-05-22 17:16:44 [restartedMain] INFO  : Updating port to 8083
+2024-05-22 17:16:44 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_CLIENTSERVICE/192.168.0.11:clientService:8083 - registration status: 204
+2024-05-22 17:16:45 [restartedMain] INFO  : Started FinalProjectApplication in 3.907 seconds (JVM running for 4.763)
+2024-05-22 17:17:14 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Disable delta property : false
+2024-05-22 17:17:14 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Single vip registry refresh property : null
+2024-05-22 17:17:14 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Force full registry fetch : false
+2024-05-22 17:17:14 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Application is null : false
+2024-05-22 17:17:14 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Registered Applications size is zero : true
+2024-05-22 17:17:14 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Application version is -1: false
+2024-05-22 17:17:14 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Getting all instance registry info from the eureka server
+2024-05-22 17:17:14 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : The response status is 200
+2024-05-22 17:21:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 17:26:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 17:31:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 17:36:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 17:41:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 17:46:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 17:51:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 17:56:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 18:01:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 18:06:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 18:09:19 [nioEventLoopGroup-2-3] INFO  : Client found -> Empresa Random
+2024-05-22 18:09:20 [nioEventLoopGroup-2-3] INFO  : Client found -> Valeria Goyzueta
+2024-05-22 18:09:25 [nioEventLoopGroup-2-3] INFO  : Client found -> Empresa Random
+2024-05-22 18:09:25 [nioEventLoopGroup-2-3] INFO  : Client found -> Valeria Goyzueta
+2024-05-22 18:09:26 [nioEventLoopGroup-2-3] INFO  : Client found -> Empresa Random
+2024-05-22 18:09:26 [nioEventLoopGroup-2-3] INFO  : Client found -> Valeria Goyzueta
+2024-05-22 18:09:27 [nioEventLoopGroup-2-3] INFO  : Client found -> Empresa Random
+2024-05-22 18:09:27 [nioEventLoopGroup-2-3] INFO  : Client found -> Valeria Goyzueta
+2024-05-22 18:09:29 [nioEventLoopGroup-2-3] INFO  : Client found -> Empresa Random
+2024-05-22 18:09:29 [nioEventLoopGroup-2-3] INFO  : Client found -> Valeria Goyzueta
+2024-05-22 18:09:31 [nioEventLoopGroup-2-3] INFO  : Client found -> Empresa Random
+2024-05-22 18:09:31 [nioEventLoopGroup-2-3] INFO  : Client found -> Valeria Goyzueta
+2024-05-22 18:09:33 [nioEventLoopGroup-2-3] INFO  : Client found -> Empresa Random
+2024-05-22 18:09:33 [nioEventLoopGroup-2-3] INFO  : Client found -> Valeria Goyzueta
+2024-05-22 18:09:34 [nioEventLoopGroup-2-3] INFO  : Client found -> Empresa Random
+2024-05-22 18:09:34 [nioEventLoopGroup-2-3] INFO  : Client found -> Valeria Goyzueta
+2024-05-22 18:11:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 18:16:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 18:21:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 18:26:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 18:31:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 18:36:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 18:41:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 18:43:21 [nioEventLoopGroup-2-3] INFO  : Client found -> Empresa Random
+2024-05-22 18:43:21 [nioEventLoopGroup-2-3] INFO  : Client found -> Valeria Goyzueta
+2024-05-22 18:43:21 [nioEventLoopGroup-2-3] INFO  : Client found -> Analucia Goyzueta
+2024-05-22 18:46:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 18:51:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 18:56:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 19:01:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 19:06:22 [nioEventLoopGroup-2-3] INFO  : The client has been validated
+2024-05-22 19:06:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 19:06:47 [nioEventLoopGroup-2-3] INFO  : Client found -> Joaquin Goyzueta
+2024-05-22 19:07:43 [nioEventLoopGroup-2-3] INFO  : Client found -> Joaquin Goyzueta
+2024-05-22 19:11:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 19:16:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 19:21:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 19:24:50 [nioEventLoopGroup-2-3] INFO  : The client has been validated
+2024-05-22 19:25:03 [nioEventLoopGroup-2-3] INFO  : The client has been validated
+2024-05-22 19:25:15 [nioEventLoopGroup-2-3] INFO  : Client found -> Joaquin Goyzueta
+2024-05-22 19:26:30 [nioEventLoopGroup-2-3] INFO  : Client found -> Javier Goyzueta
+2024-05-22 19:26:32 [nioEventLoopGroup-2-3] INFO  : Client found -> Javier Goyzueta
+2024-05-22 19:26:44 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-22 19:26:54 [nioEventLoopGroup-2-3] INFO  : Client found -> Milagros Goyzueta
+2024-05-22 19:27:11 [nioEventLoopGroup-2-3] INFO  : Client found -> Milagros Goyzueta
+2024-05-22 19:27:28 [nioEventLoopGroup-2-3] INFO  : Client found -> Milagros Goyzueta
+2024-05-22 19:27:35 [nioEventLoopGroup-2-3] INFO  : Client found -> Javier Goyzueta
+2024-05-22 19:27:50 [nioEventLoopGroup-2-3] INFO  : Client found -> Milagros Goyzueta
+2024-05-22 19:30:06 [nioEventLoopGroup-2-3] INFO  : Client found -> Empresa Random
+2024-05-22 19:30:23 [nioEventLoopGroup-2-3] INFO  : Client found -> Empresa Random
+2024-05-22 19:30:23 [nioEventLoopGroup-2-3] WARN  : Client not found -> NOT_FOUND
+2024-05-22 19:30:23 [nioEventLoopGroup-2-3] WARN  : Client not found -> NOT_FOUND

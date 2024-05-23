@@ -8,8 +8,6 @@ import project.infrastructure.adapters.GenericAccAdapter;
 import project.infrastructure.clientcalls.WebClientSrv;
 import project.infrastructure.clientcalls.responses.ClientResponse;
 import project.infrastructure.dto.BankAccountDTO;
-import project.infrastructure.dto.CurrAccDTO;
-import project.infrastructure.dto.LegalSignerDTO;
 import project.infrastructure.exceptions.CustomError;
 import project.infrastructure.factory.BARepoFactory;
 import project.infrastructure.mapper.GenericMapper;
@@ -125,12 +123,6 @@ public class DomainBAccountService implements BankAccountService {
   }
 
   @Override
-  public Mono<CustomResponse<Object>> deleteBankAccount(String accountNumber) {
-    // Implementación pendiente
-    return null;
-  }
-
-  @Override
   public Mono<CustomResponse<List<Object>>> getBankAccounts() {
     // Recupera todas las cuentas y las convierte en una lista
     Flux<Object> accounts = genericRepository.findAll();
@@ -145,41 +137,11 @@ public class DomainBAccountService implements BankAccountService {
     Mono<? extends List<?>> accountMonoList = accounts.collectList();
 
     return accountMonoList.flatMap(
-            accountList -> {
-              CustomResponse<Object> response = new CustomResponse<>(true, accountList);
-              return Mono.just(response);
-            }
-        )
-        .onErrorResume(throwable -> {
-          // Manejo de errores en caso de fallos en la recuperación
-          CustomError error = new CustomError(throwable.getMessage(), CustomError.ErrorType.GET_ERROR);
-          CustomResponse<Object> badResponse = new CustomResponse<>(false, error);
-          return Mono.just(badResponse);
-        });
-  }
-
-  @Override
-  public Mono<CustomResponse<CurrAccDTO>> addTitularsToAccount(String accountNumber, List<String> titulars) {
-    // Implementación pendiente
-    return null;
-  }
-
-  @Override
-  public Mono<CustomResponse<CurrAccDTO>> addLegalSignersToAccount(String accountNumber, List<LegalSignerDTO> legalSignersDTO) {
-    // Implementación pendiente
-    return null;
-  }
-
-  @Override
-  public Mono<CustomResponse<CurrAccDTO>> removeTitularfromAccount(String accountNumber, String titularId) {
-    // Implementación pendiente
-    return null;
-  }
-
-  @Override
-  public Mono<CustomResponse<CurrAccDTO>> removeLegalSignerfromAccount(String accountNumber, String signerId) {
-    // Implementación pendiente
-    return null;
+        accountList -> {
+          CustomResponse<Object> response = new CustomResponse<>(true, accountList);
+          return Mono.just(response);
+        }
+    );
   }
 
   @Override

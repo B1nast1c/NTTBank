@@ -2,7 +2,7 @@ package project.application.validations;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import project.infrastructure.adapters.mongoRepos.ClientRepository;
+import project.infrastructure.adapters.mongorepos.ClientRepository;
 import project.infrastructure.dto.ClientDTO;
 import project.infrastructure.exceptions.CustomError;
 import project.infrastructure.exceptions.throwable.InvalidDocument;

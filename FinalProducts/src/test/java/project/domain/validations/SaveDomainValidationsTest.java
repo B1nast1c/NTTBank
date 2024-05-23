@@ -11,10 +11,13 @@ import project.infrastructure.adapters.mongorepo.SavingsRepo;
 import project.infrastructure.clientcalls.responses.Client;
 import project.infrastructure.dto.BankAccountDTO;
 import project.infrastructure.dto.CurrAccDTO;
+import project.infrastructure.dto.LegalSignerDTO;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -25,7 +28,7 @@ class SaveDomainValidationsTest {
   private final BankAccountDTO testAcc = new BankAccountDTO();
   private final CurrAccDTO currTestAcc = new CurrAccDTO();
   private final Set<String> testTitulars = new HashSet<>();
-
+  private final List<LegalSignerDTO> legalSigners = new ArrayList<>();
   @Mock
   private CurrAccRepo currAccRepo;
 
@@ -41,11 +44,14 @@ class SaveDomainValidationsTest {
   @BeforeEach
   void setUp() {
     MockitoAnnotations.openMocks(this);
+
+    testClient.setClientType("EMPRESARIAL");
+    testAcc.setAccountType("CUENTA_CORRIENTE");
     when(currAccRepo.existsByClientDocument(any())).thenReturn(Mono.just(false));
     when(savingsRepo.existsByClientDocument(any())).thenReturn(Mono.just(false));
     when(fxdTermRepo.existsByClientDocument(any())).thenReturn(Mono.just(false));
-    testClient.setClientType("EMPRESARIAL");
-    testAcc.setAccountType("CUENTA_CORRIENTE");
+    legalSigners.add(new LegalSignerDTO("testSigner", "testName", "testLastName"));
+    legalSigners.add(new LegalSignerDTO("testSigner", "testName", "testLastName"));
   }
 
   @Test
@@ -123,6 +129,7 @@ class SaveDomainValidationsTest {
     SaveDomainValidations saveDomainValidations = new SaveDomainValidations(currAccRepo, savingsRepo, fxdTermRepo);
     testTitulars.add("testTitular");
     currTestAcc.setAccountTitulars(testTitulars);
+    currTestAcc.setLegalSigners(legalSigners);
 
     StepVerifier.create(saveDomainValidations
             .validateCurrentAccount(testClient, currTestAcc))

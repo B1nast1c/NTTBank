@@ -1,8 +1,9 @@
 package project.domain.model.account;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.security.SecureRandom;
 import java.util.stream.Collectors;
@@ -11,7 +12,8 @@ import java.util.stream.IntStream;
 /**
  * El tipo LegalSigner (FIRMANTE LEGAL).
  */
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class LegalSigner {

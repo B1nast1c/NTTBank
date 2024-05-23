@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import project.application.validations.ClientAppValidations;
 import project.domain.ports.ClientPort;
 import project.domain.validations.ClientDomainValidations;
-import project.infrastructure.adapters.mongoRepos.ClientRepository;
+import project.infrastructure.adapters.mongorepos.ClientRepository;
 import project.infrastructure.dto.ClientDTO;
 import project.infrastructure.exceptions.CustomError;
 import project.infrastructure.exceptions.throwable.NotFound;

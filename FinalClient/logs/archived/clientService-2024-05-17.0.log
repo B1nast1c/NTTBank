@@ -7505,7 +7505,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in project.application.service.DomainService.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
+Parameter 0 of constructor in project.application.service.domainservice.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
 
 
 Action:
@@ -7852,7 +7852,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in project.application.service.DomainService.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
+Parameter 0 of constructor in project.application.service.domainservice.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
 
 
 Action:
@@ -8309,7 +8309,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in project.application.service.DomainService.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
+Parameter 0 of constructor in project.application.service.domainservice.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
 
 
 Action:
@@ -8341,7 +8341,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in project.application.service.DomainService.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
+Parameter 0 of constructor in project.application.service.domainservice.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
 
 
 Action:
@@ -8373,7 +8373,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in project.application.service.DomainService.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
+Parameter 0 of constructor in project.application.service.domainservice.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
 
 
 Action:
@@ -8405,7 +8405,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in project.application.service.DomainService.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
+Parameter 0 of constructor in project.application.service.domainservice.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
 
 
 Action:
@@ -8887,7 +8887,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in project.application.service.DomainService.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
+Parameter 0 of constructor in project.application.service.domainservice.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
 
 
 Action:
@@ -8919,7 +8919,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in project.application.service.DomainService.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
+Parameter 0 of constructor in project.application.service.domainservice.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
 
 
 Action:
@@ -8951,7 +8951,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in project.application.service.DomainService.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
+Parameter 0 of constructor in project.application.service.domainservice.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
 
 
 Action:
@@ -9583,7 +9583,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in project.application.service.DomainService.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
+Parameter 0 of constructor in project.application.service.domainservice.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
 
 
 Action:
@@ -11074,7 +11074,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in project.application.service.DomainService.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
+Parameter 0 of constructor in project.application.service.domainservice.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
 
 
 Action:
@@ -11142,7 +11142,7 @@ java.lang.ClassCastException: class org.springframework.web.servlet.function.Def
 		at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762)
 		at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)
 		at project.infrastructure.adapters.ClientAdapter$$EnhancerBySpringCGLIB$$2567b076.findByID(<generated>)
-		at project.application.service.DomainService.DomainClientService.getClient(DomainClientService.java:68)
+		at project.application.service.domainservice.DomainClientService.getClient(DomainClientService.java:68)
 		at project.application.controller.ClientController.getClientById(ClientController.java:46)
 		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 		at java.base/java.lang.reflect.Method.invoke(Method.java:578)
@@ -11358,7 +11358,7 @@ java.lang.ClassCastException: class org.springframework.web.servlet.function.Def
 		at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762)
 		at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)
 		at project.infrastructure.adapters.ClientAdapter$$EnhancerBySpringCGLIB$$2567b076.findByID(<generated>)
-		at project.application.service.DomainService.DomainClientService.getClient(DomainClientService.java:68)
+		at project.application.service.domainservice.DomainClientService.getClient(DomainClientService.java:68)
 		at project.application.controller.ClientController.getClientById(ClientController.java:46)
 		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 		at java.base/java.lang.reflect.Method.invoke(Method.java:578)
@@ -12165,7 +12165,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in project.application.service.DomainService.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
+Parameter 0 of constructor in project.application.service.domainservice.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
 
 
 Action:
@@ -12960,7 +12960,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in project.application.service.DomainService.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
+Parameter 0 of constructor in project.application.service.domainservice.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
 
 
 Action:
@@ -13342,7 +13342,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in project.application.service.DomainService.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
+Parameter 0 of constructor in project.application.service.domainservice.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
 
 
 Action:
@@ -13504,7 +13504,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in project.application.service.DomainService.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
+Parameter 0 of constructor in project.application.service.domainservice.DomainClientService required a bean of type 'project.domain.ports.ClientPort' that could not be found.
 
 
 Action:

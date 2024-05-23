@@ -10,7 +10,7 @@ import project.application.validations.ClientAppValidations;
 import project.domain.model.Client;
 import project.domain.model.ClientType;
 import project.domain.validations.ClientDomainValidations;
-import project.infrastructure.adapters.mongoRepos.ClientRepository;
+import project.infrastructure.adapters.mongorepos.ClientRepository;
 import project.infrastructure.dto.ClientDTO;
 import project.infrastructure.exceptions.throwable.EmptyAttributes;
 import project.infrastructure.exceptions.throwable.InvalidDocument;
@@ -23,7 +23,7 @@ import reactor.test.StepVerifier;
 
 import static org.mockito.Mockito.*;
 
- class ClientAdapterTest {
+class ClientAdapterTest {
 
   @Mock
   private ClientRepository clientRepository;
@@ -40,10 +40,10 @@ import static org.mockito.Mockito.*;
   private Client client1;
   private Client client2;
   private ClientDTO clientDTO1;
-  private String documentNumber = "123456789";
+  private final String documentNumber = "123456789";
 
   @BeforeEach
-   void setUp() {
+  void setUp() {
     MockitoAnnotations.openMocks(this);
 
     client1 = new Client("1",
@@ -82,7 +82,7 @@ import static org.mockito.Mockito.*;
   }
 
   @Test
-   void shouldFindById() {
+  void shouldFindById() {
     Mono<ClientDTO> result = clientAdapter.findByID(client1.getDocumentNumber()).map(GenericMapper::mapToDto);
 
     StepVerifier.create(result)
@@ -97,7 +97,7 @@ import static org.mockito.Mockito.*;
   }
 
   @Test
-   void shouldNotFindNull() {
+  void shouldNotFindNull() {
     String documentNumber = "non-existent";
     when(clientRepository.findByDocumentNumber(documentNumber)).thenReturn(Mono.empty());
     Mono<?> result = clientAdapter.findByID(documentNumber);
@@ -108,7 +108,7 @@ import static org.mockito.Mockito.*;
   }
 
   @Test
-   void shouldSaveClient() {
+  void shouldSaveClient() {
     Mono<ClientDTO> result = clientAdapter.save(clientDTO1).map(GenericMapper::mapToDto);
 
     StepVerifier
@@ -120,7 +120,7 @@ import static org.mockito.Mockito.*;
   }
 
   @Test
-   void shouldNotSaveClientByDocumentNumber() {
+  void shouldNotSaveClientByDocumentNumber() {
     clientDTO1.setDocumentNumber("");
     Mono<?> result = clientAdapter.save(clientDTO1);
     when(appValidations.validateDocumentNumber(any(ClientDTO.class)))
@@ -132,7 +132,7 @@ import static org.mockito.Mockito.*;
   }
 
   @Test
-   void shouldNotSaveClientWithDuplicateDocumentNumber() {
+  void shouldNotSaveClientWithDuplicateDocumentNumber() {
     clientDTO1.setDocumentNumber(documentNumber);
     when(clientRepository.existsByDocumentNumber(documentNumber)).thenReturn(Mono.just(true));
     when(appValidations.validateDocumentNumber(clientDTO1)).thenReturn(Mono.error(new InvalidDocument("The provided document number is not valid")));
@@ -144,7 +144,7 @@ import static org.mockito.Mockito.*;
   }
 
   @Test
-   void shouldNotSaveByClientType() {
+  void shouldNotSaveByClientType() {
     clientDTO1.setClientType("Invalid ErrorType");
     clientDTO1.setDocumentNumber(documentNumber);
     when(domainValidations.validateClientType(clientDTO1))
@@ -158,7 +158,7 @@ import static org.mockito.Mockito.*;
   }
 
   @Test
-   void shouldFindAll() {
+  void shouldFindAll() {
     Flux<?> result = clientAdapter.findAll();
 
     StepVerifier.create(result)
@@ -169,7 +169,7 @@ import static org.mockito.Mockito.*;
   }
 
   @Test
-   void shouldNotDeleteClient() {
+  void shouldNotDeleteClient() {
     String wrongId = "999";
     when(clientRepository.existsById(any(String.class))).thenReturn(Mono.just(false));
     when(clientRepository.findById(wrongId)).thenReturn(Mono.empty());
@@ -181,7 +181,7 @@ import static org.mockito.Mockito.*;
   }
 
   @Test
-   void shouldDeleteClient() {
+  void shouldDeleteClient() {
     String clientId = clientDTO1.getCustomId();
     Mono<String> result = clientAdapter.delete(clientId);
 
@@ -193,7 +193,7 @@ import static org.mockito.Mockito.*;
   }
 
   @Test
-   void shouldNotUpdateByClient() {
+  void shouldNotUpdateByClient() {
     String wrongId = "999";
     when(clientRepository.existsByCustomId(wrongId)).thenReturn(Mono.just(false));
     clientDTO1.setClientName("John Smith");
@@ -208,7 +208,7 @@ import static org.mockito.Mockito.*;
   }
 
   @Test
-   void shouldNotUpdateGenericError() {
+  void shouldNotUpdateGenericError() {
     String wrongId = "1";
     ClientDTO updatedClientDTO = new ClientDTO();
     updatedClientDTO.setClientName("John Smith");
@@ -225,7 +225,7 @@ import static org.mockito.Mockito.*;
   }
 
   @Test
-   void shouldNotUpdateByRequiredFields() {
+  void shouldNotUpdateByRequiredFields() {
     String clientId = "1";
     ClientDTO updatedClientDTO = new ClientDTO();
     when(clientRepository.existsByCustomId(clientId)).thenReturn(Mono.just(true));
@@ -239,7 +239,7 @@ import static org.mockito.Mockito.*;
 
 
   @Test
-   void shouldUpdateClient() {
+  void shouldUpdateClient() {
     String clientId = "1";
     clientDTO1.setClientName("John Smith");
     clientDTO1.setClientAddress("Updated Address");

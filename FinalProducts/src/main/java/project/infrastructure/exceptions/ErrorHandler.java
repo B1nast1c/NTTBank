@@ -2,7 +2,10 @@ package project.infrastructure.exceptions;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import project.infrastructure.exceptions.throwable.*;
+import project.infrastructure.exceptions.throwable.EmptyAttributes;
+import project.infrastructure.exceptions.throwable.InvalidRule;
+import project.infrastructure.exceptions.throwable.NotFound;
+import project.infrastructure.exceptions.throwable.WrongAccountType;
 
 /**
  * Clase para gestionar errores de manera genérica en toda la aplicación.
@@ -17,10 +20,6 @@ public class ErrorHandler {
    * @param e La excepción NotFoundClient lanzada.
    * @return Un objeto CustomError con el mensaje de error y el tipo de error correspondiente.
    */
-  @ExceptionHandler(NotFoundClient.class)
-  public CustomError handleNotFound(NotFoundClient e) {
-    return new CustomError(e.getMessage(), CustomError.ErrorType.NOT_FOUND_CLIENT);
-  }
 
   /**
    * Maneja la excepción cuando no se encuentra una cuenta.
@@ -42,17 +41,6 @@ public class ErrorHandler {
   @ExceptionHandler(InvalidRule.class)
   public CustomError handleInvalidDocument(InvalidRule e) {
     return new CustomError(e.getMessage(), CustomError.ErrorType.INVALID_INSTRUCTION);
-  }
-
-  /**
-   * Maneja la excepción cuando se encuentra un tipo de cliente incorrecto.
-   *
-   * @param e La excepción WrongClientType lanzada.
-   * @return Un objeto CustomError con el mensaje de error y el tipo de error correspondiente.
-   */
-  @ExceptionHandler(WrongClientType.class)
-  public CustomError handleWrongClientType(WrongClientType e) {
-    return new CustomError(e.getMessage(), CustomError.ErrorType.INVALID_TYPE);
   }
 
   /**

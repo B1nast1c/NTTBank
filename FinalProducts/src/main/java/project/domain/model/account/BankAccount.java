@@ -1,6 +1,9 @@
 package project.domain.model.account;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import project.domain.model.BankProduct;
 
@@ -15,7 +18,6 @@ import java.util.stream.IntStream;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
 public class BankAccount extends BankProduct {
   protected String accountNumber;
   protected double balance = 0.0;

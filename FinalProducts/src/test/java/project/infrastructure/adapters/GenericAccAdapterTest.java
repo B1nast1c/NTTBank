@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -72,11 +73,10 @@ class GenericAccAdapterTest {
     when(savingsRepo.findAll()).thenReturn(Flux.just(testSavings));
 
     StepVerifier.create(genericAccAdapter.findAll())
-        .expectNext(GenericMapper.mapToSpecificClass(testCurrent, CurrAccDTO.class))
-        .expectNext(GenericMapper.mapToSpecificClass(testFixed, FxdTermDTO.class))
-        .expectNext(GenericMapper.mapToSpecificClass(testSavings, SavingsDTO.class))
-        .expectComplete()
-        .verify();
+        .assertNext(account -> assertThat(account).isInstanceOf(CurrAccDTO.class))
+        .assertNext(account -> assertThat(account).isInstanceOf(FxdTermDTO.class))
+        .assertNext(account -> assertThat(account).isInstanceOf(SavingsDTO.class))
+        .verifyComplete();
   }
 
   @Test

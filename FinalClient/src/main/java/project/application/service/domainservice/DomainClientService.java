@@ -1,4 +1,4 @@
-package project.application.service.DomainService;
+package project.application.service.domainservice;
 
 import org.springframework.stereotype.Service;
 import project.application.service.ClientService;

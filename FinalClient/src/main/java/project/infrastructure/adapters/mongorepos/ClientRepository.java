@@ -1,4 +1,4 @@
-package project.infrastructure.adapters.mongoRepos;
+package project.infrastructure.adapters.mongorepos;
 
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import project.domain.model.Client;

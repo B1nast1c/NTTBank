@@ -1,4 +1,4 @@
-package project.application.service.DomainService;
+package project.application.service.domainservice;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,11 +7,11 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import project.domain.model.Client;
 import project.domain.ports.ClientPort;
-import project.infrastructure.adapters.mongoRepos.ClientRepository;
+import project.infrastructure.adapters.mongorepos.ClientRepository;
 import project.infrastructure.dto.ClientDTO;
 import project.infrastructure.exceptions.CustomError;
-import project.infrastructure.responses.CustomResponse;
 import project.infrastructure.exceptions.throwable.NotFound;
+import project.infrastructure.responses.CustomResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
