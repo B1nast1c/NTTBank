@@ -4,6 +4,8 @@ import com.microservices_credit.microcervicescredit.entity.credits;
 import com.microservices_credit.microcervicescredit.repository.CreditRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CreditService {
     private final CreditRepository creditRepository;   //Injectamos la interfaz
@@ -21,5 +23,10 @@ public class CreditService {
 
     public credits getCreditsById(Integer id){
         return creditRepository.findById(id).get();
+    }
+
+    //Crear metodo para obtener todos los creditos
+    public List<credits> finAll(){
+        return creditRepository.findAll();
     }
 }

@@ -1,23 +1,21 @@
 package com.microservices_credit.microcervicescredit.entity;
 
 
-import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
 @Getter
 @Setter
-@Table(name = "creditss")
-@Data
+@Document(collection = "creditss")
 @AllArgsConstructor
 @NoArgsConstructor
 public class credits {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    private Integer id_credit;
+    private String id;
     private String credit_number;
     private String credit_type;
-    private Double saldo;
+    private Double balance;
+    private String client_id;
 }

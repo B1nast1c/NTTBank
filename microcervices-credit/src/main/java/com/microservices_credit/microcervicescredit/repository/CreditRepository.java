@@ -1,6 +1,7 @@
 package com.microservices_credit.microcervicescredit.repository;
 import com.microservices_credit.microcervicescredit.entity.credits;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public class CreditRepository extends JpaRepository<credits, Integer> {
+
+public interface CreditRepository extends MongoRepository<credits, Integer> {
 }
