@@ -1,90 +1,94 @@
 package project.infrastructure.clientcalls;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import okhttp3.mockwebserver.MockResponse;
-import okhttp3.mockwebserver.MockWebServer;
+import com.github.tomakehurst.wiremock.WireMockServer;
+import lombok.SneakyThrows;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.springframework.web.reactive.function.client.WebClient;
-import org.springframework.web.reactive.function.client.WebClientRequestException;
 import project.infrastructure.clientcalls.responses.Client;
 import project.infrastructure.clientcalls.responses.ClientResponse;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-import java.io.IOException;
+import static com.github.tomakehurst.wiremock.client.WireMock.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.anyString;
+import static org.mockito.Mockito.when;
 
-/**
- * Pruebas unitarias para WebClientSrv.
- */
-@TestInstance(TestInstance.Lifecycle.PER_METHOD)
-@ActiveProfiles("test")
-@SpringBootTest
 class WebClientSrvTest {
-
-  private MockWebServer mockWebServer;
+  private static WireMockServer server;
   private WebClientSrv clientSrv;
-  private ObjectMapper objectMapper;
 
-  /**
-   * Configuración inicial para cada prueba.
-   */
+  @Mock
+  private WebClient.Builder webClientBuilder;
+
+  @BeforeAll
+  static void iniciarWireMock() {
+    server = new WireMockServer(8083);
+    server.start();
+    configureFor(server.port());
+  }
+
+  @AfterAll
+  static void detenerWireMock() {
+    if (server != null) {
+      server.stop();
+    }
+  }
+
   @BeforeEach
-  void setUp() throws IOException {
-    mockWebServer = new MockWebServer();
-    mockWebServer.start();
+  void setUp() {
+    MockitoAnnotations.openMocks(this);
 
-    WebClient.Builder webClientBuilder = WebClient
-        .builder()
-        .baseUrl(mockWebServer.url("/").toString());
+    WebClient webClient = WebClient.builder().baseUrl("http://localhost:8083").build();
+    when(webClientBuilder.baseUrl(anyString())).thenReturn(webClientBuilder);
+    when(webClientBuilder.build()).thenReturn(webClient);
 
     clientSrv = new WebClientSrv(webClientBuilder);
-    objectMapper = new ObjectMapper();
   }
 
-  /**
-   * Verifica que se devuelva un cliente.
-   */
+  @SneakyThrows
   @Test
-  void shouldReturnClient() throws Exception {
-    String clientDocument = "testDocument";
-    Client client = new Client("testID",
-        "PERSONAL",
-        "testName",
-        "testAddress",
-        "testEmail",
-        "testPhone",
-        "testDocument",
-        true);
-    ClientResponse mockedClient = new ClientResponse(true, client);
+  void shouldReturnClient() {
+    String clientId = "testDocument";
+    Client expectedClient = new Client("testID", "PERSONAL", "testName", "testAddress", "testEmail", "testPhone", "testDocument", true);
+    ClientResponse expectedResponse = new ClientResponse(true, expectedClient);
+    ObjectMapper objectMapper = new ObjectMapper();
+    String expectedJson = objectMapper.writeValueAsString(expectedResponse);
 
-    mockWebServer.enqueue(new MockResponse()
-        .setResponseCode(200)
-        .setBody(objectMapper.writeValueAsString(mockedClient))
-        .addHeader("Content-Type", "application/json"));
+    stubFor(get(urlPathEqualTo("/clients/" + clientId))
+        .willReturn(aResponse()
+            .withHeader("Content-Type", "application/json")
+            .withBody(expectedJson)));
 
-    Mono<ClientResponse> gotClient = clientSrv.getClientByiD(clientDocument);
+    Mono<ClientResponse> result = clientSrv.getClientByiD(clientId);
 
-    StepVerifier.create(gotClient)
-        .verifyError(WebClientRequestException.class); // Ver cómo implementar si alcanza el tiempo
+    StepVerifier.create(result)
+        .assertNext(res -> {
+          assertTrue(res.isSuccess());
+          assertEquals(res.getData().getDocumentNumber(), expectedClient.getDocumentNumber());
+          assertEquals(res.getData().getClientName(), expectedClient.getClientName());
+          assertEquals(res.getData().getClientPhone(), expectedClient.getClientPhone());
+        })
+        .verifyComplete();
   }
 
-  /**
-   * Verifica que se maneje un error del servidor.
-   */
   @Test
-  void shouldHandleServerError() throws Exception {
-    String clientDocument = "anyDocument";
+  void shouldHandleServerError() {
+    String clientId = "anyDocument";
+    stubFor(get(urlPathEqualTo("/clients/" + clientId))
+        .willReturn(aResponse()
+            .withStatus(500)));
 
-    mockWebServer.enqueue(new MockResponse()
-        .setResponseCode(500));
+    Mono<ClientResponse> result = clientSrv.getClientByiD(clientId);
 
-    Mono<ClientResponse> gotClient = clientSrv.getClientByiD(clientDocument);
-
-    StepVerifier.create(gotClient)
+    StepVerifier.create(result)
         .expectError(RuntimeException.class)
         .verify();
   }

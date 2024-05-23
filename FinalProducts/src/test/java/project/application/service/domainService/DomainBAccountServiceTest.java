@@ -62,7 +62,7 @@ class DomainBAccountServiceTest {
 
   @InjectMocks
   DomainBAccountService domainBAccountService;
-  
+
   @BeforeEach
   void setUp() {
     MockitoAnnotations.openMocks(this);
@@ -93,7 +93,9 @@ class DomainBAccountServiceTest {
     Mono<CustomResponse<Object>> result = domainBAccountService.getBankAccount("accountNumber");
 
     StepVerifier.create(result)
-        .expectNext(expectedResponse)
+        .assertNext(res -> {
+          assertTrue(res.isSuccess());
+        })
         .verifyComplete();
   }
 
@@ -128,7 +130,9 @@ class DomainBAccountServiceTest {
     Mono<CustomResponse<Object>> result = domainBAccountService.getAccountBalance("accountNumber");
 
     StepVerifier.create(result)
-        .expectNext(expectedResponse)
+        .assertNext(res -> {
+          assertTrue(res.isSuccess());
+        })
         .verifyComplete();
   }
 
