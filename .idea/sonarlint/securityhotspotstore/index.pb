@@ -282,3 +282,7 @@ C
 BankGateway/pom.xml,1\4\14de22552ab38010f5f6bdd8762f675176c90078
 I
 BankEurekaService/pom.xml,a\8\a812f46801673193a642420ef13461a20d0e5855
+H
+BankConfigServer/pom.xml,8\2\82fa4e4587b6c2f2c5d3c4ecbd9938fa56c92a23
+ˆ
+XBankConfigServer/src/main/java/project/bankconfigserver/BankConfigServerApplication.java,0\8\0843e34150cc48c900b08626da965b5cda18ea2d
