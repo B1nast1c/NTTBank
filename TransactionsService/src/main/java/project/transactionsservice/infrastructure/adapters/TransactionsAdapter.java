@@ -11,7 +11,6 @@ import project.transactionsservice.infrastructure.exceptions.CustomError;
 import project.transactionsservice.infrastructure.exceptions.throwable.NotFoundTransaction;
 import project.transactionsservice.infrastructure.factory.TransactionStrategyFactory;
 import project.transactionsservice.infrastructure.mapper.GenericMapper;
-import project.transactionsservice.infrastructure.servicecalls.CreditService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -22,16 +21,13 @@ import java.util.function.Function;
 public class TransactionsAdapter implements TransactionsPort {
   private final TransactionStrategyFactory transactionsFactory;
   private final TransactionsRepo transactionsRepo;
-  private final CreditService creditService;
 
   public TransactionsAdapter(
 
       TransactionStrategyFactory transactionsFactory,
-      TransactionsRepo transactionsRepo,
-      CreditService creditService) {
+      TransactionsRepo transactionsRepo) {
     this.transactionsFactory = transactionsFactory;
     this.transactionsRepo = transactionsRepo;
-    this.creditService = creditService;
   }
 
   public Mono<Object> saveTransaction(TransactionDTO transactionDTO) {
@@ -39,16 +35,13 @@ public class TransactionsAdapter implements TransactionsPort {
     return TransactionsAppValidations.validateTransactionType(transactionDTO)
         .flatMap(validatedTransaction -> {
           Function<TransactionDTO, Mono<Object>> strategy = transactionsFactory.getStrategy(transactionType);
-          if (strategy != null) {
-            Mono<Object> createdTransaction = strategy.apply(validatedTransaction);
-            return createdTransaction
-                .flatMap(inserting -> {
-                  Transaction transaction = GenericMapper.mapToEntity(inserting);
-                  return transactionsRepo.save(transaction)
-                      .map(inserted -> GenericMapper.mapToAny(inserted, TransactionDTO.class));
-                });
-          }
-          return Mono.error(new IllegalArgumentException("No strategy found for transaction type: " + transactionType));
+          Mono<Object> createdTransaction = strategy.apply(validatedTransaction);
+          return createdTransaction
+              .flatMap(inserting -> {
+                Transaction transaction = GenericMapper.mapToAny(inserting, Transaction.class);
+                return transactionsRepo.save(transaction)
+                    .map(inserted -> GenericMapper.mapToAny(inserted, TransactionDTO.class));
+              });
         });
   }
 

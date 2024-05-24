@@ -25,7 +25,7 @@ public abstract class TransactionDomainValidations {
         .toLocalDate();
   }
 
-  private static boolean isSameYearAndMonth(String date1, Date date2) {
+  static boolean isSameYearAndMonth(String date1, Date date2) {
     DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     try {
       LocalDate localDate1 = LocalDate.parse(date1, dateFormatter);
@@ -42,8 +42,6 @@ public abstract class TransactionDomainValidations {
 
     String transactionAccount = transaction.getProductNumber();
     String transactionDate = transaction.getTransactionDate();
-
-    System.out.println("DATOS DE LA TRANSACCION -> " + transactionAccount + " " + transactionDate);
 
     boolean onlyAccount = transactions
         .stream()
@@ -80,7 +78,7 @@ public abstract class TransactionDomainValidations {
 
   public static Mono<TransactionDTO> validateCreditCardCharge(TransactionDTO transaction, CreditResponse creditCard) {
     if (creditCard.getAmmount() >= transaction.getAmmount()) {
-      TransactionDTO mappedTransaction = GenericMapper.mapToDto(creditCard);
+      TransactionDTO mappedTransaction = GenericMapper.mapToAny(creditCard, TransactionDTO.class);
       return Mono.just(mappedTransaction);
     }
     return Mono.error(new InvalidAmmount("The charge exceeds the available credit limit"));

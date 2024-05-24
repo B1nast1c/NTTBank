@@ -7,7 +7,6 @@ import project.transactionsservice.infrastructure.servicecalls.webClient.CreditW
 @Component
 public class CreditService implements CreditWebInterface {
   private final WebClient.Builder webClient;
-  private String serviceName; // Nombre del servicio de cuentas bancarias (Registrado en Eureka)
 
   public CreditService(WebClient.Builder webClient) {
     this.webClient = webClient;

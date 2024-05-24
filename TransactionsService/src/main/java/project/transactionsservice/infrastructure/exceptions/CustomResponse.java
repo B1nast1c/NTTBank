@@ -1,15 +1,17 @@
 package project.transactionsservice.infrastructure.exceptions;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Respuesta genérica que varía su contenido: Error o Success.
  *
  * @param <T> Tipo genérico
  */
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomResponse<T> {

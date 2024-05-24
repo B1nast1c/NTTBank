@@ -15,19 +15,11 @@ import project.transactionsservice.infrastructure.dto.TransactionDTO;
 public class GenericMapper {
   private static final ModelMapper modelMapper = new ModelMapper();
 
-  public static Transaction mapToEntity(final Object transactionDTO) {
-    try {
-      return modelMapper.map(transactionDTO, Transaction.class);
-    } catch (Exception e) {
-      throw new RuntimeException("");
-    }
-  }
-
-  public static TransactionDTO mapToDto(final Object transaction) {
+  public static TransactionDTO mapToDto(final Transaction transaction) {
     try {
       return modelMapper.map(transaction, TransactionDTO.class);
     } catch (Exception e) {
-      throw new RuntimeException("");
+      throw new RuntimeException("Failed while mapping");
     }
   }
 

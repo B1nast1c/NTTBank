@@ -1,4 +1,4 @@
-package project.transactionsservice.infrastructure.strategies.transactions;
+package project.transactionsservice.infrastructure.strategies;
 
 import org.springframework.stereotype.Component;
 import project.transactionsservice.domain.validations.TransactionDomainValidations;
@@ -14,30 +14,30 @@ import reactor.core.publisher.Mono;
 
 import java.util.function.BiFunction;
 
-@Component("withdrawalStrategy")
-public class WithdrawalStrategy implements TransactionStrategy {
+@Component
+public class TransactionStrategy {
   private final AccountsFactory accountsFactory;
   private final AccountService accountService;
   private final HelperFunctions helpers;
+  BiFunction<TransactionDTO, AccountResponse, Mono<TransactionDTO>> strategy;
 
-  public WithdrawalStrategy(AccountService accountService,
-                            AccountsFactory accountsFactory, HelperFunctions helpers) {
-    this.accountService = accountService;
+  public TransactionStrategy(AccountsFactory accountsFactory,
+                             AccountService accountService,
+                             HelperFunctions helpers) {
     this.accountsFactory = accountsFactory;
+    this.accountService = accountService;
     this.helpers = helpers;
   }
 
-  @Override
-  public Mono<Object> execute(TransactionDTO transaction) {
+  private Mono<Object> saveTransaction(TransactionDTO transaction, double ammount) {
     return helpers.getAccountDetails(transaction.getProductNumber())
         .flatMap(accountResponse -> {
-          BiFunction<TransactionDTO, AccountResponse, Mono<TransactionDTO>> strategy;
           strategy = accountsFactory.getStrategy(accountResponse.getAccountType());
           return strategy.apply(transaction, accountResponse).flatMap(applied ->
-              TransactionDomainValidations.validateWithdrawal(transaction, accountResponse)
+              TransactionDomainValidations.validateDeposit(transaction)
                   .flatMap(dto -> {
                     double balance = accountResponse.getBalance();
-                    balance -= transaction.getAmmount();
+                    balance += ammount;
                     AccountRequest request = new AccountRequest(balance, accountResponse.getTransactions() + 1);
                     return accountService
                         .updateAccount(dto.getProductNumber(), request)
@@ -50,5 +50,13 @@ public class WithdrawalStrategy implements TransactionStrategy {
                         });
                   }));
         });
+  }
+
+  public Mono<Object> depositStrategy(TransactionDTO transaction) {
+    return saveTransaction(transaction, transaction.getAmmount());
+  }
+
+  public Mono<Object> withdrawalStrategy(TransactionDTO transaction) {
+    return saveTransaction(transaction, transaction.getAmmount() * -1);
   }
 }

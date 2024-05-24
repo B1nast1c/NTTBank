@@ -29,14 +29,14 @@ class WebClientSrvTest {
   private WebClient.Builder webClientBuilder;
 
   @BeforeAll
-  static void iniciarWireMock() {
+  static void startWireMock() {
     server = new WireMockServer(8083);
     server.start();
     configureFor(server.port());
   }
 
   @AfterAll
-  static void detenerWireMock() {
+  static void stopWireMock() {
     if (server != null) {
       server.stop();
     }
@@ -66,7 +66,7 @@ class WebClientSrvTest {
         .willReturn(aResponse()
             .withHeader("Content-Type", "application/json")
             .withBody(expectedJson)));
-
+    
     Mono<ClientResponse> result = clientSrv.getClientByiD(clientId);
 
     StepVerifier.create(result)

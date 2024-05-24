@@ -18,7 +18,7 @@ public class AccountStrategies {
     this.transactionsRepo = transactionsRepo;
   }
 
-  private Mono<TransactionDTO> genericValidation(TransactionDTO transaction, AccountResponse response) {
+  Mono<TransactionDTO> genericValidation(TransactionDTO transaction, AccountResponse response) {
     if (transaction.getClientNumber().equals(response.getClientDocument())) {
       return Mono.just(transaction);
     }
