@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
@@ -7,6 +8,7 @@
         <option value="$PROJECT_DIR$/FinalProducts/pom.xml" />
         <option value="$PROJECT_DIR$/BankEurekaService/pom.xml" />
         <option value="$PROJECT_DIR$/TransactionsService/pom.xml" />
+        <option value="$PROJECT_DIR$/BankGateway/pom.xml" />
       </list>
     </option>
   </component>

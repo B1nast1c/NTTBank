@@ -276,3 +276,9 @@ p
 @TransactionsService/logs/archived/clientService-2024-05-20.0.log,8\4\84a5257570b52a2454f8879f06e22cdcfb0289c5
 f
 6TransactionsService/src/test/resources/application.yml,e\5\e5a6263ffe845a4e95b7f23791e887c8f4c30e9b
+y
+IBankGateway/src/main/java/project/bankgateway/BankGatewayApplication.java,f\1\f1ea1258617384ae520527e5cab4c2e2333d099c
+C
+BankGateway/pom.xml,1\4\14de22552ab38010f5f6bdd8762f675176c90078
+I
+BankEurekaService/pom.xml,a\8\a812f46801673193a642420ef13461a20d0e5855
