@@ -296,3 +296,5 @@ i
 0BankConfigServer/configClients/ClientService.yml,e\c\eceef516b1b5eeb6b35d8ac846e6abca3f337afd
 e
 5BankConfigServer/configClients/BankAccountService.yml,7\8\785fba90c5d850ab3512038647ef965a9cdc916c
+f
+6BankConfigServer/configClients/TransactionsService.yml,a\9\a998b17081edc7dd0f12a91d621e28128d37867a
