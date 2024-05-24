@@ -6,6 +6,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @Autor: Bryan Flores
+ * Tarea: Microservicios de creditos
+ * Fecha: 9/05/2024
+ */
+
+
 @Service
 public class CreditService {
     private final CreditRepository creditRepository;   //Injectamos la interfaz

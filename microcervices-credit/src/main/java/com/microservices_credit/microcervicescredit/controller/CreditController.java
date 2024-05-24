@@ -6,6 +6,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
+/**
+ * @Autor: Bryan Flores
+ * Tarea: Microservicios de creditos
+ * Fecha: 9/05/2024
+ */
+
 @RestController //appi rest
 @RequestMapping("/api/credits") // Definimos una url especifica para el microservico
 
