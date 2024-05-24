@@ -12,7 +12,8 @@ import java.util.List;
  * Fecha: 9/05/2024
  */
 
-
+// encapsula la lógica de negocio para manejar créditos en tu aplicación,
+// ofreciendo métodos para crear, leer, actualizar y eliminar créditos
 @Service
 public class CreditService {
     private final CreditRepository creditRepository;   //Injectamos la interfaz
@@ -23,7 +24,7 @@ public class CreditService {
     }
 
 
-    //Guardamos el objeto creditos por data base y nos retorna el obeto ya creado
+    //Guardamos el objeto creditos por la base de datos y nos retorna el objeto ya creado
     public credits CreateCredits(credits Credits){
         return creditRepository.save(Credits);
     }

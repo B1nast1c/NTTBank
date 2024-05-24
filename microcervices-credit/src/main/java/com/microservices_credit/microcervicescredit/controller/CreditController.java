@@ -18,6 +18,7 @@ import java.util.List;
 
 // Va a ser una clase como un end point es decir una clase que va a exponer recursos
 public class CreditController {
+    //injectamos
     private final CreditService creditService;  //nos dara un error
     //para ello la injectamos por un constructor
 
@@ -32,11 +33,11 @@ public class CreditController {
     }
 
     @GetMapping("/{id}")     //nos permitira obtener un registro del servidor
-    public credits getCreditById(@PathVariable String id){ //En la url viene ID y que el id deve de mapearlo a la variable id
+    public credits getCreditById(@PathVariable String id) { //En la url viene ID y que el id deve de mapearlo a la variable id
         return creditService.getCreditsById(id);
     }
 
-    //Creamos un nuevo metodo para traer todos los departamentos
+    //Creamos un nuevo metodo para traer todos de los creditos
     @GetMapping     //traemos algo del servidor es decir todos los creditops
     public List<credits>findAll(){
         return creditService.finAll();

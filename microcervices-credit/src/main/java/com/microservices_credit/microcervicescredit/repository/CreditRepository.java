@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 
 
-
+//estendemos el metodo a MongoRepository para proporcionar automáticamente una implementación
+// de los métodos CRUD básicos (Create, Read, Update, Delete)
 public interface CreditRepository extends MongoRepository<credits, String> {
 }
