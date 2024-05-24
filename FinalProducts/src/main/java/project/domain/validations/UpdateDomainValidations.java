@@ -23,7 +23,7 @@ public class UpdateDomainValidations {
   public Mono<Object> validateAmmount(Object updatedAccount) {
     BankAccountDTO updatedDTO = GenericMapper.mapToSpecificClass(updatedAccount, BankAccountDTO.class);
     if (updatedDTO.getBalance() < 0) {
-      return Mono.error(new InvalidRule("No se puede actualizar la cuenta con saldo negativo"));
+      return Mono.error(new InvalidRule("Can't update account with negative balance"));
     }
     return Mono.just(updatedAccount);
   }

@@ -3333,3 +3333,373 @@ java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.Futur
 2024-05-24 07:36:50 [nioEventLoopGroup-3-3] INFO  : Opened connection [connectionId{localValue:3, serverValue:8}] to localhost:27017
 2024-05-24 07:38:01 [reactor-http-nio-4] INFO  : Retrieving all accounts
 2024-05-24 07:38:56 [reactor-http-nio-4] INFO  : Retrieving all accounts
+2024-05-24 07:40:27 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 07:45:27 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 07:50:27 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 07:55:27 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 07:59:30 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 07:59:31 [reactor-http-nio-5] WARN  : Client retrieval failed, try to request again
+2024-05-24 07:59:51 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 07:59:52 [reactor-http-nio-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 07:59:52 [nioEventLoopGroup-3-4] INFO  : Opened connection [connectionId{localValue:4, serverValue:30}] to localhost:27017
+2024-05-24 07:59:52 [nioEventLoopGroup-3-5] INFO  : Opened connection [connectionId{localValue:5, serverValue:31}] to localhost:27017
+2024-05-24 07:59:57 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 07:59:58 [reactor-http-nio-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 07:59:58 [nioEventLoopGroup-3-3] WARN  : The account creation breaks some domain rules
+2024-05-24 08:00:27 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 08:00:31 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:00:31 [reactor-http-nio-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:00:31 [nioEventLoopGroup-3-5] WARN  : The account creation breaks some domain rules
+2024-05-24 08:00:45 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:00:45 [reactor-http-nio-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:00:45 [nioEventLoopGroup-3-5] INFO  : Account for the client -> 72163251 has been created
+2024-05-24 08:00:54 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:00:54 [reactor-http-nio-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:00:54 [nioEventLoopGroup-3-3] WARN  : The account creation breaks some domain rules
+2024-05-24 08:01:17 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:01:17 [reactor-http-nio-5] WARN  : Client retrieval failed, try to request again
+2024-05-24 08:01:34 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:01:34 [reactor-http-nio-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:01:34 [nioEventLoopGroup-3-4] WARN  : The account creation breaks some domain rules
+2024-05-24 08:01:41 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:01:41 [reactor-http-nio-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:01:41 [nioEventLoopGroup-3-4] WARN  : The account creation breaks some domain rules
+2024-05-24 08:02:52 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:02:52 [reactor-http-nio-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:02:57 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:02:57 [reactor-http-nio-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:02:57 [nioEventLoopGroup-3-3] INFO  : Account for the client -> 72163251 has been created
+2024-05-24 08:03:02 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:03:02 [reactor-http-nio-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:03:02 [nioEventLoopGroup-3-5] INFO  : Account -> 3772217075153908 has been created
+2024-05-24 08:03:09 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:03:09 [reactor-http-nio-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:03:09 [nioEventLoopGroup-3-4] INFO  : Account -> 7837378422197553 has been created
+2024-05-24 08:05:27 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 08:06:21 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:06:21 [reactor-http-nio-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:06:22 [nioEventLoopGroup-3-3] WARN  : The account creation breaks some domain rules
+2024-05-24 08:06:40 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:06:40 [reactor-http-nio-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:06:40 [nioEventLoopGroup-3-4] WARN  : The account creation breaks some domain rules
+2024-05-24 08:08:09 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:08:09 [reactor-http-nio-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:08:10 [nioEventLoopGroup-3-3] INFO  : Account for the client -> 72163253 has been created
+2024-05-24 08:08:10 [nioEventLoopGroup-3-3] INFO  : Calling ClientService to get client by id
+2024-05-24 08:08:10 [nioEventLoopGroup-3-3] INFO  : Calling ClientService to get client by id
+2024-05-24 08:08:10 [reactor-http-nio-6] WARN  : The account titular list is empty
+2024-05-24 08:08:28 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:08:28 [reactor-http-nio-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:08:28 [nioEventLoopGroup-3-5] INFO  : Account for the client -> 72163253 has been created
+2024-05-24 08:08:28 [nioEventLoopGroup-3-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:08:28 [nioEventLoopGroup-3-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:08:54 [reactor-http-nio-5] INFO  : Calling ClientService to get client by id
+2024-05-24 08:08:54 [reactor-http-nio-6] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:08:54 [nioEventLoopGroup-3-4] INFO  : Account for the client -> 72163253 has been created
+2024-05-24 08:08:54 [nioEventLoopGroup-3-4] INFO  : Calling ClientService to get client by id
+2024-05-24 08:08:54 [nioEventLoopGroup-3-4] INFO  : Calling ClientService to get client by id
+2024-05-24 08:09:18 [reactor-http-nio-5] INFO  : Retrieving all accounts
+2024-05-24 08:10:06 [reactor-http-nio-5] INFO  : Retrieving all accounts for the client 72163253
+2024-05-24 08:10:24 [reactor-http-nio-5] INFO  : Retrieving all accounts for the client 721632531
+2024-05-24 08:10:27 [reactor-http-nio-5] INFO  : Retrieving all accounts for the client 72163253
+2024-05-24 08:10:27 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 08:10:45 [reactor-http-nio-5] INFO  : Retrieving the account -> 6587805701869778
+2024-05-24 08:10:45 [nioEventLoopGroup-3-4] WARN  : The account with number 6587805701869778 does not exist
+2024-05-24 08:10:54 [reactor-http-nio-5] INFO  : Retrieving the account -> 4530265066703180
+2024-05-24 08:11:13 [reactor-http-nio-5] INFO  : Retrieving the account -> 4530265066703180
+2024-05-24 08:11:19 [reactor-http-nio-5] INFO  : Retrieving the account -> 4530265066703180a
+2024-05-24 08:11:19 [nioEventLoopGroup-3-4] WARN  : The account with number 4530265066703180a does not exist and has no balance
+2024-05-24 08:12:45 [reactor-http-nio-5] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:12:45 [nioEventLoopGroup-3-4] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:12:45 [nioEventLoopGroup-3-4] INFO  : Account -> null has been updated
+2024-05-24 08:12:49 [reactor-http-nio-5] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:12:49 [nioEventLoopGroup-3-3] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:12:49 [nioEventLoopGroup-3-3] INFO  : Account -> null has been updated
+2024-05-24 08:15:27 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 08:20:25 [reactor-http-nio-7] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:20:27 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 08:20:31 [reactor-http-nio-7] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:20:31 [reactor-http-nio-8] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:20:31 [nioEventLoopGroup-3-4] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:20:31 [nioEventLoopGroup-3-4] INFO  : Account -> null has been updated
+2024-05-24 08:21:24 [reactor-http-nio-7] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:21:55 [reactor-http-nio-8] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:21:55 [reactor-http-nio-7] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:21:55 [nioEventLoopGroup-3-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:22:06 [reactor-http-nio-8] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:22:06 [reactor-http-nio-7] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:22:06 [nioEventLoopGroup-3-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:25:27 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 08:29:15 [reactor-http-nio-8] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:29:15 [reactor-http-nio-7] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:29:15 [nioEventLoopGroup-3-4] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:29:17 [reactor-http-nio-8] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:29:17 [reactor-http-nio-7] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:29:17 [nioEventLoopGroup-3-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:29:18 [reactor-http-nio-8] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:29:18 [reactor-http-nio-7] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:29:18 [nioEventLoopGroup-3-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:29:19 [reactor-http-nio-8] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:29:19 [reactor-http-nio-7] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:29:19 [nioEventLoopGroup-3-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:30:27 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 08:35:27 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 08:35:43 [reactor-http-nio-1] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:35:43 [reactor-http-nio-2] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:35:43 [nioEventLoopGroup-3-4] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:38:27 [reactor-http-nio-3] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:38:27 [reactor-http-nio-4] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:38:27 [nioEventLoopGroup-3-3] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:40:18 [SpringApplicationShutdownHook] INFO  : Unregistering application ACCOUNTSSERVICE with eureka with status DOWN
+2024-05-24 08:40:18 [SpringApplicationShutdownHook] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716558018217, current=DOWN, previous=UP]
+2024-05-24 08:40:18 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 08:40:18 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 08:40:20 [SpringApplicationShutdownHook] INFO  : Shutting down DiscoveryClient ...
+2024-05-24 08:40:23 [SpringApplicationShutdownHook] INFO  : Unregistering ...
+2024-05-24 08:40:23 [SpringApplicationShutdownHook] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - deregister  status: 200
+2024-05-24 08:40:23 [SpringApplicationShutdownHook] INFO  : Completed shut down of DiscoveryClient
+2024-05-24 08:40:27 [restartedMain] INFO  : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-24 08:40:28 [restartedMain] INFO  : Fetching config from server at : http://localhost:8888
+2024-05-24 08:40:28 [restartedMain] INFO  : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2024-05-24 08:40:28 [restartedMain] WARN  : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/accountsService/default": Connection refused: no further information; nested exception is java.net.ConnectException: Connection refused: no further information
+2024-05-24 08:40:28 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-05-24 08:40:28 [restartedMain] INFO  : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2024-05-24 08:40:28 [restartedMain] INFO  : Finished Spring Data repository scanning in 99 ms. Found 3 Reactive MongoDB repository interfaces.
+2024-05-24 08:40:28 [restartedMain] INFO  : BeanFactory id=2736589b-1b3a-3b14-95fc-bb5a688bf055
+2024-05-24 08:40:28 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 08:40:28 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 08:40:28 [restartedMain] INFO  : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 08:40:29 [restartedMain] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Amazon.com Inc./19.0.2+7-FR"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@2a21e798, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@5ce96c16]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2024-05-24 08:40:29 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 08:40:29 [cluster-rtt-ClusterId{value='665098cd6c13764e970ec519', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:1, serverValue:45}] to localhost:27017
+2024-05-24 08:40:29 [cluster-ClusterId{value='665098cd6c13764e970ec519', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:2, serverValue:44}] to localhost:27017
+2024-05-24 08:40:29 [cluster-ClusterId{value='665098cd6c13764e970ec519', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=37982400}
+2024-05-24 08:40:29 [restartedMain] WARN  : Unable to start LiveReload server
+2024-05-24 08:40:29 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 08:40:29 [restartedMain] INFO  : Eureka HTTP Client uses RestTemplate.
+2024-05-24 08:40:30 [restartedMain] WARN  : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-24 08:40:30 [restartedMain] INFO  : Netty started on port 53467
+2024-05-24 08:40:30 [restartedMain] INFO  : Updating port to 53467
+2024-05-24 08:40:30 [restartedMain] INFO  : Setting initial instance status as: STARTING
+2024-05-24 08:40:30 [restartedMain] INFO  : Initializing Eureka in region us-east-1
+2024-05-24 08:40:30 [restartedMain] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 08:40:30 [restartedMain] INFO  : Disable delta property : false
+2024-05-24 08:40:30 [restartedMain] INFO  : Single vip registry refresh property : null
+2024-05-24 08:40:30 [restartedMain] INFO  : Force full registry fetch : false
+2024-05-24 08:40:30 [restartedMain] INFO  : Application is null : false
+2024-05-24 08:40:30 [restartedMain] INFO  : Registered Applications size is zero : true
+2024-05-24 08:40:30 [restartedMain] INFO  : Application version is -1: true
+2024-05-24 08:40:30 [restartedMain] INFO  : Getting all instance registry info from the eureka server
+2024-05-24 08:40:30 [restartedMain] INFO  : The response status is 200
+2024-05-24 08:40:30 [restartedMain] INFO  : Starting heartbeat executor: renew interval is: 30
+2024-05-24 08:40:30 [restartedMain] INFO  : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-24 08:40:30 [restartedMain] INFO  : Discovery Client initialized at timestamp 1716558030371 with initial instances count: 4
+2024-05-24 08:40:30 [restartedMain] INFO  : Registering application ACCOUNTSSERVICE with eureka with status UP
+2024-05-24 08:40:30 [restartedMain] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716558030373, current=UP, previous=STARTING]
+2024-05-24 08:40:30 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 08:40:30 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 08:40:30 [restartedMain] INFO  : Started FinalProjectApplication in 3.64 seconds (JVM running for 4.3)
+2024-05-24 08:41:49 [reactor-http-nio-2] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:41:49 [nioEventLoopGroup-3-4] INFO  : Opened connection [connectionId{localValue:4, serverValue:51}] to localhost:27017
+2024-05-24 08:41:49 [nioEventLoopGroup-3-3] INFO  : Opened connection [connectionId{localValue:3, serverValue:50}] to localhost:27017
+2024-05-24 08:41:49 [nioEventLoopGroup-3-5] INFO  : Opened connection [connectionId{localValue:5, serverValue:52}] to localhost:27017
+2024-05-24 08:41:49 [reactor-http-nio-3] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:41:50 [nioEventLoopGroup-3-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:41:50 [nioEventLoopGroup-3-5] INFO  : Account -> null has been updated
+2024-05-24 08:42:03 [reactor-http-nio-2] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:42:03 [reactor-http-nio-3] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:42:03 [nioEventLoopGroup-3-5] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:42:03 [nioEventLoopGroup-3-5] INFO  : Account -> null has been updated
+2024-05-24 08:42:08 [reactor-http-nio-2] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:42:08 [reactor-http-nio-3] INFO  : Retrieving the account -> 7229641798077094
+2024-05-24 08:42:08 [nioEventLoopGroup-3-4] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:42:08 [nioEventLoopGroup-3-4] WARN  : The saving account validation has failed
+2024-05-24 08:42:51 [reactor-http-nio-2] INFO  : Retrieving the account -> 2249070056169458
+2024-05-24 08:42:51 [nioEventLoopGroup-3-5] WARN  : The account with number 2249070056169458 does not exist
+2024-05-24 08:43:13 [reactor-http-nio-3] INFO  : Retrieving the account -> 7837378422197553
+2024-05-24 08:43:28 [reactor-http-nio-2] INFO  : Retrieving the account -> 7837378422197553
+2024-05-24 08:43:28 [reactor-http-nio-3] INFO  : Retrieving the account -> 7837378422197553
+2024-05-24 08:43:28 [nioEventLoopGroup-3-3] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:43:28 [nioEventLoopGroup-3-3] INFO  : Account -> 7837378422197553 has been updated
+2024-05-24 08:43:33 [reactor-http-nio-2] INFO  : Retrieving the account -> 7837378422197553
+2024-05-24 08:44:08 [reactor-http-nio-3] INFO  : Retrieving the account -> 7837378422197553
+2024-05-24 08:44:57 [reactor-http-nio-2] INFO  : Retrieving the account -> 1378698734025311
+2024-05-24 08:45:03 [reactor-http-nio-3] INFO  : Retrieving the account -> 1378698734025311
+2024-05-24 08:45:03 [reactor-http-nio-2] INFO  : Retrieving the account -> 1378698734025311
+2024-05-24 08:45:03 [nioEventLoopGroup-3-3] INFO  : Assigning adapter to the incoming account
+2024-05-24 08:45:03 [nioEventLoopGroup-3-3] INFO  : Account -> 1378698734025311 has been updated
+2024-05-24 08:45:30 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 08:47:53 [SpringApplicationShutdownHook] INFO  : Unregistering application ACCOUNTSSERVICE with eureka with status DOWN
+2024-05-24 08:47:53 [SpringApplicationShutdownHook] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716558473862, current=DOWN, previous=UP]
+2024-05-24 08:47:53 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 08:47:53 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 08:47:55 [SpringApplicationShutdownHook] INFO  : Shutting down DiscoveryClient ...
+2024-05-24 08:47:58 [SpringApplicationShutdownHook] INFO  : Unregistering ...
+2024-05-24 08:47:58 [SpringApplicationShutdownHook] INFO  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE/192.168.0.11:accountsService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE/192.168.0.11:accountsService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1120)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1086)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1032)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 37 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:576)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:666)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 50 more
+
+2024-05-24 08:47:58 [SpringApplicationShutdownHook] WARN  : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE/192.168.0.11:accountsService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2024-05-24 08:47:58 [SpringApplicationShutdownHook] INFO  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE/192.168.0.11:accountsService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE/192.168.0.11:accountsService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1120)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1086)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1032)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 38 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:576)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:666)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 51 more
+
+2024-05-24 08:47:58 [SpringApplicationShutdownHook] WARN  : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE/192.168.0.11:accountsService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2024-05-24 08:47:58 [SpringApplicationShutdownHook] ERROR : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1120)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1086)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1032)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-05-24 08:47:58 [SpringApplicationShutdownHook] INFO  : Completed shut down of DiscoveryClient

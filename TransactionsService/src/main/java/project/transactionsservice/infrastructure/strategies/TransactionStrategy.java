@@ -46,7 +46,7 @@ public class TransactionStrategy {
                             Object mapped = GenericMapper.mapToAny(transaction, Object.class);
                             return Mono.just(mapped);
                           }
-                          return Mono.error(new InvalidTransaction("Transactions limit reached"));
+                          return Mono.error(new InvalidTransaction(updated.getData().toString()));
                         });
                   }));
         });
