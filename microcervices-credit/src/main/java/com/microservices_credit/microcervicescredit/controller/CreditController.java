@@ -25,7 +25,7 @@ public class CreditController {
     }
 
     @GetMapping("/{id}")     //nos permitira obtener un registro del servidor
-    public credits getCreditById(@PathVariable Integer id){ //En la url viene ID y que el id deve de mapearlo a la variable id
+    public credits getCreditById(@PathVariable String id){ //En la url viene ID y que el id deve de mapearlo a la variable id
         return creditService.getCreditsById(id);
     }
 
@@ -33,5 +33,17 @@ public class CreditController {
     @GetMapping     //traemos algo del servidor es decir todos los creditops
     public List<credits>findAll(){
         return creditService.finAll();
+    }
+
+    //Modificamos un credito
+    @PutMapping("/{id}")
+    public credits updateCredit(@PathVariable String id, @RequestBody credits credit) {
+        return creditService.updateCredit(id, credit);
+    }
+
+    //Eliminamos un credito
+    @DeleteMapping("/{id}")
+    public void deleteCredit(@PathVariable String id) {
+        creditService.deleteCredit(id);
     }
 }

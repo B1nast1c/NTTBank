@@ -21,12 +21,22 @@ public class CreditService {
         return creditRepository.save(Credits);
     }
 
-    public credits getCreditsById(Integer id){
+    public credits getCreditsById(String id){
         return creditRepository.findById(id).get();
     }
 
     //Crear metodo para obtener todos los creditos
     public List<credits> finAll(){
         return creditRepository.findAll();
+    }
+    //modificar Creditos
+    public credits updateCredit(String id, credits credit) {
+        credit.setId(id);
+        return creditRepository.save(credit);
+    }
+
+    //Eliminar Creditos
+    public void deleteCredit(String id) {
+        creditRepository.deleteById(id);
     }
 }
