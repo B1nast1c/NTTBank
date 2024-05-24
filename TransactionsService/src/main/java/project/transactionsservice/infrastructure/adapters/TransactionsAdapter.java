@@ -16,20 +16,32 @@ import reactor.core.publisher.Mono;
 
 import java.util.function.Function;
 
+/**
+ * Adaptador que implementa la interfaz TransactionsPort y maneja la lógica de acceso a datos para las transacciones.
+ */
 @Slf4j
 @Repository
 public class TransactionsAdapter implements TransactionsPort {
   private final TransactionStrategyFactory transactionsFactory;
   private final TransactionsRepo transactionsRepo;
 
-  public TransactionsAdapter(
-
-      TransactionStrategyFactory transactionsFactory,
-      TransactionsRepo transactionsRepo) {
+  /**
+   * Constructor de TransactionsAdapter.
+   *
+   * @param transactionsFactory fábrica de estrategias de transacciones
+   * @param transactionsRepo    repositorio de transacciones
+   */
+  public TransactionsAdapter(TransactionStrategyFactory transactionsFactory, TransactionsRepo transactionsRepo) {
     this.transactionsFactory = transactionsFactory;
     this.transactionsRepo = transactionsRepo;
   }
 
+  /**
+   * Guarda una transacción después de validarla y aplicar la estrategia correspondiente.
+   *
+   * @param transactionDTO el objeto DTO de la transacción a guardar
+   * @return un Mono que emite el objeto de la transacción guardada
+   */
   public Mono<Object> saveTransaction(TransactionDTO transactionDTO) {
     String transactionType = transactionDTO.getTransactionType();
     return TransactionsAppValidations.validateTransactionType(transactionDTO)
@@ -45,31 +57,48 @@ public class TransactionsAdapter implements TransactionsPort {
         });
   }
 
+  /**
+   * Obtiene una transacción por su número de transacción.
+   *
+   * @param transactionNumber el número de la transacción a buscar
+   * @return un Mono que emite el objeto DTO de la transacción encontrada, o un error si no se encuentra
+   */
   @Override
   public Mono<TransactionDTO> getTransaction(String transactionNumber) {
     return transactionsRepo.findById(transactionNumber)
         .flatMap(transaction -> {
-          log.info("Transaction found -> {}", transaction.getTransactionId());
+          log.info("Found transaction -> {}", transaction.getTransactionId());
           return Mono.just(GenericMapper.mapToDto(transaction));
         }).switchIfEmpty(
             Mono.defer(() -> {
-              log.warn("Transaction not found -> {}", CustomError.ErrorType.TRANSACTION_NOT_FOUND);
-              return Mono.error(new NotFoundTransaction("The transaction you are looking for does not exist"));
+              log.warn("Not found transaction -> {}", CustomError.ErrorType.TRANSACTION_NOT_FOUND);
+              return Mono.error(new NotFoundTransaction("The transaction was not found"));
             }));
   }
 
+  /**
+   * Obtiene todas las transacciones.
+   *
+   * @return un Flux que emite una lista de objetos DTO de todas las transacciones
+   */
   @Override
   public Flux<TransactionDTO> getAllTransactions() {
     return transactionsRepo.findAll()
         .map(GenericMapper::mapToDto);
   }
 
+  /**
+   * Obtiene todas las transacciones asociadas a un número de producto.
+   *
+   * @param productNumber el número del producto bancario
+   * @return un Flux que emite una lista de objetos DTO de las transacciones asociadas al producto bancario, o un error si no hay transacciones
+   */
   @Override
-  public Flux<TransactionDTO> getTransactionsByProductNumber(String productNumber) { // Adicional, lanzar una excepcion en caso de que la cuenta no exista
+  public Flux<TransactionDTO> getTransactionsByProductNumber(String productNumber) {
     return transactionsRepo.findAllByProductNumber(productNumber)
         .map(GenericMapper::mapToDto)
         .switchIfEmpty(
-            Flux.error(new NotFoundTransaction("The bank product has no transactions"))
+            Flux.error(new NotFoundTransaction("The transaction was not found and has no transactions"))
         );
   }
 }

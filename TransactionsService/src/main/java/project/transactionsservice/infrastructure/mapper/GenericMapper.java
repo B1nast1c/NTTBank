@@ -8,7 +8,7 @@ import project.transactionsservice.infrastructure.dto.TransactionDTO;
 
 /**
  * Mapper funcional para el cambio de clases, uso de modelMapper, se ha decidido hacerla estática
- * Para compartir un mismo elemento de mapping durante todo el servicio.
+ * Para compartir un mismo elemento de mapping durante el servicio.
  */
 @Slf4j
 @Component
