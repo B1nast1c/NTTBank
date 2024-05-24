@@ -292,3 +292,5 @@ e
 5BankConfigServer/configClients/BankGatewayApplication,f\0\f0d8d65c71dbfddcb713396dec440f247aa680ab
 i
 9BankConfigServer/configClients/BankGatewayApplication.yml,6\6\66176a7fc2f73b37ec3de5fca5d7ceec2ea58d64
+`
+0BankConfigServer/configClients/ClientService.yml,e\c\eceef516b1b5eeb6b35d8ac846e6abca3f337afd
