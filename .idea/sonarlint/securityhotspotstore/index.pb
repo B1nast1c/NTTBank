@@ -286,3 +286,5 @@ H
 BankConfigServer/pom.xml,8\2\82fa4e4587b6c2f2c5d3c4ecbd9938fa56c92a23
 ˆ
 XBankConfigServer/src/main/java/project/bankconfigserver/BankConfigServerApplication.java,0\8\0843e34150cc48c900b08626da965b5cda18ea2d
+d
+4BankConfigServer/configClients/BankEurekaService.yml,b\5\b52ef060e272924c8cec8227f7150fd24be31917

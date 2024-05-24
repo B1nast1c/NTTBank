@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: BankConfigServer
+  cloud:
+    config:
+      server:
+        git:
+          default-label: master
+          uri: https://github.com/B1nast1c/NTTBank
+          search-paths: BankConfigServer/configClients
+server:
+  port: 8000
