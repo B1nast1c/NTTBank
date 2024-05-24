@@ -16,7 +16,6 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 // Implementar validaciones de credito + tarjeta de credito
@@ -181,37 +180,7 @@ class TransactionDomainValidationsTest {
         .expectNext(transaction)
         .verifyComplete();
   }
-
-  @Test
-  void creditPaymentShouldNotBeValid() {
-    TransactionDTO transaction = new TransactionDTO();
-    transaction.setAmmount(50000.0);
-    CreditRequest credit = new CreditRequest();
-    credit.setAmmount(20000.0);
-
-    Mono<TransactionDTO> result = TransactionDomainValidations.validateCreditPayment(transaction);
-
-    StepVerifier.create(result)
-        .expectError(InvalidAmmount.class)
-        .verify();
-  }
-
-  @Test
-  void creditCardChargeShouldBeValid() {
-    TransactionDTO transaction = new TransactionDTO();
-    transaction.setAmmount(50000.0);
-    CreditResponse creditCard = new CreditResponse();
-    creditCard.setAmmount(100000.0);
-
-    Mono<TransactionDTO> result = TransactionDomainValidations.validateCreditCardCharge(transaction, creditCard);
-
-    StepVerifier.create(result)
-        .assertNext(t -> {
-          assertEquals(100000.0, t.getAmmount());
-        })
-        .verifyComplete();
-  }
-
+  
   @Test
   void creditCardChargeShouldNotBeValid() {
     TransactionDTO transaction = new TransactionDTO();

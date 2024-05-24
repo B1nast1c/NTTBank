@@ -412,8 +412,6 @@ lmicrocervices-credit/src/main/java/com/microservices_credit/microcervicescredit
 jmicrocervices-credit/src/main/java/com/microservices_credit/microcervicescredit/entity/CustomResponse.java,c\3\c39e000aad675344b448de9debbe98cfdeaefa16
 “
 cmicrocervices-credit/src/main/java/com/microservices_credit/microcervicescredit/entity/Credits.java,d\0\d0af0042790c9ecabf97e0e497b025511b8532e9
-­
-}microcervices-credit/src/main/java/com/microservices_credit/microcervicescredit/apicalls/feignClient/EmployeeFeignClient.java,a\8\a8b5c6b1b38dc66db0c714c48c61f30627d43022
 œ
 lmicrocervices-credit/src/main/java/com/microservices_credit/microcervicescredit/apicalls/ClientResponse.java,5\5\55111fcc0c3f91460b72aec74533c1690dcb49f0
 ”
@@ -422,8 +420,6 @@ dmicrocervices-credit/src/main/java/com/microservices_credit/microcervicescredit
 rmicrocervices-credit/src/main/java/com/microservices_credit/microcervicescredit/validations/CreditValidations.java,a\c\aca4b39f7c4d05e67457c75f415437ef4a861203
 «
 {microcervices-credit/src/main/java/com/microservices_credit/microcervicescredit/apicalls/feignClient/ClientFeignClient.java,2\3\23ff04ab539bcdb5aa21f964d8febfef78c793ab
-™
-imicrocervices-credit/src/main/java/com/microservices_credit/microcervicescredit/entity/CreditRequest.java,a\f\afb8f0d6c275a666afaa247f840c8affa869a5a6
 –
 fmicrocervices-credit/src/main/java/com/microservices_credit/microcervicescredit/entity/CreditCard.java,0\8\08c7f0e51873306d0781331c3164f715811e77f3
 ¤
@@ -434,7 +430,5 @@ nmicrocervices-credit/src/main/java/com/microservices_credit/microcervicescredit
 xmicrocervices-credit/src/main/java/com/microservices_credit/microcervicescredit/service/helpers/CreditAndCardHelper.java,a\c\ac3d09c0d4862ab9b289a9ecdb551cbb44b344fa
 ¤
 tmicrocervices-credit/src/main/java/com/microservices_credit/microcervicescredit/controller/CreditCardController.java,0\6\062e472afdb88e43c0b6ae66035673929b2b918a
-¥
-uTransactionsService/src/main/java/project/transactionsservice/infrastructure/servicecalls/request/CreditResponse.java,7\8\7803002b78c8ac386e0bf8bf91df2b4245f5e501
 ¤
 tTransactionsService/src/main/java/project/transactionsservice/infrastructure/servicecalls/request/CreditRequest.java,d\2\d21e11a5403061170938528d6eed3c24af9cb367
