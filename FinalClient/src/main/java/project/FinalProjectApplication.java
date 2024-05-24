@@ -16,6 +16,7 @@ import org.springframework.web.reactive.config.EnableWebFlux;
 @EnableReactiveMongoRepositories
 public class FinalProjectApplication {
   public static void main(final String[] args) {
+    System.setProperty("spring.cloud.bootstrap.enabled", "true");
     SpringApplication.run(FinalProjectApplication.class, args);
   }
 

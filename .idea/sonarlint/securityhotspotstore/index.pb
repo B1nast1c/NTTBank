@@ -57,8 +57,6 @@ E
 FinalProducts/pom.xml,d\1\d1304ab363e135308ecf75e6e37ce523764879bc
 C
 FinalClient/pom.xml,4\7\4726223ca1c5d5d9b7f891193a036abef89b9a52
-­
-}TransactionsService/src/main/java/project/transactionsservice/infrastructure/strategies/transactions/TransactionStrategy.java,4\6\463573d130900d7b0b4275b60dee5f1f29441875
 i
 9TransactionsService/src/main/resources/logback-spring.xml,e\6\e6715ed2e30afbf28fc7dc0e933cdb3879297d52
 š
@@ -107,8 +105,6 @@ _TransactionsService/src/main/java/project/transactionsservice/domain/model/Tran
 xTransactionsService/src/main/java/project/transactionsservice/infrastructure/servicecalls/responses/AccountResponse.java,1\2\123b36e96a3d8b93b3fa64cac85eac331ccb8945
 œ
 lTransactionsService/src/main/java/project/transactionsservice/infrastructure/servicecalls/CreditService.java,e\9\e96108e4dafbfa928e62c8666a0b4ca95395d4e2
-f
-6TransactionsService/src/main/resources/application.yml,e\5\e5384fe2e2f07c530ba47815e820cbe19dffec0c
 ›
 kTransactionsService/src/main/java/project/transactionsservice/infrastructure/exceptions/CustomResponse.java,d\8\d81a29446283f8c98e38e8143fb6fd29b735d34b
 –
@@ -222,8 +218,6 @@ H
 FinalProducts/.gitignore,a\c\ac3262a9798346fdf9201396d01926b6f24ff332
 B
 FinalProducts/mvnw,f\c\fc2309d8ad46c6c6eaefecd681cd3bc4faf88c0e
-`
-0FinalProducts/src/main/resources/application.yml,4\d\4d8660ef99f6f1cf63ccef36a208ce2dd8e426e7
 c
 3FinalProducts/src/main/resources/logback-spring.xml,3\c\3cef949fc319728975628e0ac1e0a0d282f18238
 †
@@ -242,12 +236,8 @@ l
 <FinalProducts/logs/archived/accountsService-2024-05-21.0.log,c\f\cfe1c68348e9d605b655acd9aeff5c637933a0c3
 l
 <FinalProducts/src/test/resources/application-test.properties,8\6\8688442c4cb4d6dd6be497d2815fe779f94d2315
-E
-FinalProducts/HELP.md,0\e\0e6f74ae312efa83ba9cfbc71eb1ff190740a20c
 ¢
 rTransactionsService/src/test/java/project/transactionsservice/infrastructure/strategies/AccountStrategiesTest.java,2\f\2f9c2c51e15a43da21f9a0bc68ed04620e7dc8bf
-­
-}TransactionsService/src/test/java/project/transactionsservice/infrastructure/strategies/transactions/DepositStrategyTest.java,a\8\a89a7a3b77e03e5820060bf90d706515a2069c96
 ©
 yTransactionsService/src/test/java/project/transactionsservice/application/validations/TransactionsAppValidationsTest.java,d\1\d15bcff72d8d2e1d7b5a9537b1413cfad080d76f
 ¦
@@ -288,8 +278,6 @@ H
 XBankConfigServer/src/main/java/project/bankconfigserver/BankConfigServerApplication.java,0\8\0843e34150cc48c900b08626da965b5cda18ea2d
 d
 4BankConfigServer/configClients/BankEurekaService.yml,b\5\b52ef060e272924c8cec8227f7150fd24be31917
-e
-5BankConfigServer/configClients/BankGatewayApplication,f\0\f0d8d65c71dbfddcb713396dec440f247aa680ab
 i
 9BankConfigServer/configClients/BankGatewayApplication.yml,6\6\66176a7fc2f73b37ec3de5fca5d7ceec2ea58d64
 `
@@ -298,3 +286,5 @@ e
 5BankConfigServer/configClients/BankAccountService.yml,7\8\785fba90c5d850ab3512038647ef965a9cdc916c
 f
 6BankConfigServer/configClients/TransactionsService.yml,a\9\a998b17081edc7dd0f12a91d621e28128d37867a
+Š
+ZFinalClient/src/main/java/project/infrastructure/adapters/mongorepos/ClientRepository.java,4\b\4bfa886f5c9d29a24ad7c429a807a68667bbdf1e
