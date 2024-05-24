@@ -1,3 +1,5 @@
+server:
+  port: ${:0}s
 spring:
   cloud:
     config:
@@ -5,6 +7,3 @@ spring:
       uri: http://localhost:8000
   application:
     name: clientService
-server:
-  port: ${:0}
-
