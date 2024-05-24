@@ -9,7 +9,9 @@ import project.transactionsservice.infrastructure.factory.AccountsFactory;
 import project.transactionsservice.infrastructure.helpers.HelperFunctions;
 import project.transactionsservice.infrastructure.mapper.GenericMapper;
 import project.transactionsservice.infrastructure.servicecalls.AccountService;
+import project.transactionsservice.infrastructure.servicecalls.CreditService;
 import project.transactionsservice.infrastructure.servicecalls.request.AccountRequest;
+import project.transactionsservice.infrastructure.servicecalls.request.CreditRequest;
 import project.transactionsservice.infrastructure.servicecalls.responses.AccountResponse;
 import reactor.core.publisher.Mono;
 
@@ -23,6 +25,7 @@ import java.util.function.BiFunction;
 public class TransactionStrategy {
   private final AccountsFactory accountsFactory;
   private final AccountService accountService;
+  private final CreditService creditService;
   private final HelperFunctions helpers;
   BiFunction<TransactionDTO, AccountResponse, Mono<TransactionDTO>> strategy;
 
@@ -34,10 +37,11 @@ public class TransactionStrategy {
    * @param helpers         funciones auxiliares
    */
   public TransactionStrategy(AccountsFactory accountsFactory,
-                             AccountService accountService,
+                             AccountService accountService, CreditService creditService,
                              HelperFunctions helpers) {
     this.accountsFactory = accountsFactory;
     this.accountService = accountService;
+    this.creditService = creditService;
     this.helpers = helpers;
   }
 
@@ -65,7 +69,6 @@ public class TransactionStrategy {
                             Object mapped = GenericMapper.mapToAny(transaction, Object.class); // Mapear la transacción a un objeto genérico
                             return Mono.just(mapped);
                           }
-                          log.warn("Falló la actualización de la solicitud de cuenta en el servicio -> accountService"); // Registrar un mensaje de advertencia si falla la actualización de la cuenta
                           return Mono.error(new InvalidTransaction(updated.getData().toString())); // Devolver un error si falla la actualización de la cuenta
                         });
                   }));
@@ -91,4 +94,45 @@ public class TransactionStrategy {
   public Mono<Object> withdrawalStrategy(TransactionDTO transaction) {
     return saveTransaction(transaction, transaction.getAmmount() * -1); // Llamar al método de guardar transacción para realizar un retiro
   }
+
+  public Mono<Object> creditCardStrategy(TransactionDTO transaction) {
+    return helpers.getCreditCardDetails(transaction.getProductNumber())
+        .flatMap(cardResponse -> TransactionDomainValidations
+            .validateCreditCardCharge(transaction, cardResponse)
+            .flatMap(card -> {
+              CreditRequest request = new CreditRequest(transaction.getAmmount());
+              return creditService.updateCreditCard(transaction.getProductNumber(), request)
+                  .flatMap(updated -> {
+                    if (updated.isSuccess()) {
+                      Object mapped = GenericMapper.mapToAny(transaction, Object.class); // Mapear la transacción a un objeto genérico
+                      return Mono.just(mapped);
+                    }
+                    return Mono.error(new InvalidTransaction(updated.getData().toString())); // Devolver un error si falla la actualización de la cuenta
+                  });
+            })
+        );
+  }
+
+  public Mono<Object> creditStrategy(TransactionDTO transaction) {
+    return helpers.getCreditDetails(transaction.getProductNumber())
+        .flatMap(creditResponse -> TransactionDomainValidations
+            .validateCreditPayment(transaction)
+            .flatMap(credit -> {
+              CreditRequest request = new CreditRequest(false, transaction.getAmmount());
+              if (transaction.getAmmount() >= creditResponse.getLimit()) {
+                request.setPaid(true);
+              }
+              return creditService.updateCredit(transaction.getProductNumber(), request)
+                  .flatMap(updated -> {
+                    if (updated.isSuccess()) {
+                      Object mapped = GenericMapper.mapToAny(transaction, Object.class); // Mapear la transacción a un objeto genérico
+                      return Mono.just(mapped);
+                    }
+                    return Mono.error(new InvalidTransaction(updated.getData().toString())); // Devolver un error si falla la actualización de la cuenta
+                  });
+            })
+        );
+  }
+
+
 }

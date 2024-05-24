@@ -120,11 +120,8 @@ public class TransactionDomainValidations {
    * @param credit      la respuesta del servicio que contiene la información del crédito
    * @return la transacción validada si es válida, o un error si no lo es
    */
-  public static Mono<TransactionDTO> validateCreditPayment(TransactionDTO transaction, CreditResponse credit) {
-    if (credit.getAmmount() == transaction.getAmmount()) {
-      return Mono.just(transaction);
-    }
-    return Mono.error(new InvalidAmmount("Credit payment amount does not match credit amount"));
+  public static Mono<TransactionDTO> validateCreditPayment(TransactionDTO transaction) {
+    return Mono.just(transaction);
   }
 
   /**
@@ -135,7 +132,7 @@ public class TransactionDomainValidations {
    * @return la transacción validada si es válida, o un error si no lo es
    */
   public static Mono<TransactionDTO> validateCreditCardCharge(TransactionDTO transaction, CreditResponse creditCard) {
-    if (creditCard.getAmmount() >= transaction.getAmmount()) {
+    if (creditCard.getLimit() >= transaction.getAmmount()) {
       TransactionDTO mappedTransaction = GenericMapper.mapToAny(creditCard, TransactionDTO.class);
       return Mono.just(mappedTransaction);
     }

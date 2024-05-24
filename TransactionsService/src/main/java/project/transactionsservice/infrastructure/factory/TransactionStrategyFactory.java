@@ -24,6 +24,8 @@ public class TransactionStrategyFactory {
   public TransactionStrategyFactory(TransactionStrategy transactionStrategy) {
     strategies.put("DEPOSITO", transactionStrategy::depositStrategy);
     strategies.put("RETIRO", transactionStrategy::withdrawalStrategy);
+    strategies.put("CARGO", transactionStrategy::creditCardStrategy);
+    strategies.put("PAGO", transactionStrategy::creditStrategy);
   }
 
   /**

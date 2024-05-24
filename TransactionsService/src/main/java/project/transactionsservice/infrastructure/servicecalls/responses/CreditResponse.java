@@ -10,5 +10,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreditResponse {
-  private double ammount; // Depende del microservicio de creditos
+  private String creditNumber;
+  private String clientDocument;
+  private String cardNumber;
+  private double ammount;
+  private boolean paid;
+  private double limit;
 }

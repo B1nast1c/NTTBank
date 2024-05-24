@@ -20,7 +20,7 @@ public class TransactionDTO implements Serializable {
   String productNumber; // CUENTA BANCARIA O CREDITO (Incluye a las tarjetas de crédito)
   String transactionType;
   String transactionDate;
-  String clientNumber;
-  String transactionDetail;
+  String clientNumber = "";
+  String transactionDetail = "";
   double ammount;
 }

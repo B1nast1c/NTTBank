@@ -434,3 +434,7 @@ nmicrocervices-credit/src/main/java/com/microservices_credit/microcervicescredit
 xmicrocervices-credit/src/main/java/com/microservices_credit/microcervicescredit/service/helpers/CreditAndCardHelper.java,a\c\ac3d09c0d4862ab9b289a9ecdb551cbb44b344fa
 ¤
 tmicrocervices-credit/src/main/java/com/microservices_credit/microcervicescredit/controller/CreditCardController.java,0\6\062e472afdb88e43c0b6ae66035673929b2b918a
+¥
+uTransactionsService/src/main/java/project/transactionsservice/infrastructure/servicecalls/request/CreditResponse.java,7\8\7803002b78c8ac386e0bf8bf91df2b4245f5e501
+¤
+tTransactionsService/src/main/java/project/transactionsservice/infrastructure/servicecalls/request/CreditRequest.java,d\2\d21e11a5403061170938528d6eed3c24af9cb367

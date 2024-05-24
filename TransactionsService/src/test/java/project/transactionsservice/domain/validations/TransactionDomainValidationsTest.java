@@ -6,6 +6,7 @@ import project.transactionsservice.domain.model.Transaction;
 import project.transactionsservice.infrastructure.dto.TransactionDTO;
 import project.transactionsservice.infrastructure.exceptions.throwable.InvalidAmmount;
 import project.transactionsservice.infrastructure.exceptions.throwable.InvalidTransaction;
+import project.transactionsservice.infrastructure.servicecalls.request.CreditRequest;
 import project.transactionsservice.infrastructure.servicecalls.responses.AccountResponse;
 import project.transactionsservice.infrastructure.servicecalls.responses.CreditResponse;
 import reactor.core.publisher.Mono;
@@ -171,10 +172,10 @@ class TransactionDomainValidationsTest {
   void creditPaymentShouldBeValid() {
     TransactionDTO transaction = new TransactionDTO();
     transaction.setAmmount(50000.0);
-    CreditResponse credit = new CreditResponse();
+    CreditRequest credit = new CreditRequest();
     credit.setAmmount(50000.0);
 
-    Mono<TransactionDTO> result = TransactionDomainValidations.validateCreditPayment(transaction, credit);
+    Mono<TransactionDTO> result = TransactionDomainValidations.validateCreditPayment(transaction);
 
     StepVerifier.create(result)
         .expectNext(transaction)
@@ -185,10 +186,10 @@ class TransactionDomainValidationsTest {
   void creditPaymentShouldNotBeValid() {
     TransactionDTO transaction = new TransactionDTO();
     transaction.setAmmount(50000.0);
-    CreditResponse credit = new CreditResponse();
+    CreditRequest credit = new CreditRequest();
     credit.setAmmount(20000.0);
 
-    Mono<TransactionDTO> result = TransactionDomainValidations.validateCreditPayment(transaction, credit);
+    Mono<TransactionDTO> result = TransactionDomainValidations.validateCreditPayment(transaction);
 
     StepVerifier.create(result)
         .expectError(InvalidAmmount.class)
