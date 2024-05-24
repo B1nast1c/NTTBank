@@ -1,5 +1,6 @@
 package project.transactionsservice.infrastructure.strategies;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import project.transactionsservice.domain.validations.TransactionDomainValidations;
 import project.transactionsservice.infrastructure.dto.TransactionDTO;
@@ -14,6 +15,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.function.BiFunction;
 
+@Slf4j
 @Component
 public class TransactionStrategy {
   private final AccountsFactory accountsFactory;
@@ -46,6 +48,7 @@ public class TransactionStrategy {
                             Object mapped = GenericMapper.mapToAny(transaction, Object.class);
                             return Mono.just(mapped);
                           }
+                          log.warn("Failed to update account request to the service -> accountService");
                           return Mono.error(new InvalidTransaction(updated.getData().toString()));
                         });
                   }));

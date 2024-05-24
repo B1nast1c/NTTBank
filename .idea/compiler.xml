@@ -7,11 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="BankGateway" />
-        <module name="BankConfigServer" />
+        <module name="microcervices-credit" />
         <module name="FinalProject" />
         <module name="accountService" />
         <module name="BankEurekaService" />
+        <module name="BankGateway" />
+        <module name="BankConfigServer" />
         <module name="TransactionsService" />
       </profile>
     </annotationProcessing>
@@ -24,6 +25,7 @@
       <module name="FinalProject" options="-parameters" />
       <module name="TransactionsService" options="-parameters" />
       <module name="accountService" options="-parameters" />
+      <module name="microcervices-credit" options="-parameters" />
     </option>
   </component>
 </project>

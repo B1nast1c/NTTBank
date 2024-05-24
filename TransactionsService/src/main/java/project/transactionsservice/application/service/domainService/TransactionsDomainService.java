@@ -26,12 +26,14 @@ public class TransactionsDomainService implements TransactionsService {
     return transactionsPort.saveTransaction(transactionDTO)
         .flatMap(
             transaction -> {
+              log.info("A transaction has been created successfully");
               CustomResponse<Object> result = new CustomResponse<>(true, transaction);
               return Mono.just(result);
             }
         )
         .onErrorResume(throwable -> {
           CustomError error = new CustomError(throwable.getMessage(), CustomError.ErrorType.POSTING_ERROR);
+          log.warn(throwable.getMessage());
           CustomResponse<Object> badResponse = new CustomResponse<>(false, error);
           return Mono.just(badResponse);
         });
@@ -41,11 +43,13 @@ public class TransactionsDomainService implements TransactionsService {
   public Mono<CustomResponse<Object>> getTransaction(String transactionId) {
     return transactionsPort.getTransaction(transactionId)
         .flatMap(transaction -> {
+          log.info("A transaction has been gotten successfully");
           CustomResponse<Object> result = new CustomResponse<>(true, transaction);
           return Mono.just(result);
         })
         .onErrorResume(throwable -> {
           CustomError error = new CustomError(throwable.getMessage(), CustomError.ErrorType.GETTING_ERROR);
+          log.warn(throwable.getMessage());
           CustomResponse<Object> badResponse = new CustomResponse<>(false, error);
           return Mono.just(badResponse);
         });
@@ -64,6 +68,7 @@ public class TransactionsDomainService implements TransactionsService {
         .collectList()
         .map(transactions -> new CustomResponse<Object>(true, transactions))
         .onErrorResume(throwable -> {
+          log.warn(throwable.getMessage());
           CustomError error = new CustomError(throwable.getMessage(), CustomError.ErrorType.GETTING_ERROR);
           CustomResponse<Object> badResponse = new CustomResponse<>(false, error);
           return Mono.just(badResponse);

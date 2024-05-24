@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/TransactionsService/pom.xml" />
         <option value="$PROJECT_DIR$/BankGateway/pom.xml" />
         <option value="$PROJECT_DIR$/BankConfigServer/pom.xml" />
+        <option value="$PROJECT_DIR$/microcervices-credit/pom.xml" />
       </list>
     </option>
   </component>

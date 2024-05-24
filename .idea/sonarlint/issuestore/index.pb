@@ -286,3 +286,7 @@ f
 6BankConfigServer/configClients/TransactionsService.yml,a\9\a998b17081edc7dd0f12a91d621e28128d37867a
 Š
 ZFinalClient/src/main/java/project/infrastructure/adapters/mongorepos/ClientRepository.java,4\b\4bfa886f5c9d29a24ad7c429a807a68667bbdf1e
+ 
+pmicrocervices-credit/src/main/java/com/microservices_credit/microcervicescredit/repository/CreditRepository.java,d\8\d81db8b82b8fef7b408afef226012433d4e3518b
+š
+jmicrocervices-credit/src/main/java/com/microservices_credit/microcervicescredit/service/CreditService.java,5\8\5849f0bd9e338349a3c23e5f5a1c57f96bfb7129

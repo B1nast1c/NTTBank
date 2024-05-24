@@ -1,5 +1,6 @@
 package project.transactionsservice.infrastructure.strategies;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import project.transactionsservice.domain.model.Transaction;
 import project.transactionsservice.domain.validations.TransactionDomainValidations;
@@ -10,6 +11,7 @@ import project.transactionsservice.infrastructure.servicecalls.responses.Account
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+@Slf4j
 @Component
 public class AccountStrategies {
   private final TransactionsRepo transactionsRepo;
@@ -22,6 +24,7 @@ public class AccountStrategies {
     if (transaction.getClientNumber().equals(response.getClientDocument())) {
       return Mono.just(transaction);
     }
+    log.warn("Client not allowed to do the transaction GENERIC ACCOUNT");
     return Mono.error(new InvalidClient("Client not allowed to do the transaction"));
   }
 
@@ -43,6 +46,7 @@ public class AccountStrategies {
         || response.getAccountTitulars().contains(transaction.getClientNumber())) {
       return Mono.just(transaction);
     }
+    log.warn("Client not allowed to do the transaction (CUENTA CORRIENTE)");
     return Mono.error(new InvalidClient("Client not allowed to do the transaction"));
   }
 }

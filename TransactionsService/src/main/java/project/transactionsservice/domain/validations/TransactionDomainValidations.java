@@ -1,5 +1,6 @@
 package project.transactionsservice.domain.validations;
 
+import lombok.extern.slf4j.Slf4j;
 import project.transactionsservice.domain.model.Transaction;
 import project.transactionsservice.infrastructure.dto.TransactionDTO;
 import project.transactionsservice.infrastructure.exceptions.throwable.InvalidAmmount;
@@ -18,6 +19,7 @@ import java.time.format.DateTimeParseException;
 import java.util.Date;
 import java.util.List;
 
+@Slf4j
 public abstract class TransactionDomainValidations {
   private static LocalDate convertToLocalDate(Date date) {
     return Instant.ofEpochMilli(date.getTime())
@@ -51,6 +53,7 @@ public abstract class TransactionDomainValidations {
     if (!onlyAccount) {
       return Mono.just(transaction);
     }
+    log.warn("Fixed account allows just a transaction per month");
     return Mono.error(new InvalidAmmount("Fixed account allows just a transaction per month"));
   }
 
@@ -58,6 +61,7 @@ public abstract class TransactionDomainValidations {
     if (transaction.getAmmount() <= 100000) {
       return Mono.just(transaction);
     }
+    log.warn("The deposit ammount is too big");
     return Mono.error(new InvalidAmmount("The deposit ammount is too big"));
   }
 
@@ -65,6 +69,7 @@ public abstract class TransactionDomainValidations {
     if (account.getBalance() >= transaction.getAmmount()) {
       return Mono.just(transaction);
     }
+    log.warn("Insufficient funds for withdrawal");
     return Mono.error(new InvalidAmmount("Insufficient funds for withdrawal"));
   }
 
