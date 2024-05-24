@@ -24,6 +24,10 @@ import java.util.List;
 @Slf4j
 public class TransactionDomainValidations {
 
+  private TransactionDomainValidations() {
+    log.info("Private constructor");
+  }
+
   /**
    * Convierte una fecha a LocalDate.
    *

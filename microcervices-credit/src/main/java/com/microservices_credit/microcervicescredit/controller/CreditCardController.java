@@ -1,8 +1,8 @@
 package com.microservices_credit.microcervicescredit.controller;
 
-import com.microservices_credit.microcervicescredit.entity.Credits;
+import com.microservices_credit.microcervicescredit.entity.CreditCard;
 import com.microservices_credit.microcervicescredit.entity.CustomResponse;
-import com.microservices_credit.microcervicescredit.service.CreditService;
+import com.microservices_credit.microcervicescredit.service.CreditCardService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,48 +14,46 @@ import java.util.List;
  * Fecha: 9/05/2024
  */
 
-@RestController //appi rest
-@RequestMapping("/credits") // Definimos una url especifica para el microservicio
+@RestController //api rest
+@RequestMapping("/cards") // Definimos una url especifica para el microservicio
+public class CreditCardController {
+  private final CreditCardService creditService; //nos dara un error
 
-// Va a ser una clase como un end point es decir una clase que va a exponer recursos
-public class CreditController {
-  private final CreditService creditService;  //nos dara un error
-
-  public CreditController(CreditService creditService) {
+  public CreditCardController(CreditCardService creditService) {
     this.creditService = creditService;
   }
 
   //Metodo para poder guardar un credito nos permitira que el objeto json pase a mapearse en nuestra clase java
   @PostMapping(value = "/create")
-  public CustomResponse<Object> createCredits(@RequestBody Credits Credits) {
-    return creditService.createCredits(Credits);
+  public CustomResponse<Object> createCredits(@RequestBody CreditCard creditCard) {
+    return creditService.createCreditCards(creditCard);
   }
 
-  @GetMapping(value = "/credit/{id}")     //nos permitira obtener un registro del servidor
+  @GetMapping(value = "/card/{id}")     //nos permitira obtener un registro del servidor
   public CustomResponse<Object> getCreditById(@PathVariable String id) { //En la url viene ID y que el id deve de mapearlo a la variable id
-    return creditService.getCreditsById(id);
+    return creditService.getCardsById(id);
   }
 
-  @GetMapping(value = "/credit/client/{id}")     //nos permitira obtener un registro del servidor
+  @GetMapping(value = "/card/client/{id}")     //nos permitira obtener un registro del servidor
   public CustomResponse<Object> getCreditByClientDocument(@PathVariable String id) { //En la url viene ID y que el id deve de mapearlo a la variable id
-    return creditService.getCreditsByClientDocument(id);
+    return creditService.getCardByClientDocument(id);
   }
 
   //Creamos un nuevo metodo para traer todos de los creditos
   @GetMapping(value = "/all")     //traemos algo del servidor es decir todos los creditops
-  public CustomResponse<List<Credits>> findAll() {
+  public CustomResponse<List<CreditCard>> findAll() {
     return creditService.findAll();
   }
 
   //Modificamos un credito
   @PutMapping(value = "/update/{id}")
-  public CustomResponse<Object> updateCredit(@PathVariable String id, @RequestBody Credits credit) {
-    return creditService.updateCredit(id, credit);
+  public CustomResponse<Object> updateCredit(@PathVariable String id, @RequestBody CreditCard creditCard) {
+    return creditService.updateCredit(id, creditCard);
   }
 
   //Eliminamos un credito
   @DeleteMapping(value = "/delete/{id}")
   public void deleteCredit(@PathVariable String id) {
-    creditService.deleteCredit(id);
+    creditService.deleteCreditCard(id);
   }
 }

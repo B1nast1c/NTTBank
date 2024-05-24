@@ -20,6 +20,14 @@ spring:
           uri: lb://transactionsService
           predicates:
             - Path=/transactions/**
+        - id: creditsService
+          uri: lb://microcervices-credit
+          predicates:
+            - Path=/credits/**
+        - id: creditCardsService
+          uri: lb://microcervices-credit
+          predicates:
+            - Path=/cards/**
 eureka:
   client:
     registerWithEureka: true

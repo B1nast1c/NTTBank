@@ -1,0 +1,319 @@
+2024-05-24 13:12:30 [restartedMain] INFO  : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-24 13:12:30 [restartedMain] INFO  : Fetching config from server at : http://localhost:8000
+2024-05-24 13:12:32 [restartedMain] INFO  : Located environment: name=clientService, profiles=[default], label=null, version=1362ffdffce888a65e9436feed2dc5af63eedce9, state=null
+2024-05-24 13:12:32 [restartedMain] INFO  : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/B1nast1c/NTTBank/BankConfigServer/configClients/clientService.yml'}]
+2024-05-24 13:12:32 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-05-24 13:12:32 [restartedMain] INFO  : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2024-05-24 13:12:32 [restartedMain] INFO  : Finished Spring Data repository scanning in 54 ms. Found 1 Reactive MongoDB repository interfaces.
+2024-05-24 13:12:32 [restartedMain] INFO  : BeanFactory id=51dc9dc2-f4eb-3c0a-a3b3-e950abbffdcf
+2024-05-24 13:12:32 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 13:12:32 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 13:12:32 [restartedMain] INFO  : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 13:12:33 [restartedMain] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/11.0.22+9-LTS-219"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@54e52c23, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@644ea502]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2024-05-24 13:12:33 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 13:12:33 [restartedMain] WARN  : Unable to start LiveReload server
+2024-05-24 13:12:33 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 13:12:33 [cluster-ClusterId{value='6650d89120effd369c5b3248', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:1, serverValue:78}] to localhost:27017
+2024-05-24 13:12:33 [cluster-rtt-ClusterId{value='6650d89120effd369c5b3248', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:2, serverValue:79}] to localhost:27017
+2024-05-24 13:12:33 [cluster-ClusterId{value='6650d89120effd369c5b3248', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=61990000}
+2024-05-24 13:12:33 [nioEventLoopGroup-3-3] INFO  : Opened connection [connectionId{localValue:3, serverValue:80}] to localhost:27017
+2024-05-24 13:12:34 [restartedMain] INFO  : Eureka HTTP Client uses RestTemplate.
+2024-05-24 13:12:34 [restartedMain] WARN  : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-24 13:12:34 [restartedMain] INFO  : Netty started on port 61766
+2024-05-24 13:12:34 [restartedMain] INFO  : Updating port to 61766
+2024-05-24 13:12:34 [restartedMain] INFO  : Setting initial instance status as: STARTING
+2024-05-24 13:12:34 [restartedMain] INFO  : Initializing Eureka in region us-east-1
+2024-05-24 13:12:34 [restartedMain] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 13:12:34 [restartedMain] INFO  : Disable delta property : false
+2024-05-24 13:12:34 [restartedMain] INFO  : Single vip registry refresh property : null
+2024-05-24 13:12:34 [restartedMain] INFO  : Force full registry fetch : false
+2024-05-24 13:12:34 [restartedMain] INFO  : Application is null : false
+2024-05-24 13:12:34 [restartedMain] INFO  : Registered Applications size is zero : true
+2024-05-24 13:12:34 [restartedMain] INFO  : Application version is -1: true
+2024-05-24 13:12:34 [restartedMain] INFO  : Getting all instance registry info from the eureka server
+2024-05-24 13:12:34 [restartedMain] INFO  : The response status is 200
+2024-05-24 13:12:34 [restartedMain] INFO  : Starting heartbeat executor: renew interval is: 30
+2024-05-24 13:12:34 [restartedMain] INFO  : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-24 13:12:34 [restartedMain] INFO  : Discovery Client initialized at timestamp 1716574354871 with initial instances count: 1
+2024-05-24 13:12:34 [restartedMain] INFO  : Registering application CLIENTSERVICE with eureka with status UP
+2024-05-24 13:12:34 [restartedMain] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716574354873, current=UP, previous=STARTING]
+2024-05-24 13:12:34 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_CLIENTSERVICE/192.168.0.11:clientService:0: registering service...
+2024-05-24 13:12:34 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_CLIENTSERVICE/192.168.0.11:clientService:0 - registration status: 204
+2024-05-24 13:12:35 [restartedMain] INFO  : Started FinalProjectApplication in 5.411 seconds (JVM running for 6.341)
+2024-05-24 13:17:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 13:22:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 13:27:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 13:32:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 13:37:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 13:40:48 [nioEventLoopGroup-3-3] INFO  : Client found -> Patricio Flores
+2024-05-24 13:40:55 [nioEventLoopGroup-3-3] INFO  : Client found -> Patricio Flores
+2024-05-24 13:42:18 [nioEventLoopGroup-3-3] INFO  : Client found -> Patricio Flores
+2024-05-24 13:42:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 13:43:04 [nioEventLoopGroup-3-3] INFO  : Client found -> Patricio Flores
+2024-05-24 13:44:45 [nioEventLoopGroup-3-3] INFO  : Client found -> Patricio Flores
+2024-05-24 13:44:47 [nioEventLoopGroup-3-3] INFO  : Client found -> Patricio Flores
+2024-05-24 13:46:49 [nioEventLoopGroup-3-3] INFO  : Client found -> Patricio Flores
+2024-05-24 13:47:29 [nioEventLoopGroup-3-3] INFO  : Client found -> Patricio Flores
+2024-05-24 13:47:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 13:48:19 [nioEventLoopGroup-3-3] INFO  : Client found -> Patricio Flores
+2024-05-24 13:48:34 [nioEventLoopGroup-3-3] INFO  : Client found -> Mas Ventas
+2024-05-24 13:48:36 [nioEventLoopGroup-3-3] INFO  : Client found -> Mas Ventas
+2024-05-24 13:52:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 13:53:13 [nioEventLoopGroup-3-3] INFO  : Client found -> Patricio Flores
+2024-05-24 13:53:44 [nioEventLoopGroup-3-3] INFO  : Client found -> San Fernando
+2024-05-24 13:53:45 [nioEventLoopGroup-3-3] INFO  : Client found -> San Fernando
+2024-05-24 13:53:46 [nioEventLoopGroup-3-3] INFO  : Client found -> San Fernando
+2024-05-24 13:57:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 14:02:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 14:07:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 14:12:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 14:17:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 14:22:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 14:27:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 14:32:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 14:37:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 14:42:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 14:47:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 14:52:34 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 15:08:12 [cluster-ClusterId{value='6650d89120effd369c5b3248', description='null'}-localhost:27017] INFO  : Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.connection.netty.NettyStream$InboundBufferHandler.exceptionCaught(NettyStream.java:427)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:346)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:325)
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:317)
+	at com.mongodb.connection.netty.NettyStream$ReadTimeoutTask.run(NettyStream.java:564)
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:153)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: io.netty.handler.timeout.ReadTimeoutException: null
+2024-05-24 15:08:13 [cluster-ClusterId{value='6650d89120effd369c5b3248', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:4, serverValue:166}] to localhost:27017
+2024-05-24 15:08:13 [cluster-ClusterId{value='6650d89120effd369c5b3248', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=202236900}
+2024-05-24 15:08:41 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 15:10:46 [nioEventLoopGroup-3-5] INFO  : Opened connection [connectionId{localValue:5, serverValue:173}] to localhost:27017
+2024-05-24 15:10:46 [nioEventLoopGroup-3-5] INFO  : Client found -> Patricio Flores
+2024-05-24 15:10:50 [nioEventLoopGroup-3-5] INFO  : Client found -> Patricio Flores
+2024-05-24 15:11:08 [nioEventLoopGroup-3-5] INFO  : Client found -> San Fernando
+2024-05-24 15:11:09 [nioEventLoopGroup-3-5] INFO  : Client found -> San Fernando
+2024-05-24 15:13:41 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 15:18:41 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 15:23:41 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 15:24:55 [nioEventLoopGroup-3-5] INFO  : Client found -> Patricio Flores
+2024-05-24 15:25:12 [nioEventLoopGroup-3-5] INFO  : Client found -> Patricio Flores
+2024-05-24 15:25:23 [nioEventLoopGroup-3-5] INFO  : Client found -> San Fernando
+2024-05-24 15:25:34 [nioEventLoopGroup-3-5] INFO  : Client found -> San Fernando
+2024-05-24 15:25:35 [nioEventLoopGroup-3-5] INFO  : Client found -> San Fernando
+2024-05-24 15:28:41 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 15:33:41 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 15:38:41 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 15:43:41 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 15:45:35 [cluster-ClusterId{value='6650d89120effd369c5b3248', description='null'}-localhost:27017] INFO  : Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.connection.netty.NettyStream$InboundBufferHandler.exceptionCaught(NettyStream.java:427)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:346)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:325)
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:317)
+	at com.mongodb.connection.netty.NettyStream$ReadTimeoutTask.run(NettyStream.java:564)
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:153)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: io.netty.handler.timeout.ReadTimeoutException: null
+2024-05-24 15:45:36 [cluster-ClusterId{value='6650d89120effd369c5b3248', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:6, serverValue:195}] to localhost:27017
+2024-05-24 15:45:36 [cluster-ClusterId{value='6650d89120effd369c5b3248', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=378498900}
+2024-05-24 15:50:32 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 15:52:58 [SpringApplicationShutdownHook] INFO  : Unregistering application CLIENTSERVICE with eureka with status DOWN
+2024-05-24 15:52:58 [SpringApplicationShutdownHook] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716583978831, current=DOWN, previous=UP]
+2024-05-24 15:52:58 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_CLIENTSERVICE/192.168.0.11:clientService:0: registering service...
+2024-05-24 15:52:58 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_CLIENTSERVICE/192.168.0.11:clientService:0 - registration status: 204
+2024-05-24 15:52:58 [SpringApplicationShutdownHook] INFO  : Opened connection [connectionId{localValue:7, serverValue:203}] to localhost:27017
+2024-05-24 15:53:01 [SpringApplicationShutdownHook] INFO  : Shutting down DiscoveryClient ...
+2024-05-24 15:53:04 [SpringApplicationShutdownHook] INFO  : Unregistering ...
+2024-05-24 15:53:04 [SpringApplicationShutdownHook] INFO  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/CLIENTSERVICE/192.168.0.11:clientService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/CLIENTSERVICE/192.168.0.11:clientService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1120)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1086)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1032)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 39 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/java.net.PlainSocketImpl.connect0(Native Method)
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:101)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.base/java.net.Socket.connect(Socket.java:608)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 52 more
+
+2024-05-24 15:53:04 [SpringApplicationShutdownHook] WARN  : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/CLIENTSERVICE/192.168.0.11:clientService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2024-05-24 15:53:04 [SpringApplicationShutdownHook] INFO  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/CLIENTSERVICE/192.168.0.11:clientService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/CLIENTSERVICE/192.168.0.11:clientService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1120)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1086)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1032)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 40 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/java.net.PlainSocketImpl.connect0(Native Method)
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:101)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.base/java.net.Socket.connect(Socket.java:608)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 53 more
+
+2024-05-24 15:53:04 [SpringApplicationShutdownHook] WARN  : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/CLIENTSERVICE/192.168.0.11:clientService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2024-05-24 15:53:04 [SpringApplicationShutdownHook] ERROR : DiscoveryClient_CLIENTSERVICE/192.168.0.11:clientService:0 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1120)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1086)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1032)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-05-24 15:53:04 [SpringApplicationShutdownHook] INFO  : Completed shut down of DiscoveryClient
