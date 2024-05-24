@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          default-label: master
+          default-label: main
           uri: https://github.com/B1nast1c/NTTBank
           search-paths: BankConfigServer/configClients
 server:

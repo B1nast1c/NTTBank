@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/BankEurekaService/pom.xml" />
         <option value="$PROJECT_DIR$/TransactionsService/pom.xml" />
         <option value="$PROJECT_DIR$/BankGateway/pom.xml" />
+        <option value="$PROJECT_DIR$/BankConfigServer/pom.xml" />
       </list>
     </option>
   </component>

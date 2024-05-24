@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="BankGateway" />
+        <module name="BankConfigServer" />
         <module name="FinalProject" />
         <module name="accountService" />
         <module name="BankEurekaService" />
@@ -17,6 +18,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BankConfigServer" options="-parameters" />
       <module name="BankEurekaService" options="-parameters" />
       <module name="BankGateway" options="-parameters" />
       <module name="FinalProject" options="-parameters" />
