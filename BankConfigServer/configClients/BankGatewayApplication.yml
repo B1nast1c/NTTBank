@@ -1,3 +1,5 @@
+server:
+  port: ${:0}
 spring:
   application:
     name: bankGateway
@@ -25,8 +27,6 @@ eureka:
     registerWithEureka: false
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
-server:
-  port: 8888
 
 management:
   endpoint:

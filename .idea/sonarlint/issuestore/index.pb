@@ -288,3 +288,7 @@ H
 XBankConfigServer/src/main/java/project/bankconfigserver/BankConfigServerApplication.java,0\8\0843e34150cc48c900b08626da965b5cda18ea2d
 d
 4BankConfigServer/configClients/BankEurekaService.yml,b\5\b52ef060e272924c8cec8227f7150fd24be31917
+e
+5BankConfigServer/configClients/BankGatewayApplication,f\0\f0d8d65c71dbfddcb713396dec440f247aa680ab
+i
+9BankConfigServer/configClients/BankGatewayApplication.yml,6\6\66176a7fc2f73b37ec3de5fca5d7ceec2ea58d64
