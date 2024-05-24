@@ -1,9 +1,32 @@
 spring:
-  cloud:
-    config:
-      enabled: true
-      uri: http://localhost:8000
   application:
     name: accountsService
+  data:
+    mongodb:
+      database: BankProducts
+      host: localhost
+      port: 27017
+      auto-index-creation: true
+  main:
+    web-application-type: reactive
+  jackson:
+    default-property-inclusion: non_null
+    date-format: yyyy/MM/dd
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+logging:
+  file:
+    name: logs/productsService.log
+    path: logs/
+  level:
+    com:
+      example: DEBUG
 server:
   port: ${:0}

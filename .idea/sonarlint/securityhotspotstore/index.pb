@@ -234,8 +234,6 @@ V
 &FinalProducts/logs/accountsService.log,8\c\8c3b6af89b6e4f9db2d1220afb19cf13aa6a71d7
 l
 <FinalProducts/logs/archived/accountsService-2024-05-21.0.log,c\f\cfe1c68348e9d605b655acd9aeff5c637933a0c3
-l
-<FinalProducts/src/test/resources/application-test.properties,8\6\8688442c4cb4d6dd6be497d2815fe779f94d2315
 ¢
 rTransactionsService/src/test/java/project/transactionsservice/infrastructure/strategies/AccountStrategiesTest.java,2\f\2f9c2c51e15a43da21f9a0bc68ed04620e7dc8bf
 ©

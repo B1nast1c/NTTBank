@@ -9,15 +9,15 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>project</groupId>
-    <artifactId>accountService</artifactId>
+    <artifactId>accountsService</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>FinalProject</name>
     <description>FinalProject</description>
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>2021.0.9</spring-cloud.version>
-        <sonar.projectKey>accountService</sonar.projectKey>
-        <sonar.projectName>accountService</sonar.projectName>
+        <sonar.projectKey>accountsService</sonar.projectKey>
+        <sonar.projectName>accountsService</sonar.projectName>
         <sonar.projectVersion>1.0</sonar.projectVersion>
         <sonar.sources>src/main/java</sonar.sources>
         <sonar.tests>src/test/java</sonar.tests>
@@ -88,11 +88,6 @@
             <artifactId>mockwebserver</artifactId>
             <version>4.10.0</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib</artifactId>
-            <version>1.6.10</version>
         </dependency>
         <dependency>
             <groupId>com.github.tomakehurst</groupId>

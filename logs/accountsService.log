@@ -2222,3 +2222,1114 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 2024-05-24 01:44:57 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
 2024-05-24 01:44:57 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
 2024-05-24 01:44:57 [restartedMain] INFO  : Started FinalProjectApplication in 4.472 seconds (JVM running for 5.142)
+2024-05-24 01:49:56 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 01:54:56 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 01:58:29 [reactor-http-nio-2] INFO  : Retrieving all accounts
+2024-05-24 01:58:29 [nioEventLoopGroup-3-3] INFO  : Opened connection [connectionId{localValue:3, serverValue:124}] to localhost:27017
+2024-05-24 01:59:09 [SpringApplicationShutdownHook] INFO  : Unregistering application ACCOUNTSSERVICE with eureka with status DOWN
+2024-05-24 01:59:09 [SpringApplicationShutdownHook] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716533949447, current=DOWN, previous=UP]
+2024-05-24 01:59:09 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 01:59:09 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 01:59:11 [SpringApplicationShutdownHook] INFO  : Shutting down DiscoveryClient ...
+2024-05-24 01:59:14 [SpringApplicationShutdownHook] INFO  : Unregistering ...
+2024-05-24 01:59:14 [SpringApplicationShutdownHook] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - deregister  status: 200
+2024-05-24 01:59:14 [SpringApplicationShutdownHook] INFO  : Completed shut down of DiscoveryClient
+2024-05-24 01:59:17 [restartedMain] INFO  : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-24 01:59:17 [restartedMain] INFO  : Fetching config from server at : http://localhost:8000
+2024-05-24 01:59:18 [restartedMain] INFO  : Located environment: name=accountsService, profiles=[default], label=null, version=b023fcdc95966a71ca168fc3a799f1b4284b9854, state=null
+2024-05-24 01:59:18 [restartedMain] INFO  : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}]
+2024-05-24 01:59:18 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-05-24 01:59:19 [restartedMain] INFO  : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2024-05-24 01:59:19 [restartedMain] INFO  : Finished Spring Data repository scanning in 93 ms. Found 3 Reactive MongoDB repository interfaces.
+2024-05-24 01:59:19 [restartedMain] INFO  : BeanFactory id=2736589b-1b3a-3b14-95fc-bb5a688bf055
+2024-05-24 01:59:19 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 01:59:19 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 01:59:19 [restartedMain] INFO  : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 01:59:19 [restartedMain] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Amazon.com Inc./19.0.2+7-FR"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@10e83450, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@755e238b]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2024-05-24 01:59:19 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 01:59:20 [cluster-rtt-ClusterId{value='66503ac76c87d95a5920e397', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:2, serverValue:125}] to localhost:27017
+2024-05-24 01:59:20 [cluster-ClusterId{value='66503ac76c87d95a5920e397', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:1, serverValue:126}] to localhost:27017
+2024-05-24 01:59:20 [cluster-ClusterId{value='66503ac76c87d95a5920e397', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=37265400}
+2024-05-24 01:59:20 [restartedMain] WARN  : Unable to start LiveReload server
+2024-05-24 01:59:20 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 01:59:20 [restartedMain] INFO  : Eureka HTTP Client uses RestTemplate.
+2024-05-24 01:59:20 [restartedMain] WARN  : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-24 01:59:20 [restartedMain] INFO  : Netty started on port 50577
+2024-05-24 01:59:20 [restartedMain] INFO  : Updating port to 50577
+2024-05-24 01:59:20 [restartedMain] INFO  : Setting initial instance status as: STARTING
+2024-05-24 01:59:20 [restartedMain] INFO  : Initializing Eureka in region us-east-1
+2024-05-24 01:59:20 [restartedMain] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 01:59:20 [restartedMain] INFO  : Disable delta property : false
+2024-05-24 01:59:20 [restartedMain] INFO  : Single vip registry refresh property : null
+2024-05-24 01:59:20 [restartedMain] INFO  : Force full registry fetch : false
+2024-05-24 01:59:20 [restartedMain] INFO  : Application is null : false
+2024-05-24 01:59:20 [restartedMain] INFO  : Registered Applications size is zero : true
+2024-05-24 01:59:20 [restartedMain] INFO  : Application version is -1: true
+2024-05-24 01:59:20 [restartedMain] INFO  : Getting all instance registry info from the eureka server
+2024-05-24 01:59:21 [restartedMain] INFO  : The response status is 200
+2024-05-24 01:59:21 [restartedMain] INFO  : Starting heartbeat executor: renew interval is: 30
+2024-05-24 01:59:21 [restartedMain] INFO  : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-24 01:59:21 [restartedMain] INFO  : Discovery Client initialized at timestamp 1716533961116 with initial instances count: 4
+2024-05-24 01:59:21 [restartedMain] INFO  : Registering application ACCOUNTSSERVICE with eureka with status UP
+2024-05-24 01:59:21 [restartedMain] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716533961117, current=UP, previous=STARTING]
+2024-05-24 01:59:21 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 01:59:21 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 01:59:21 [restartedMain] INFO  : Started FinalProjectApplication in 4.277 seconds (JVM running for 4.978)
+2024-05-24 01:59:30 [reactor-http-nio-2] INFO  : Retrieving all accounts
+2024-05-24 01:59:30 [nioEventLoopGroup-3-3] INFO  : Opened connection [connectionId{localValue:3, serverValue:127}] to localhost:27017
+2024-05-24 02:04:20 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 02:05:26 [File Watcher] INFO  : Restarting due to 43 class path changes (0 additions, 43 deletions, 0 modifications)
+2024-05-24 02:05:26 [Thread-1] INFO  : Unregistering application ACCOUNTSSERVICE with eureka with status DOWN
+2024-05-24 02:05:26 [Thread-1] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716534326388, current=DOWN, previous=UP]
+2024-05-24 02:05:26 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 02:05:26 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 02:05:28 [Thread-1] INFO  : Shutting down DiscoveryClient ...
+2024-05-24 02:05:31 [Thread-1] INFO  : Unregistering ...
+2024-05-24 02:05:31 [Thread-1] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - deregister  status: 200
+2024-05-24 02:05:31 [Thread-1] INFO  : Completed shut down of DiscoveryClient
+2024-05-24 02:05:40 [restartedMain] INFO  : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-24 02:05:40 [restartedMain] INFO  : Fetching config from server at : http://localhost:8000
+2024-05-24 02:05:41 [restartedMain] INFO  : Located environment: name=accountsService, profiles=[default], label=null, version=b023fcdc95966a71ca168fc3a799f1b4284b9854, state=null
+2024-05-24 02:05:41 [restartedMain] INFO  : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}]
+2024-05-24 02:05:41 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-05-24 02:05:42 [restartedMain] INFO  : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2024-05-24 02:05:42 [restartedMain] INFO  : Finished Spring Data repository scanning in 98 ms. Found 3 Reactive MongoDB repository interfaces.
+2024-05-24 02:05:42 [restartedMain] INFO  : BeanFactory id=2736589b-1b3a-3b14-95fc-bb5a688bf055
+2024-05-24 02:05:42 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 02:05:42 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 02:05:42 [restartedMain] INFO  : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 02:05:43 [restartedMain] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Amazon.com Inc./19.0.2+7-FR"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@23b2de14, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@18b45919]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2024-05-24 02:05:43 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 02:05:43 [cluster-ClusterId{value='66503c4611809e5def26ed12', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:2, serverValue:130}] to localhost:27017
+2024-05-24 02:05:43 [cluster-ClusterId{value='66503c4611809e5def26ed12', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=44649100}
+2024-05-24 02:05:43 [cluster-rtt-ClusterId{value='66503c4611809e5def26ed12', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:1, serverValue:129}] to localhost:27017
+2024-05-24 02:05:43 [restartedMain] WARN  : Unable to start LiveReload server
+2024-05-24 02:05:43 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 02:05:43 [restartedMain] INFO  : Eureka HTTP Client uses RestTemplate.
+2024-05-24 02:05:43 [restartedMain] WARN  : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-24 02:05:44 [restartedMain] INFO  : Netty started on port 51426
+2024-05-24 02:05:44 [restartedMain] INFO  : Updating port to 51426
+2024-05-24 02:05:44 [restartedMain] INFO  : Setting initial instance status as: STARTING
+2024-05-24 02:05:44 [restartedMain] INFO  : Initializing Eureka in region us-east-1
+2024-05-24 02:05:44 [restartedMain] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 02:05:44 [restartedMain] INFO  : Disable delta property : false
+2024-05-24 02:05:44 [restartedMain] INFO  : Single vip registry refresh property : null
+2024-05-24 02:05:44 [restartedMain] INFO  : Force full registry fetch : false
+2024-05-24 02:05:44 [restartedMain] INFO  : Application is null : false
+2024-05-24 02:05:44 [restartedMain] INFO  : Registered Applications size is zero : true
+2024-05-24 02:05:44 [restartedMain] INFO  : Application version is -1: true
+2024-05-24 02:05:44 [restartedMain] INFO  : Getting all instance registry info from the eureka server
+2024-05-24 02:05:44 [restartedMain] INFO  : The response status is 200
+2024-05-24 02:05:44 [restartedMain] INFO  : Starting heartbeat executor: renew interval is: 30
+2024-05-24 02:05:44 [restartedMain] INFO  : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-24 02:05:44 [restartedMain] INFO  : Discovery Client initialized at timestamp 1716534344376 with initial instances count: 4
+2024-05-24 02:05:44 [restartedMain] INFO  : Registering application ACCOUNTSSERVICE with eureka with status UP
+2024-05-24 02:05:44 [restartedMain] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716534344377, current=UP, previous=STARTING]
+2024-05-24 02:05:44 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 02:05:44 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 02:05:44 [restartedMain] INFO  : Started FinalProjectApplication in 5.064 seconds (JVM running for 5.886)
+2024-05-24 02:07:15 [SpringApplicationShutdownHook] INFO  : Unregistering application ACCOUNTSSERVICE with eureka with status DOWN
+2024-05-24 02:07:15 [SpringApplicationShutdownHook] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716534435809, current=DOWN, previous=UP]
+2024-05-24 02:07:15 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 02:07:15 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 02:07:17 [SpringApplicationShutdownHook] INFO  : Shutting down DiscoveryClient ...
+2024-05-24 02:07:20 [SpringApplicationShutdownHook] INFO  : Unregistering ...
+2024-05-24 02:07:20 [SpringApplicationShutdownHook] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - deregister  status: 200
+2024-05-24 02:07:20 [SpringApplicationShutdownHook] INFO  : Completed shut down of DiscoveryClient
+2024-05-24 02:07:24 [restartedMain] INFO  : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-24 02:07:25 [restartedMain] INFO  : Fetching config from server at : http://localhost:8000
+2024-05-24 02:07:26 [restartedMain] INFO  : Located environment: name=accountsService, profiles=[default], label=null, version=b023fcdc95966a71ca168fc3a799f1b4284b9854, state=null
+2024-05-24 02:07:26 [restartedMain] INFO  : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}]
+2024-05-24 02:07:26 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-05-24 02:07:26 [restartedMain] INFO  : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2024-05-24 02:07:26 [restartedMain] INFO  : Finished Spring Data repository scanning in 121 ms. Found 3 Reactive MongoDB repository interfaces.
+2024-05-24 02:07:27 [restartedMain] INFO  : BeanFactory id=2736589b-1b3a-3b14-95fc-bb5a688bf055
+2024-05-24 02:07:27 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 02:07:27 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 02:07:27 [restartedMain] INFO  : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 02:07:27 [restartedMain] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Amazon.com Inc./19.0.2+7-FR"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@c2181ca, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@5f674680]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2024-05-24 02:07:27 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 02:07:27 [cluster-ClusterId{value='66503caf8da65c46fc194c95', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:2, serverValue:131}] to localhost:27017
+2024-05-24 02:07:27 [cluster-rtt-ClusterId{value='66503caf8da65c46fc194c95', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:1, serverValue:132}] to localhost:27017
+2024-05-24 02:07:27 [cluster-ClusterId{value='66503caf8da65c46fc194c95', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=39532900}
+2024-05-24 02:07:27 [restartedMain] WARN  : Unable to start LiveReload server
+2024-05-24 02:07:27 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 02:07:28 [restartedMain] INFO  : Eureka HTTP Client uses RestTemplate.
+2024-05-24 02:07:28 [restartedMain] WARN  : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-24 02:07:28 [restartedMain] INFO  : Netty started on port 51563
+2024-05-24 02:07:28 [restartedMain] INFO  : Updating port to 51563
+2024-05-24 02:07:28 [restartedMain] INFO  : Setting initial instance status as: STARTING
+2024-05-24 02:07:28 [restartedMain] INFO  : Initializing Eureka in region us-east-1
+2024-05-24 02:07:28 [restartedMain] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 02:07:28 [restartedMain] INFO  : Disable delta property : false
+2024-05-24 02:07:28 [restartedMain] INFO  : Single vip registry refresh property : null
+2024-05-24 02:07:28 [restartedMain] INFO  : Force full registry fetch : false
+2024-05-24 02:07:28 [restartedMain] INFO  : Application is null : false
+2024-05-24 02:07:28 [restartedMain] INFO  : Registered Applications size is zero : true
+2024-05-24 02:07:28 [restartedMain] INFO  : Application version is -1: true
+2024-05-24 02:07:28 [restartedMain] INFO  : Getting all instance registry info from the eureka server
+2024-05-24 02:07:28 [restartedMain] INFO  : The response status is 200
+2024-05-24 02:07:28 [restartedMain] INFO  : Starting heartbeat executor: renew interval is: 30
+2024-05-24 02:07:28 [restartedMain] INFO  : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-24 02:07:28 [restartedMain] INFO  : Discovery Client initialized at timestamp 1716534448680 with initial instances count: 4
+2024-05-24 02:07:28 [restartedMain] INFO  : Registering application ACCOUNTSSERVICE with eureka with status UP
+2024-05-24 02:07:28 [restartedMain] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716534448682, current=UP, previous=STARTING]
+2024-05-24 02:07:28 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 02:07:28 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 02:07:28 [restartedMain] INFO  : Started FinalProjectApplication in 4.628 seconds (JVM running for 5.415)
+2024-05-24 02:07:40 [reactor-http-nio-2] INFO  : Retrieving all accounts
+2024-05-24 02:07:40 [nioEventLoopGroup-3-3] INFO  : Opened connection [connectionId{localValue:3, serverValue:133}] to localhost:27017
+2024-05-24 02:12:28 [AsyncResolver-bootstrap-executor-0] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 02:14:26 [SpringApplicationShutdownHook] INFO  : Unregistering application ACCOUNTSSERVICE with eureka with status DOWN
+2024-05-24 02:14:26 [SpringApplicationShutdownHook] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716534866343, current=DOWN, previous=UP]
+2024-05-24 02:14:26 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 02:14:26 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 02:14:28 [SpringApplicationShutdownHook] INFO  : Shutting down DiscoveryClient ...
+2024-05-24 02:14:31 [DiscoveryClient-1] WARN  : task supervisor shutting down, can't accept the task
+2024-05-24 02:14:31 [SpringApplicationShutdownHook] INFO  : Unregistering ...
+2024-05-24 02:14:31 [SpringApplicationShutdownHook] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - deregister  status: 200
+2024-05-24 02:14:31 [SpringApplicationShutdownHook] INFO  : Completed shut down of DiscoveryClient
+2024-05-24 02:14:35 [restartedMain] INFO  : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-24 02:14:35 [restartedMain] INFO  : Fetching config from server at : http://localhost:8000
+2024-05-24 02:14:36 [restartedMain] INFO  : Located environment: name=accountsService, profiles=[default], label=null, version=b023fcdc95966a71ca168fc3a799f1b4284b9854, state=null
+2024-05-24 02:14:36 [restartedMain] INFO  : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}]
+2024-05-24 02:14:36 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-05-24 02:14:36 [restartedMain] INFO  : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2024-05-24 02:14:36 [restartedMain] INFO  : Finished Spring Data repository scanning in 99 ms. Found 3 Reactive MongoDB repository interfaces.
+2024-05-24 02:14:37 [restartedMain] INFO  : BeanFactory id=2736589b-1b3a-3b14-95fc-bb5a688bf055
+2024-05-24 02:14:37 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 02:14:37 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 02:14:37 [restartedMain] INFO  : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 02:14:37 [restartedMain] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Amazon.com Inc./19.0.2+7-FR"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@3c83129b, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@1228c008]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2024-05-24 02:14:37 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 02:14:37 [cluster-rtt-ClusterId{value='66503e5d82f6440908e52413', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:2, serverValue:135}] to localhost:27017
+2024-05-24 02:14:37 [cluster-ClusterId{value='66503e5d82f6440908e52413', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:1, serverValue:134}] to localhost:27017
+2024-05-24 02:14:37 [cluster-ClusterId{value='66503e5d82f6440908e52413', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=49613000}
+2024-05-24 02:14:37 [restartedMain] WARN  : Unable to start LiveReload server
+2024-05-24 02:14:37 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 02:14:38 [restartedMain] INFO  : Eureka HTTP Client uses RestTemplate.
+2024-05-24 02:14:38 [restartedMain] WARN  : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-24 02:14:38 [restartedMain] INFO  : Netty started on port 51823
+2024-05-24 02:14:38 [restartedMain] INFO  : Updating port to 51823
+2024-05-24 02:14:38 [restartedMain] INFO  : Setting initial instance status as: STARTING
+2024-05-24 02:14:38 [restartedMain] INFO  : Initializing Eureka in region us-east-1
+2024-05-24 02:14:38 [restartedMain] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 02:14:38 [restartedMain] INFO  : Disable delta property : false
+2024-05-24 02:14:38 [restartedMain] INFO  : Single vip registry refresh property : null
+2024-05-24 02:14:38 [restartedMain] INFO  : Force full registry fetch : false
+2024-05-24 02:14:38 [restartedMain] INFO  : Application is null : false
+2024-05-24 02:14:38 [restartedMain] INFO  : Registered Applications size is zero : true
+2024-05-24 02:14:38 [restartedMain] INFO  : Application version is -1: true
+2024-05-24 02:14:38 [restartedMain] INFO  : Getting all instance registry info from the eureka server
+2024-05-24 02:14:38 [restartedMain] INFO  : The response status is 200
+2024-05-24 02:14:38 [restartedMain] INFO  : Starting heartbeat executor: renew interval is: 30
+2024-05-24 02:14:38 [restartedMain] INFO  : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-24 02:14:38 [restartedMain] INFO  : Discovery Client initialized at timestamp 1716534878987 with initial instances count: 4
+2024-05-24 02:14:38 [restartedMain] INFO  : Registering application ACCOUNTSSERVICE with eureka with status UP
+2024-05-24 02:14:38 [restartedMain] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716534878989, current=UP, previous=STARTING]
+2024-05-24 02:14:38 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 02:14:39 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 02:14:39 [restartedMain] INFO  : Started FinalProjectApplication in 4.624 seconds (JVM running for 5.321)
+2024-05-24 02:15:51 [reactor-http-nio-4] INFO  : Retrieving all accounts
+2024-05-24 02:15:51 [nioEventLoopGroup-3-3] INFO  : Opened connection [connectionId{localValue:3, serverValue:136}] to localhost:27017
+2024-05-24 02:17:34 [SpringApplicationShutdownHook] INFO  : Unregistering application ACCOUNTSSERVICE with eureka with status DOWN
+2024-05-24 02:17:34 [SpringApplicationShutdownHook] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716535054958, current=DOWN, previous=UP]
+2024-05-24 02:17:34 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 02:17:35 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE": localhost:8761 failed to respond; nested exception is org.apache.http.NoHttpResponseException: localhost:8761 failed to respond stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE": localhost:8761 failed to respond; nested exception is org.apache.http.NoHttpResponseException: localhost:8761 failed to respond
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.apache.http.NoHttpResponseException: localhost:8761 failed to respond
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:141)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 21 more
+
+2024-05-24 02:17:35 [DiscoveryClient-InstanceInfoReplicator-0] WARN  : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE": localhost:8761 failed to respond; nested exception is org.apache.http.NoHttpResponseException: localhost:8761 failed to respond
+2024-05-24 02:17:35 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 22 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:576)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:666)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 35 more
+
+2024-05-24 02:17:35 [DiscoveryClient-InstanceInfoReplicator-0] WARN  : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2024-05-24 02:17:35 [DiscoveryClient-InstanceInfoReplicator-0] WARN  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-05-24 02:17:35 [DiscoveryClient-InstanceInfoReplicator-0] WARN  : There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-05-24 02:17:37 [SpringApplicationShutdownHook] INFO  : Shutting down DiscoveryClient ...
+2024-05-24 02:17:39 [DiscoveryClient-HeartbeatExecutor-0] INFO  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE/192.168.0.11:accountsService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE/192.168.0.11:accountsService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:893)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1457)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 20 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:576)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:666)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 33 more
+
+2024-05-24 02:17:39 [DiscoveryClient-HeartbeatExecutor-0] WARN  : Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE/192.168.0.11:accountsService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2024-05-24 02:17:39 [DiscoveryClient-HeartbeatExecutor-0] ERROR : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:893)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1457)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-05-24 02:17:39 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1135)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1016)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1531)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 22 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:576)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:666)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 35 more
+
+2024-05-24 02:17:39 [DiscoveryClient-CacheRefreshExecutor-0] WARN  : Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2024-05-24 02:17:39 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1135)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1016)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1531)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 23 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:576)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:666)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 36 more
+
+2024-05-24 02:17:39 [DiscoveryClient-CacheRefreshExecutor-0] WARN  : Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2024-05-24 02:17:39 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1135)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1016)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1531)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2024-05-24 02:17:40 [SpringApplicationShutdownHook] INFO  : Unregistering ...
+2024-05-24 02:17:40 [SpringApplicationShutdownHook] INFO  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE/192.168.0.11:accountsService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE/192.168.0.11:accountsService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1120)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1086)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1032)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 38 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:576)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:666)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 51 more
+
+2024-05-24 02:17:40 [SpringApplicationShutdownHook] WARN  : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE/192.168.0.11:accountsService:0": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2024-05-24 02:17:40 [SpringApplicationShutdownHook] ERROR : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1120)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1086)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1032)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-05-24 02:17:40 [SpringApplicationShutdownHook] INFO  : Completed shut down of DiscoveryClient
+2024-05-24 02:18:20 [restartedMain] INFO  : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-24 02:18:20 [restartedMain] INFO  : Fetching config from server at : http://localhost:8000
+2024-05-24 02:18:20 [restartedMain] INFO  : Connect Timeout Exception on Url - http://localhost:8000. Will be trying the next url if available
+2024-05-24 02:18:20 [restartedMain] WARN  : Could not locate PropertySource: I/O error on GET request for "http://localhost:8000/accountsService/default": Connection refused: no further information; nested exception is java.net.ConnectException: Connection refused: no further information
+2024-05-24 02:18:20 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-05-24 02:18:21 [restartedMain] INFO  : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2024-05-24 02:18:21 [restartedMain] INFO  : Finished Spring Data repository scanning in 196 ms. Found 3 Reactive MongoDB repository interfaces.
+2024-05-24 02:18:21 [restartedMain] INFO  : BeanFactory id=2736589b-1b3a-3b14-95fc-bb5a688bf055
+2024-05-24 02:18:21 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 02:18:21 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 02:18:21 [restartedMain] INFO  : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 02:18:22 [restartedMain] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Amazon.com Inc./19.0.2+7-FR"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@2750870a, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@26fac90b]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2024-05-24 02:18:22 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 02:18:22 [cluster-ClusterId{value='66503f3eb4cf1a6a0065eb69', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:1, serverValue:138}] to localhost:27017
+2024-05-24 02:18:22 [cluster-rtt-ClusterId{value='66503f3eb4cf1a6a0065eb69', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:2, serverValue:137}] to localhost:27017
+2024-05-24 02:18:22 [cluster-ClusterId{value='66503f3eb4cf1a6a0065eb69', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=60145200}
+2024-05-24 02:18:22 [restartedMain] INFO  : LiveReload server is running on port 35729
+2024-05-24 02:18:22 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 02:18:23 [restartedMain] INFO  : Eureka HTTP Client uses RestTemplate.
+2024-05-24 02:18:23 [restartedMain] WARN  : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-24 02:18:23 [restartedMain] INFO  : Netty started on port 51998
+2024-05-24 02:18:23 [restartedMain] INFO  : Updating port to 51998
+2024-05-24 02:18:23 [restartedMain] INFO  : Setting initial instance status as: STARTING
+2024-05-24 02:18:23 [restartedMain] INFO  : Initializing Eureka in region us-east-1
+2024-05-24 02:18:23 [restartedMain] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 02:18:23 [restartedMain] INFO  : Disable delta property : false
+2024-05-24 02:18:23 [restartedMain] INFO  : Single vip registry refresh property : null
+2024-05-24 02:18:23 [restartedMain] INFO  : Force full registry fetch : false
+2024-05-24 02:18:23 [restartedMain] INFO  : Application is null : false
+2024-05-24 02:18:23 [restartedMain] INFO  : Registered Applications size is zero : true
+2024-05-24 02:18:23 [restartedMain] INFO  : Application version is -1: true
+2024-05-24 02:18:23 [restartedMain] INFO  : Getting all instance registry info from the eureka server
+2024-05-24 02:18:24 [restartedMain] INFO  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on GET request for "http://localhost:8761/eureka/apps/": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplications(RestTemplateEurekaHttpClient.java:135)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:441)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:283)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:279)
+	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:66)
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:295)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:633)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:374)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:376)
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:127)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:115)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:485)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$b6fa7947.getEurekaClient(<generated>)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:54)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:38)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:83)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent(EurekaAutoServiceRegistration.java:146)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent(EurekaAutoServiceRegistration.java:131)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:171)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:429)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:386)
+	at org.springframework.boot.web.reactive.context.WebServerManager.start(WebServerManager.java:57)
+	at org.springframework.boot.web.reactive.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:40)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:179)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:357)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:156)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:124)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:946)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:594)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
+	at project.FinalProjectApplication.main(FinalProjectApplication.java:16)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 76 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:576)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:666)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 89 more
+
+2024-05-24 02:18:24 [restartedMain] WARN  : Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2024-05-24 02:18:24 [restartedMain] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:441)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:283)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:279)
+	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:66)
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:295)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:633)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:374)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:376)
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:127)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:115)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:485)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$b6fa7947.getEurekaClient(<generated>)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:54)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:38)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:83)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent(EurekaAutoServiceRegistration.java:146)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent(EurekaAutoServiceRegistration.java:131)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:171)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:429)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:386)
+	at org.springframework.boot.web.reactive.context.WebServerManager.start(WebServerManager.java:57)
+	at org.springframework.boot.web.reactive.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:40)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:179)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:357)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:156)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:124)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:946)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:594)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
+	at project.FinalProjectApplication.main(FinalProjectApplication.java:16)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+
+2024-05-24 02:18:24 [restartedMain] INFO  : Initial registry fetch from primary servers failed
+2024-05-24 02:18:24 [restartedMain] WARN  : Using default backup registry implementation which does not do anything.
+2024-05-24 02:18:24 [restartedMain] INFO  : Initial registry fetch from backup servers failed
+2024-05-24 02:18:24 [restartedMain] INFO  : Starting heartbeat executor: renew interval is: 30
+2024-05-24 02:18:24 [restartedMain] INFO  : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-24 02:18:24 [restartedMain] INFO  : Discovery Client initialized at timestamp 1716535104193 with initial instances count: 0
+2024-05-24 02:18:24 [restartedMain] INFO  : Registering application ACCOUNTSSERVICE with eureka with status UP
+2024-05-24 02:18:24 [restartedMain] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716535104198, current=UP, previous=STARTING]
+2024-05-24 02:18:24 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 02:18:24 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 22 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:576)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:666)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 35 more
+
+2024-05-24 02:18:24 [DiscoveryClient-InstanceInfoReplicator-0] WARN  : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/ACCOUNTSSERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2024-05-24 02:18:24 [DiscoveryClient-InstanceInfoReplicator-0] WARN  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-05-24 02:18:24 [DiscoveryClient-InstanceInfoReplicator-0] WARN  : There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-05-24 02:18:24 [restartedMain] INFO  : Started FinalProjectApplication in 4.901 seconds (JVM running for 5.591)
+2024-05-24 02:18:54 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Disable delta property : false
+2024-05-24 02:18:54 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Single vip registry refresh property : null
+2024-05-24 02:18:54 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Force full registry fetch : false
+2024-05-24 02:18:54 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Application is null : false
+2024-05-24 02:18:54 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Registered Applications size is zero : true
+2024-05-24 02:18:54 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Application version is -1: true
+2024-05-24 02:18:54 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : Getting all instance registry info from the eureka server
+2024-05-24 02:18:54 [DiscoveryClient-HeartbeatExecutor-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - Re-registering apps/ACCOUNTSSERVICE
+2024-05-24 02:18:54 [DiscoveryClient-HeartbeatExecutor-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 02:18:54 [DiscoveryClient-HeartbeatExecutor-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 02:18:54 [DiscoveryClient-CacheRefreshExecutor-0] INFO  : The response status is 200
+2024-05-24 02:19:00 [SpringApplicationShutdownHook] INFO  : Unregistering application ACCOUNTSSERVICE with eureka with status DOWN
+2024-05-24 02:19:00 [SpringApplicationShutdownHook] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716535140797, current=DOWN, previous=UP]
+2024-05-24 02:19:00 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 02:19:00 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 02:19:02 [SpringApplicationShutdownHook] INFO  : Shutting down DiscoveryClient ...
+2024-05-24 02:19:05 [SpringApplicationShutdownHook] INFO  : Unregistering ...
+2024-05-24 02:19:05 [SpringApplicationShutdownHook] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - deregister  status: 200
+2024-05-24 02:19:05 [SpringApplicationShutdownHook] INFO  : Completed shut down of DiscoveryClient
+2024-05-24 02:19:08 [restartedMain] INFO  : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-24 02:19:08 [restartedMain] INFO  : Fetching config from server at : http://localhost:8000
+2024-05-24 02:19:10 [restartedMain] INFO  : Located environment: name=accountsService, profiles=[default], label=null, version=b023fcdc95966a71ca168fc3a799f1b4284b9854, state=null
+2024-05-24 02:19:10 [restartedMain] INFO  : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}]
+2024-05-24 02:19:10 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-05-24 02:19:10 [restartedMain] INFO  : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2024-05-24 02:19:10 [restartedMain] INFO  : Finished Spring Data repository scanning in 93 ms. Found 3 Reactive MongoDB repository interfaces.
+2024-05-24 02:19:10 [restartedMain] INFO  : BeanFactory id=2736589b-1b3a-3b14-95fc-bb5a688bf055
+2024-05-24 02:19:10 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 02:19:10 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 02:19:10 [restartedMain] INFO  : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 02:19:11 [restartedMain] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Amazon.com Inc./19.0.2+7-FR"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@4f4eea67, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@63877334]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2024-05-24 02:19:11 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 02:19:11 [cluster-rtt-ClusterId{value='66503f6f5f964a141352089f', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:1, serverValue:146}] to localhost:27017
+2024-05-24 02:19:11 [cluster-ClusterId{value='66503f6f5f964a141352089f', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:2, serverValue:147}] to localhost:27017
+2024-05-24 02:19:11 [cluster-ClusterId{value='66503f6f5f964a141352089f', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=45673200}
+2024-05-24 02:19:11 [restartedMain] INFO  : LiveReload server is running on port 35729
+2024-05-24 02:19:11 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 02:19:12 [restartedMain] INFO  : Eureka HTTP Client uses RestTemplate.
+2024-05-24 02:19:12 [restartedMain] WARN  : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-24 02:19:12 [restartedMain] INFO  : Netty started on port 52173
+2024-05-24 02:19:12 [restartedMain] INFO  : Updating port to 52173
+2024-05-24 02:19:12 [restartedMain] INFO  : Setting initial instance status as: STARTING
+2024-05-24 02:19:12 [restartedMain] INFO  : Initializing Eureka in region us-east-1
+2024-05-24 02:19:12 [restartedMain] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 02:19:12 [restartedMain] INFO  : Disable delta property : false
+2024-05-24 02:19:12 [restartedMain] INFO  : Single vip registry refresh property : null
+2024-05-24 02:19:12 [restartedMain] INFO  : Force full registry fetch : false
+2024-05-24 02:19:12 [restartedMain] INFO  : Application is null : false
+2024-05-24 02:19:12 [restartedMain] INFO  : Registered Applications size is zero : true
+2024-05-24 02:19:12 [restartedMain] INFO  : Application version is -1: true
+2024-05-24 02:19:12 [restartedMain] INFO  : Getting all instance registry info from the eureka server
+2024-05-24 02:19:12 [restartedMain] INFO  : The response status is 200
+2024-05-24 02:19:12 [restartedMain] INFO  : Starting heartbeat executor: renew interval is: 30
+2024-05-24 02:19:12 [restartedMain] INFO  : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-24 02:19:12 [restartedMain] INFO  : Discovery Client initialized at timestamp 1716535152650 with initial instances count: 2
+2024-05-24 02:19:12 [restartedMain] INFO  : Registering application ACCOUNTSSERVICE with eureka with status UP
+2024-05-24 02:19:12 [restartedMain] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716535152652, current=UP, previous=STARTING]
+2024-05-24 02:19:12 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 02:19:12 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 02:19:12 [restartedMain] INFO  : Started FinalProjectApplication in 4.629 seconds (JVM running for 5.28)
+2024-05-24 07:34:45 [restartedMain] INFO  : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-24 07:34:45 [restartedMain] INFO  : Fetching config from server at : http://localhost:8888
+2024-05-24 07:34:45 [restartedMain] INFO  : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2024-05-24 07:34:45 [restartedMain] WARN  : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/accountsService/default": Connection refused: no further information; nested exception is java.net.ConnectException: Connection refused: no further information
+2024-05-24 07:34:45 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-05-24 07:34:45 [restartedMain] INFO  : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2024-05-24 07:34:46 [restartedMain] INFO  : Finished Spring Data repository scanning in 98 ms. Found 3 Reactive MongoDB repository interfaces.
+2024-05-24 07:34:46 [restartedMain] INFO  : BeanFactory id=2736589b-1b3a-3b14-95fc-bb5a688bf055
+2024-05-24 07:34:46 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 07:34:46 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 07:34:46 [restartedMain] INFO  : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 07:34:46 [restartedMain] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Amazon.com Inc./19.0.2+7-FR"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@4d1d3930, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@7be3cbf1]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2024-05-24 07:34:46 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 07:34:46 [cluster-rtt-ClusterId{value='66508966898d7f5a63ec097d', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:1, serverValue:4}] to localhost:27017
+2024-05-24 07:34:46 [cluster-ClusterId{value='66508966898d7f5a63ec097d', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:2, serverValue:5}] to localhost:27017
+2024-05-24 07:34:46 [cluster-ClusterId{value='66508966898d7f5a63ec097d', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=45448300}
+2024-05-24 07:34:46 [restartedMain] WARN  : Unable to start LiveReload server
+2024-05-24 07:34:46 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 07:34:47 [restartedMain] INFO  : Eureka HTTP Client uses RestTemplate.
+2024-05-24 07:34:47 [restartedMain] WARN  : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-24 07:34:47 [restartedMain] INFO  : Netty started on port 50546
+2024-05-24 07:34:47 [restartedMain] INFO  : Updating port to 50546
+2024-05-24 07:34:47 [restartedMain] INFO  : Setting initial instance status as: STARTING
+2024-05-24 07:34:47 [restartedMain] INFO  : Initializing Eureka in region us-east-1
+2024-05-24 07:34:47 [restartedMain] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 07:34:47 [restartedMain] INFO  : Disable delta property : false
+2024-05-24 07:34:47 [restartedMain] INFO  : Single vip registry refresh property : null
+2024-05-24 07:34:47 [restartedMain] INFO  : Force full registry fetch : false
+2024-05-24 07:34:47 [restartedMain] INFO  : Application is null : false
+2024-05-24 07:34:47 [restartedMain] INFO  : Registered Applications size is zero : true
+2024-05-24 07:34:47 [restartedMain] INFO  : Application version is -1: true
+2024-05-24 07:34:47 [restartedMain] INFO  : Getting all instance registry info from the eureka server
+2024-05-24 07:34:47 [restartedMain] INFO  : The response status is 200
+2024-05-24 07:34:47 [restartedMain] INFO  : Starting heartbeat executor: renew interval is: 30
+2024-05-24 07:34:47 [restartedMain] INFO  : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-24 07:34:47 [restartedMain] INFO  : Discovery Client initialized at timestamp 1716554087951 with initial instances count: 2
+2024-05-24 07:34:47 [restartedMain] INFO  : Registering application ACCOUNTSSERVICE with eureka with status UP
+2024-05-24 07:34:47 [restartedMain] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716554087954, current=UP, previous=STARTING]
+2024-05-24 07:34:47 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 07:34:47 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 07:34:48 [restartedMain] INFO  : Started FinalProjectApplication in 3.56 seconds (JVM running for 5.137)
+2024-05-24 07:35:12 [SpringApplicationShutdownHook] INFO  : Unregistering application ACCOUNTSSERVICE with eureka with status DOWN
+2024-05-24 07:35:12 [SpringApplicationShutdownHook] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716554112842, current=DOWN, previous=UP]
+2024-05-24 07:35:12 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 07:35:12 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 07:35:14 [SpringApplicationShutdownHook] INFO  : Shutting down DiscoveryClient ...
+2024-05-24 07:35:17 [SpringApplicationShutdownHook] INFO  : Unregistering ...
+2024-05-24 07:35:17 [DiscoveryClient-0] WARN  : task supervisor shutting down, reject the task
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@62ba1fa0[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@409dcf86[Wrapped task = com.netflix.discovery.DiscoveryClient$CacheRefreshThread@59f59f1]] rejected from java.util.concurrent.ThreadPoolExecutor@40c4933b[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2081)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1376)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:66)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-05-24 07:35:17 [DiscoveryClient-1] WARN  : task supervisor shutting down, reject the task
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@3de22107[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@7cdf2b3c[Wrapped task = com.netflix.discovery.DiscoveryClient$HeartbeatThread@78e0a07f]] rejected from java.util.concurrent.ThreadPoolExecutor@73dd350a[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2081)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1376)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:66)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-05-24 07:35:17 [SpringApplicationShutdownHook] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - deregister  status: 200
+2024-05-24 07:35:17 [SpringApplicationShutdownHook] INFO  : Completed shut down of DiscoveryClient
+2024-05-24 07:35:25 [restartedMain] INFO  : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-24 07:35:25 [restartedMain] INFO  : Fetching config from server at : http://localhost:8888
+2024-05-24 07:35:25 [restartedMain] INFO  : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2024-05-24 07:35:25 [restartedMain] WARN  : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/accountsService/default": Connection refused: no further information; nested exception is java.net.ConnectException: Connection refused: no further information
+2024-05-24 07:35:25 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-05-24 07:35:26 [restartedMain] INFO  : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2024-05-24 07:35:26 [restartedMain] INFO  : Finished Spring Data repository scanning in 98 ms. Found 3 Reactive MongoDB repository interfaces.
+2024-05-24 07:35:26 [restartedMain] INFO  : BeanFactory id=2736589b-1b3a-3b14-95fc-bb5a688bf055
+2024-05-24 07:35:26 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 07:35:26 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 07:35:26 [restartedMain] INFO  : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 07:35:26 [restartedMain] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Amazon.com Inc./19.0.2+7-FR"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@1e54b290, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@48ae485f]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2024-05-24 07:35:26 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 07:35:26 [cluster-rtt-ClusterId{value='6650898e22b3a73d65deffcc', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:2, serverValue:6}] to localhost:27017
+2024-05-24 07:35:26 [cluster-ClusterId{value='6650898e22b3a73d65deffcc', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:1, serverValue:7}] to localhost:27017
+2024-05-24 07:35:26 [cluster-ClusterId{value='6650898e22b3a73d65deffcc', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=38337900}
+2024-05-24 07:35:26 [restartedMain] WARN  : Unable to start LiveReload server
+2024-05-24 07:35:26 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 07:35:27 [restartedMain] INFO  : Eureka HTTP Client uses RestTemplate.
+2024-05-24 07:35:27 [restartedMain] WARN  : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-24 07:35:27 [restartedMain] INFO  : Netty started on port 50568
+2024-05-24 07:35:27 [restartedMain] INFO  : Updating port to 50568
+2024-05-24 07:35:27 [restartedMain] INFO  : Setting initial instance status as: STARTING
+2024-05-24 07:35:27 [restartedMain] INFO  : Initializing Eureka in region us-east-1
+2024-05-24 07:35:27 [restartedMain] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 07:35:27 [restartedMain] INFO  : Disable delta property : false
+2024-05-24 07:35:27 [restartedMain] INFO  : Single vip registry refresh property : null
+2024-05-24 07:35:27 [restartedMain] INFO  : Force full registry fetch : false
+2024-05-24 07:35:27 [restartedMain] INFO  : Application is null : false
+2024-05-24 07:35:27 [restartedMain] INFO  : Registered Applications size is zero : true
+2024-05-24 07:35:27 [restartedMain] INFO  : Application version is -1: true
+2024-05-24 07:35:27 [restartedMain] INFO  : Getting all instance registry info from the eureka server
+2024-05-24 07:35:27 [restartedMain] INFO  : The response status is 200
+2024-05-24 07:35:27 [restartedMain] INFO  : Starting heartbeat executor: renew interval is: 30
+2024-05-24 07:35:27 [restartedMain] INFO  : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-24 07:35:27 [restartedMain] INFO  : Discovery Client initialized at timestamp 1716554127851 with initial instances count: 3
+2024-05-24 07:35:27 [restartedMain] INFO  : Registering application ACCOUNTSSERVICE with eureka with status UP
+2024-05-24 07:35:27 [restartedMain] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716554127853, current=UP, previous=STARTING]
+2024-05-24 07:35:27 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0: registering service...
+2024-05-24 07:35:27 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService:0 - registration status: 204
+2024-05-24 07:35:27 [restartedMain] INFO  : Started FinalProjectApplication in 3.294 seconds (JVM running for 8.191)
+2024-05-24 07:36:50 [reactor-http-nio-2] INFO  : Retrieving all accounts
+2024-05-24 07:36:50 [nioEventLoopGroup-3-3] INFO  : Opened connection [connectionId{localValue:3, serverValue:8}] to localhost:27017
+2024-05-24 07:38:01 [reactor-http-nio-4] INFO  : Retrieving all accounts
+2024-05-24 07:38:56 [reactor-http-nio-4] INFO  : Retrieving all accounts
