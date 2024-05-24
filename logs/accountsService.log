@@ -55,3 +55,60 @@ Action:
 
 Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
 
+2024-05-24 00:05:15 [restartedMain] INFO  : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-24 00:05:16 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-05-24 00:05:16 [restartedMain] INFO  : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2024-05-24 00:05:16 [restartedMain] INFO  : Finished Spring Data repository scanning in 116 ms. Found 3 Reactive MongoDB repository interfaces.
+2024-05-24 00:05:16 [restartedMain] INFO  : BeanFactory id=ee6c0e9d-82e7-3749-8115-81a2b22305b6
+2024-05-24 00:05:17 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 00:05:17 [restartedMain] INFO  : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 00:05:17 [restartedMain] INFO  : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-24 00:05:17 [restartedMain] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Amazon.com Inc./19.0.2+7-FR"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=NettyStreamFactoryFactory{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@2fb62b2f, socketChannelClass=class io.netty.channel.socket.nio.NioSocketChannel, allocator=PooledByteBufAllocator(directByDefault: true), sslContext=null}, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@69c2a3c8]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2024-05-24 00:05:17 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 00:05:17 [cluster-ClusterId{value='6650200dd35a990e60df25b4', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:1, serverValue:34}] to localhost:27017
+2024-05-24 00:05:17 [cluster-rtt-ClusterId{value='6650200dd35a990e60df25b4', description='null'}-localhost:27017] INFO  : Opened connection [connectionId{localValue:2, serverValue:35}] to localhost:27017
+2024-05-24 00:05:17 [cluster-ClusterId{value='6650200dd35a990e60df25b4', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=63404700}
+2024-05-24 00:05:17 [restartedMain] INFO  : LiveReload server is running on port 35729
+2024-05-24 00:05:17 [restartedMain] WARN  : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-05-24 00:05:18 [restartedMain] INFO  : Eureka HTTP Client uses RestTemplate.
+2024-05-24 00:05:18 [restartedMain] WARN  : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-24 00:05:18 [restartedMain] INFO  : Setting initial instance status as: STARTING
+2024-05-24 00:05:18 [restartedMain] INFO  : Initializing Eureka in region us-east-1
+2024-05-24 00:05:18 [restartedMain] INFO  : Resolving eureka endpoints via configuration
+2024-05-24 00:05:18 [restartedMain] INFO  : Disable delta property : false
+2024-05-24 00:05:18 [restartedMain] INFO  : Single vip registry refresh property : null
+2024-05-24 00:05:18 [restartedMain] INFO  : Force full registry fetch : false
+2024-05-24 00:05:18 [restartedMain] INFO  : Application is null : false
+2024-05-24 00:05:18 [restartedMain] INFO  : Registered Applications size is zero : true
+2024-05-24 00:05:18 [restartedMain] INFO  : Application version is -1: true
+2024-05-24 00:05:18 [restartedMain] INFO  : Getting all instance registry info from the eureka server
+2024-05-24 00:05:18 [restartedMain] INFO  : The response status is 200
+2024-05-24 00:05:18 [restartedMain] INFO  : Starting heartbeat executor: renew interval is: 30
+2024-05-24 00:05:18 [restartedMain] INFO  : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-24 00:05:18 [restartedMain] INFO  : Discovery Client initialized at timestamp 1716527118735 with initial instances count: 1
+2024-05-24 00:05:18 [restartedMain] INFO  : Registering application ACCOUNTSSERVICE with eureka with status UP
+2024-05-24 00:05:18 [restartedMain] INFO  : Saw local status change event StatusChangeEvent [timestamp=1716527118737, current=UP, previous=STARTING]
+2024-05-24 00:05:18 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService: registering service...
+2024-05-24 00:05:18 [DiscoveryClient-InstanceInfoReplicator-0] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService - registration status: 204
+2024-05-24 00:05:18 [restartedMain] WARN  : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2024-05-24 00:05:20 [restartedMain] INFO  : Shutting down DiscoveryClient ...
+2024-05-24 00:05:23 [restartedMain] INFO  : Unregistering ...
+2024-05-24 00:05:23 [restartedMain] INFO  : DiscoveryClient_ACCOUNTSSERVICE/192.168.0.11:accountsService - deregister  status: 200
+2024-05-24 00:05:23 [restartedMain] INFO  : Completed shut down of DiscoveryClient
+2024-05-24 00:05:23 [restartedMain] INFO  : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-05-24 00:05:23 [restartedMain] ERROR : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
